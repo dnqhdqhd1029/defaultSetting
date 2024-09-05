@@ -1,0 +1,62 @@
+{
+  "name": "untitled",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.4.0",
+    "@babel/runtime": "^7.25.4",
+    "@fontsource/noto-sans": "^5.0.22",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@vovkasm/redux-persist": "^4.10.1",
+    "antd": "^5.20.3",
+    "dayjs": "^1.11.13",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "jquery": "^3.7.1",
+    "link": "^2.1.1",
+    "lint": "^0.8.19",
+    "nanoscroller": "^0.8.7",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-app": "^1.1.2",
+    "react-devtools": "^5.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "react-scripts": "^5.0.1",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.77.8",
+    "scss": "^0.2.4",
+    "styled-components": "^6.1.12",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --no-cache"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0"
+  }
+}
