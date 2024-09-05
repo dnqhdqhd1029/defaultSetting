@@ -7,6 +7,9 @@ import NotFound from "./page/publ/NotFound";
 import Guide from "./page/publ/Guide";
 import ReportP from "./page/publ/Report";
 import ListP from "./page/publ/ListP";
+import ReportListP from "./page/publ/ReportListP";
+import CurationEditP from "./page/publ/CurationEditP";
+import CurationListP from "./page/publ/CurationListP";
 
 //import Guide from '/puble/Guide';
 //import NotFound from '/puble/NotFound';
@@ -62,6 +65,9 @@ const AppRoutes = () => {
         <Route path="/publ/report" element={<ReportP />} />
         <Route path="/publ/main" element={<MainP />} />
         <Route path="/publ/list" element={<ListP />} />
+        <Route path="/publ/reportList" element={<ReportListP />} />
+        <Route path="/publ/curationEdit" element={<CurationEditP />} />
+        <Route path="/publ/curationList" element={<CurationListP />} />
       </Routes>
     </BrowserRouter>
     // <BrowserRouter>

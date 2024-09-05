@@ -66,23 +66,28 @@ const Home = () => {
         </li>
         <li>
           <Link to={`/publ/`}>
-            나의 보관함 팝업 <span className="ing">진행중</span>
+            나의 보관함 팝업 <span>완료(header에 공통)</span>
           </Link>
         </li>
         <li>
-          <Link to={`/publ`}>
-            나의 큐레이터 <span className="ing">진행중</span>
+          <Link to={`/publ/`}>
+            나의 보관함 팝업 최종확인 <span className="ing">진행중</span>
+          </Link>
+        </li>
+        <li>
+          <Link to={`/publ/curationEdit`}>
+            나의 큐레이터 편집  <span>완료</span>
           </Link>
         </li>
 
         <li>
-          <Link to={`/publ`}>
-            일괄리포트 생성 최종확인 팝업 <span className="ing">진행중</span>
+          <Link to={`/publ/curationList`}>
+            추천큐레이션 <span>완료</span>
           </Link>
         </li>
         <li>
-          <Link to1={`/publ`}>
-            최근리포트 목록 <span className="ing">진행중</span>
+          <Link to1={`/publ/reportList`}>
+            최근리포트 목록 <span>완료</span>
           </Link>
         </li>
         <li>
@@ -92,7 +97,7 @@ const Home = () => {
         </li>
         <li>
           <Link to={`/publ/preview`}>
-            LLM 생성화면 <span>Preview 완료</span>
+            미리보기<span>Preview 완료</span>
           </Link>
         </li>
       </ul>

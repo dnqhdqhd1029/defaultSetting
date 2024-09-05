@@ -13,6 +13,8 @@ body {
   background: #fff;
 }
 
+
+
 header {
   min-height: 80px;
   background-color: #0075c2;
@@ -63,13 +65,18 @@ header {
             z-index: 100;
             overflow: hidden;
 
-            transition:
-              opacity 0.5s ease-out,
-              min-width 0.5s ease-out;
+
             opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
 
             &.show {
               opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+              transition: opacity 0.5s ease, transform 0.5s ease;
+
             }
           }
 
@@ -104,14 +111,31 @@ header {
             overflow: hidden;
             text-align: left;
 
-            transition:
-              opacity 0.5s ease-out,
-              min-width 0.5s ease-out;
+
             opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
 
             &.show {
               opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+              transition: opacity 0.5s ease, transform 0.5s ease;
+
             }
+
+            button.close{
+              background: url("../images/svg/icon-close.svg") center center no-repeat;
+              width: 32px;
+              height: 32px;
+              background-size: contain;
+              position: absolute;
+              right: 20px;
+              top: 10px;
+
+            }
+
             h4 {
               color: #4d545b;
               font-size: 16px;
@@ -122,7 +146,7 @@ header {
               display: flex;
               justify-content: space-between;
               align-items: flex-start;
-              border: 1px solid red;
+              
               h5.info {
                 color: #0c0c0d;
                 font-size: 16px;
@@ -133,33 +157,248 @@ header {
               }
               .curationWrap {
                 width: 342px;
-                border: 1px solid red;
+                margin-right: 40px;
 
                 .curationCont {
                   padding: 20px;
                   height: 610px;
                   background-color: #fafafa;
                   text-align: left;
+                  overflow-y: scroll;
 
                   h6 {
                     color: #7996b7;
+                    margin-bottom: 10px;
                   }
 
                   .curationBox {
-                    height: 276px;
-                    border: 1px solid red;
-                    overflow-y: scroll;
+                    //height: 298px;
+                    padding: 10px 0;
+                    margin-bottom: 20px;
+                    &:last-of-type{
+                      margin-bottom: 0;
+                      height: 204px;
+                    }
+                    & > button{
+                      border: 1px solid transparent;
+                      background-color: #fff;
+                      padding: 14px;
+                      display: block;
+                      height: 92px;
+                      margin-bottom: 4px;
+                      dl {
+                        dt{
+                          display: flex;
+                          justify-content: space-between;
+                          font-weight: 600;
+                          height: 24px;
+                          margin-bottom: 5px;
+
+                          em{
+                            width: 28px;
+                            height: 24px;
+                            border-radius: 12px;
+                            background-color: #219BF1;
+                            color: #fff;
+
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+                        }
+                        dd{
+                          color: #7F8896;
+                          font-size: 12px;
+
+
+
+                          span{
+                            @include ellipsisLine;
+                            -webkit-line-clamp: 2;
+                            line-height: 16px;
+                            padding: 0;
+                            text-align: left;
+                          }
+                        }
+                      }
+
+                      &.on{
+                        background-color: #F6FCFF;
+                        border: 1px solid #219BF1;
+                         dt{
+                           color: #219BF1;
+                         }
+                      }
+                    }
                   }
                 }
               }
 
               .myBoxWrap {
                 flex: 1;
-                border: 1px solid red;
+                overflow-y: scroll;
+
+
+                .myBoxChecked{
+                  .allChecked{
+                    background-color: #fafafa;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 5px 15px;
+                    margin-bottom:5px;
+
+                    div.btn{
+                      .btn.bgWhite{
+                        color: #000000;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border:1px solid #D5E0E7;
+                       min-width: 45px;
+                        height: 28px;
+                      }
+                    }
+                  }
+
+                  .allList{
+                    background-color: #fff;
+                    padding: 15px;
+                    overflow-y: auto;
+                    height: 260px;
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 50px;
+
+
+                    & > button{
+                      border: 1px solid #F1F1F1;
+                      border-radius: 12px;
+                      height: 66px;
+                      width: 48%;
+                      margin-right: 10px;
+                      margin-bottom: 10px;
+                      text-align: left;
+                      padding: 15px 20px;
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: center;
+
+                      &:last-of-type{
+                        margin-right: 0;
+                      }
+
+                      &.on{
+                        border: 1px solid #219BF1;
+                      }
+
+                      & > label{
+                        width: 20px;
+                        margin-right: 10px;
+                      }
+
+                      & > span{
+                        flex: 1;
+                        strong{
+                          @include ellipsisLine;
+                          -webkit-line-clamp: 1;
+                          line-height: 16px;
+                        }
+
+                        em{
+                          font-size: 12px;
+                          color: #BEC7CD;
+                          font-weight: 400;
+
+                          b{
+                            color: #7F8896;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+
+                }
+                .myBoxList{
+                  background-color: #F6FCFF;
+                  padding: 20px;
+                  height: 215px;
+                  overflow-y: auto;
+                  //display: flex;
+                  //justify-content: flex-start;
+                  //flex-wrap: wrap;
+                  //align-items: flex-start;
+                  //
+
+                  .cont{
+                    background-color: #fff;
+                    width: 49%;
+                    height: 36px;
+                    border-radius: 12px;
+                    border: 1px solid #F1F1F1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 8px 14px;
+                    float: left;
+                    margin-bottom: 10px;
+                    margin-left: 8px;
+
+                    &:last-of-type{
+                      margin-bottom: 0;
+                    }
+                    &:nth-of-type(odd){
+                      margin-left: 0;
+                    }
+
+                    .del{
+                      width: 16px;
+                      height: 16px;
+                      background: url("../images/svg/icon-close-gray.svg") center center no-repeat;
+                      background-size: contain;
+                    }
+                    & > span{
+                      @include ellipsisLine;
+                      -webkit-line-clamp: 1;
+                      line-height: 18px;
+                      flex: 1;
+                    }
+                  }
+                }
               }
             }
             .popupFoot {
-              border: 1px solid red;
+              
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              padding: 20px;
+              .info{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-right: 20px;
+                em{
+                  color: #A6B0BE;
+                  font-size: 12px;
+                }
+                span{
+                  font-size: 20px;
+                  font-weight: 400;
+                  color: #A6B0BE;
+                  b{
+                    color: #219BF1;
+                    font-weight: 700;
+                  }
+                }
+              }
+              button.btn{
+                width: 213px;
+                border-radius: 12px;
+                height: 48px;
+                font-size: 20px;
+              }
             }
           }
         }
@@ -185,13 +424,18 @@ header {
             overflow: hidden;
             text-align: left;
 
-            transition:
-              opacity 0.5s ease-out,
-              min-width 0.5s ease-out;
+
             opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
 
             &.show {
               opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+              transition: opacity 0.5s ease, transform 0.5s ease;
+
             }
             ul li {
               & > button {
@@ -432,6 +676,10 @@ section.container {
     color: #0c0c0d;
     line-height: 24px;
     margin-bottom: 20px;
+    b{
+      color:#20C4F4;
+    }
+
   }
 
   .totalTxt {
@@ -441,6 +689,125 @@ section.container {
       color: #20c4f4;
     }
   }
+  //나의큐레이터
+  .curationContainer{
+
+    .allChecked{
+      border-radius: 8px;
+      height: 44px;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      .btn.bgWhite{
+        color: #000000;
+        font-size: 14px;
+        border-radius: 6px;
+        border:1px solid #D5E0E7;
+        min-width: 45px;
+        height: 28px;
+      }
+
+    }
+
+    .curationWrap{
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      .curationBox{
+        //float: left;
+        width: 380px;
+        height: 209px;
+        border-radius: 12px;
+        border: 1px solid #DDD;
+        background: #FFF;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        overflow:visible;
+
+        &.checked{
+          border-color: #219BF1;
+        }
+
+
+
+        &:last-of-type{
+          margin-right: 0;
+
+        }
+        &:nth-of-type(3n){
+          margin-right: 0;
+        }
+
+        .head{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+
+          label{
+            span{
+              margin-right: 0;
+            }
+          }
+        }
+
+        .cont{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+
+          & > div{
+            flex: 1;
+            color: #7F8896;
+          }
+
+          .txt{
+
+            height: 140px;
+            margin-right: 10px;
+            span{
+              @include ellipsisLine;
+              -webkit-line-clamp: 4;
+              line-height: 20px;
+              font-size: 14px;
+              overflow: hidden;
+              height: 80px;
+              margin-bottom: 20px;
+
+            }
+
+            select{
+              width: 120px;
+              height: 32px;
+              font-size: 14px;
+              appearance:auto;
+              padding-right: 0;
+            }
+          }
+
+          .list{
+            background-color: #F9F9F9;
+            padding: 5px;
+            ul li{
+              font-size: 12px;
+              background: url("../images/svg/icon-folder.svg") left center no-repeat;
+              background-size: 16px;
+              padding-left: 20px;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+
 }
 
 .ant-spin-container {
@@ -652,6 +1019,8 @@ section.container {
         no-repeat;
       margin-right: 10px;
     }
+
+
   }
   .reportLayout {
     width: 100%;
@@ -1079,3 +1448,84 @@ section.container {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+
+/* 공통 영역 - 기본 요소에 스크롤바 커스터마이징 적용 */
+.scroll {
+  /* Firefox용 스크롤바 스타일 */
+  scrollbar-width: thin; /* thin, auto, none */
+  scrollbar-color: #A6B0BE transparent; /* 막대 색상과 트랙 색상 */
+
+
+}
+
+/* WebKit 기반 브라우저용 스크롤바 스타일 */
+.scroll::-webkit-scrollbar {
+  width: 3px; /* 스크롤바 너비 (세로 스크롤) */
+  height: 3px; /* 스크롤바 높이 (가로 스크롤) */
+  border-radius: 4px;
+}
+
+/* 스크롤바 막대 (Thumb) */
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #A6B0BE; /* 스크롤바 막대 색상 */
+  border-radius: 4px; /* 막대 모서리 둥글게 */
+  border: 3px solid transparent; /* 내부 여백 */
+  background-clip: content-box; /* 내부 클립 */
+  transition: background-color 0.3s ease;
+}
+
+/* 막대 위에 마우스를 올렸을 때 색상 변화 */
+.scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #A6B0BE; /* hover 상태에서의 막대 색상 */
+}
+
+/* 스크롤바 트랙 (스크롤바 배경) */
+.scroll::-webkit-scrollbar-track {
+  background-color: transparent; /* 트랙(배경) 색상 */
+  border-radius: 4px;
+}
+
+/* 트랙 안쪽에 여백을 주고 싶다면 */
+.scroll::-webkit-scrollbar-track-piece {
+  margin: 2px;
+  background-color: #000; /* 내부 트랙 색상 */
+}
+
+/* 스크롤바의 코너(세로와 가로 스크롤이 교차하는 부분) 디자인 */
+.scroll::-webkit-scrollbar-corner {
+  background-color: #f1f1f1; /* 코너 색상 */
+}
+
+
+.tabContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & > button {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+    color: #A6B0BE;
+
+    &.active {
+      color: #0C0C0D;
+      font-weight: 700;
+    }
+  }
+
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: #0C0C0D;
+    transition: all 0.3s;
+    width: 100px;
+  }
+}
+
