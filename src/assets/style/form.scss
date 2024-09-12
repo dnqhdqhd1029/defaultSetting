@@ -7,10 +7,11 @@ input[type="number"],
 input[type="text"] {
   display: block;
   //width: -webkit-fill-available;
-  height: $heightMd;
-  border: 1px solid $info;
+  height: 40px;
+  border: 1px solid #E9E9E9;
   color: $gray;
   padding: 0 10px;
+  width: 100%;
 }
 input.inline {
   display: inline-block;
@@ -229,15 +230,15 @@ label.toggleSwitch span {
 }
 
 /*select*/
-.select-content {
+.selectContent {
   position: relative;
   display: inline-block;
 }
-.select-pull {
+.selectPull {
   display: block;
 }
 
-.select-content:before {
+.selectContent:before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -249,7 +250,7 @@ label.toggleSwitch span {
   transform: rotate(-45deg);
   pointer-events: none;
 }
-.select-content:after {
+.selectContent:after {
   content: "";
   color: #fff;
   display: inline-block;
@@ -264,18 +265,18 @@ label.toggleSwitch span {
 }
 select {
   box-sizing: border-box;
-  width: 100%;
-  padding: 0 32px 0 14px;
+  padding: 0 15px 0 14px;
   background: $white;
-  height: $heightXs;
-  line-height: $fontSm;
-  color: $dark;
+  //height: $heightXs;
+  line-height: 26px;
+  //color: $dark;
   font-size: $fontSm;
   border: 1px solid $info;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: $radius;
+  //border-radius: $radius;
+  background: url("../images/svg/icon-select.svg") right center no-repeat;
 }
 
 select::-ms-expand {

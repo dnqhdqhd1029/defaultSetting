@@ -12,19 +12,18 @@ const HeaderP = () => {
 
   return (
     <>
-      <div className="headerContainer">
-        <header>
-          <div className="header">
-            <h1 className="logo">AI 검색</h1>
-            <div className="searchWrap">
-              <input type="search" placeholder="검색어를 입력하세요" />
-              <button
+      <header>
+        <div className="header">
+          <h1 className="logo">AI 검색</h1>
+          <div className="searchWrap">
+            <input type="search" placeholder="검색어를 입력하세요" />
+            <button
                 type="button"
                 className="iconSearch"
                 onClick={() => modalRef.current.show()}
-              />
+            />
 
-              {/*<div className="searchList">
+            {/*<div className="searchList">
                 <div className="top">
                   <span>최근검색어</span>
                   <button type="button">전체삭제</button>
@@ -74,30 +73,29 @@ const HeaderP = () => {
                   </label>
                 </div>
               </div>*/}
-            </div>
-            <div className="lnb">
-              <button
+          </div>
+          <div className="lnb">
+            <button
                 type="button"
                 className={`detail ${activeState.detail ? "on" : ""}`}
                 onClick={() => modalDetailRef.current.show()}
-              >
-                상세검색
-              </button>
-              <label>
-                <input type="checkbox" />
-                <span>결과 내 재검색</span>
-              </label>
-              <button
+            >
+              상세검색
+            </button>
+            <label>
+              <input type="checkbox" />
+              <span>결과 내 재검색</span>
+            </label>
+            <button
                 className={`setting ${activeState.setting ? "on" : ""}`}
                 type="button"
                 onClick={() => modalSettingRef.current.show()}
-              >
-                설정
-              </button>
-            </div>
+            >
+              설정
+            </button>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
 
       <ModalP
         ref={modalRef}

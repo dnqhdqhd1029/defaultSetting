@@ -6,137 +6,335 @@ import "../../assets/style/style.scss";
 
 const MainP = () => {
   const [activeTab, setActiveTab] = useState("tab01");
+  const [activeView, setActiveView] = useState("tab01");
+  const [activeMenuTab, setActiveMenuTab] = useState("tab01");
+  const underlineRef = useRef(null);
   const tabButtonsRef = useRef([]);
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
+  const handleViewClick = (tab) => {
+    setActiveView(tab);
+  };
+
+  const handleMenuTabClick = (tab) => {
+    setActiveMenuTab(tab);
+  };
+
+  useEffect(() => {
+    const activeButton = tabButtonsRef.current.find((btn) =>
+      btn.classList.contains("active"),
+    );
+    if (activeButton) {
+      const { offsetLeft, offsetWidth } = activeButton;
+      underlineRef.current.style.transform = `translateX(${offsetLeft}px)`;
+      underlineRef.current.style.width = `${offsetWidth}px`;
+    }
+  }, [activeTab]);
+
   return (
     <>
       <HeaderP />
       <main>
-        <section className="section">
-          <div className="menuContainer">
-            <div className="tabMenu">
-              <button type="button" className="on">
-                전체보기
+        <div className="menuContainer">
+          <div className="tabMenu">
+            <button
+              type="button"
+              className="on"
+              className={activeView === "tab01" ? "on" : ""}
+              onClick={() => handleViewClick("tab01")}
+            >
+              전체보기
+            </button>
+            <button
+              type="button"
+              className={activeView === "tab02" ? "on" : ""}
+              onClick={() => handleViewClick("tab02")}
+            >
+              나눠보기
+            </button>
+          </div>
+          <div className="menuWrap">
+            <div className="menuTab">
+              <button
+                type="button"
+                className={activeMenuTab === "tab01" ? "on" : ""}
+                onClick={() => handleMenuTabClick("tab01")}
+              >
+                원천
               </button>
-              <button type="button" className="">
-                나눠보기
+              <button
+                type="button"
+                className={activeMenuTab === "tab02" ? "on" : ""}
+                onClick={() => handleMenuTabClick("tab02")}
+              >
+                新정보
               </button>
             </div>
-            <div className="menuWrap">
-              <div className="menuTab">
-                <button type="button" className="on">
-                  원천
-                </button>
-                <button type="button" className="">
-                  新정보
-                </button>
-              </div>
-              <div className="menuList">
-                <button type="button" className="on">
-                  <span>
-                    고객센터 <em>21</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    전자결재 <em>5</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    규정 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    우리상품 바로알기 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    부서홈페이지 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    게시 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    업무포탈 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    업무길라잡이 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    은행사전 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    직원정보 <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    통합Q&A <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-                <button type="button" className="">
-                  <span>
-                    전산매뉴얼ABC <em>2</em>
-                  </span>{" "}
-                  <i className="iconEye" />
-                </button>
-              </div>
+            <div className="menuList">
+              {activeMenuTab === "tab01" && (
+                <>
+                  <ul>
+                    <li className="on">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            고객센터 <em>21</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            전자결재 <em>5</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            규정 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            우리상품 바로알기 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            부서홈페이지 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyOff" />
+                        </button>
+                      </div>
+                    </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            게시 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyOff" />
+                        </button>
+                      </div>
+                    </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            업무포탈 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyOff" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            업무길라잡이 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            은행사전 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            직원정보 <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            통합Q&A <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            전산매뉴얼ABC <em>2</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </>
+              )}
+              {activeMenuTab === "tab02" && (
+                <>
+                  <ul>
+                    <li className="on">
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            수신 <em>21</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+
+                      <div className="depthTwo">
+                        <button type="button" className="on">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            투자상품PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                      </div>
+                    </li>
+                    <li className="">
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            여신 <em>21</em>
+                          </span>
+                        </button>
+                        <button type="button">
+                          <i className="iconEyeOn" />
+                        </button>
+                      </div>
+
+                      <div className="depthTwo">
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            투자상품PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA<em>21</em>
+                          </span>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </>
+              )}
             </div>
           </div>
-
+        </div>
+        <section className="section">
           <div className="listContainer">
             <div className="title">
               <span>
                 <strong>전체</strong>
                 <em>42</em>
               </span>
-              <select>
-                <option>정확도순</option>
-                <option>조회순</option>
-                <option>제목순</option>
-                <option>최근날짜순</option>
-              </select>
+              <div className="">
+                <select className="">
+                  <option>정확도순</option>
+                  <option>조회순</option>
+                  <option>제목순</option>
+                  <option>최근날짜순</option>
+                </select>
+              </div>
             </div>
             <div className="content">
               <div className="lnb">
-                <span>길라잡이</span>
+                <span className="label">길라잡이</span>
+                <span className="label number">관리번호 0000</span>
                 <em>
                   외환 > 제3권 외환여신 > <b>제3장 장외파생상품 업무</b>
                 </em>
               </div>
               <dl>
                 <dt>
-                  <span>
-                    통화<strong>스왑</strong> 업무게시
+                  <span className="txt">
+                    통화<strong>스왑</strong> 업무게시업무게시업무게시업무게시업무게시업무게시업무게시업무게시
                   </span>
-                  <em>2024-05-22</em>
+                  <em>
+                    기업고객부 서유리 차장
+                    <samll className="ml1">2024-05-22</samll>
+                  </em>
                 </dt>
                 <dd className="info">
                   <span className="txt">
@@ -151,7 +349,7 @@ const MainP = () => {
                     <strong>스왑</strong>포인트(swap point)’라고 한다.
                   </span>
                 </dd>
-                <dd className="down">
+                <dd className="download">
                   <button type="button">
                     <i className="iconPdf" />
                     ★통화스왑(부채)_업무안내.pdf
@@ -182,15 +380,70 @@ const MainP = () => {
             </div>
 
             <div className="content">
-              <div className="txtNone">
-                <h5><b>이자율 스왑</b> 에 대한 검색결과가 없습니다.</h5>
-                <ul className="dot">
-                  <li><span>단어의 철자가 정확한지 확인해 주세요.</span></li>
-                  <li><span>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</span></li>
-                  <li><span>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</span></li>
-                  <li><span>두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.</span></li>
-                </ul>
+              <div className="lnb">
+                <span className="label">길라잡이</span>
+                <span className="label number">관리번호 0000</span>
+                <em>
+                  외환 > 제3권 외환여신 > <b>제3장 장외파생상품 업무</b>
+                </em>
               </div>
+              <dl>
+                <dt>
+                  <span className="txt">
+                    통화<strong>스왑</strong> 업무게시
+                  </span>
+                  <em>
+                    기업고객부 서유리 차장
+                    <samll className="ml1">2024-05-22</samll>
+                  </em>
+                </dt>
+                <dd className="info">
+                  <span className="txt">
+                    소제목 텍스트 최대1줄 넘치는텍스트 말줄임 소제목 텍스트
+                    최대1줄 넘치는텍스트 말줄임소제목 텍스트 최대1줄
+                    넘치는텍스트 말줄임
+                  </span>
+                  <span>
+                    ① <strong>스왑</strong>포인트(Swap Point) ⓐ 통화선도의
+                    예약환율은 현재환율에 교환채권의 만기 이자값 차이를 가감하여
+                    산출하며, 이러한 만기 이자값 차이, 즉 미래교환가치를 ‘
+                    <strong>스왑</strong>포인트(swap point)’라고 한다.
+                  </span>
+                </dd>
+                <dd className="download">
+                  <button type="button">
+                    <i className="iconPdf" />
+                    ★통화스왑(부채)_업무안내.pdf
+                  </button>
+                  <button type="button">
+                    <i className="iconExcel" />
+                    ★통화스왑(부채)_업무안내.pdf
+                  </button>
+                  <button type="button">
+                    <i className="iconWord" />
+                    ★통화스왑(부채)_업무안내.pdf
+                  </button>
+                  <button type="button">
+                    <i className="iconHwp" />
+                    ★통화스왑(부채)_업무안내.pdf
+                  </button>
+                </dd>
+                <dd className="etc">
+                  <span>
+                    <button type="button">북마크</button>
+                    <button type="button">
+                      00개의 유사문서(팝업 디자인 나올거임)
+                    </button>
+                  </span>
+                  <button type="button">Preview</button>
+                </dd>
+              </dl>
+            </div>
+
+            <div className="more">
+              <button type="button">
+                <i className="iconAdd" /> 펼쳐보기
+              </button>
             </div>
 
             <div className="paginate">
@@ -209,36 +462,93 @@ const MainP = () => {
             </div>
           </div>
 
-          <div className="keyWordContainer">
-            <div className="title">연관 검색어</div>
+          <div className="listContainer">
             <div className="content">
-              <button type="button">
-                일이삼사오육칠팔구십일이삼사오육칠팔구
-              </button>
-              <button type="button">버팀목전세자금대출 한도조회</button>
-              <button type="button">대출이자납입일</button>
-              <button type="button">한도미사용수수료 VG</button>
-              <button type="button">재형저축 비과세 한도</button>
-              <button type="button">당좌 이자</button>
-              <button type="button">신용보정서한도</button>
-              <button type="button">한도 신청</button>
-              <button type="button">기간연장 이자</button>
-              <button type="button">이체한도 5억</button>
+              <div className="txtNone">
+                <h5>
+                  <b>이자율 스왑</b> 에 대한 검색결과가 없습니다.
+                </h5>
+                <ul className="dot">
+                  <li>
+                    <span>단어의 철자가 정확한지 확인해 주세요.</span>
+                  </li>
+                  <li>
+                    <span>
+                      한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시
+                      검색해 보세요.
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="keyWordContainer">
+            <div className="title borderNone">연관 검색어</div>
+            <div className="content">
+              <ul className="dot">
+                <li>
+                  <button type="button">
+                    일이삼사오육칠팔구십일이삼사오육칠팔구
+                  </button>
+                </li>
+                <li>
+                  <button type="button">버팀목전세자금대출 한도조회</button>
+                </li>
+                <li>
+                  <button type="button">대출이자납입일</button>
+                </li>
+                <li>
+                  <button type="button">한도미사용수수료 VG</button>
+                </li>
+                <li>
+                  <button type="button">재형저축 비과세 한도</button>
+                </li>
+                <li>
+                  <button type="button">당좌 이자</button>
+                </li>
+                <li>
+                  <button type="button">신용보정서한도</button>
+                </li>
+                <li>
+                  <button type="button">한도 신청</button>
+                </li>
+                <li>
+                  <button type="button">기간연장 이자</button>
+                </li>
+                <li>
+                  <button type="button">이체한도 5억</button>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
         <aside>
           <div className="aiContainer">
-            <div className="title">
+            <div className="title borderNone">
               <span>
                 우리은행 ChatGPT <strong>AI 지식상담</strong>입니다.
               </span>
               <button type="button" className="iconScale" />
+            </div>
 
-              <div className="aiWrap">
-                <div className="aiCont">
+            <div className="aiWrap">
+              <div className="aiTxt">
+                <div className="cont">
                   <p>
-                    어떤 업무를 도와드릴까요? 다음과 같이 질문을 구체적으로
+                    어떤 업무를 도와드릴까요? <br />
+                    다음과 같이 질문을 구체적으로
+                    <br />
                     물어보시면 도움되는 답변을 받으실 수 있습니다.
                   </p>
                   <p>
@@ -248,12 +558,18 @@ const MainP = () => {
                     </button>
                   </p>
                   <p>
-                    <i className="iconInfo" />
-                    IRP 대리인 해지 가능해?
+                    <small className="flexS">
+                      <i className="iconInfo" />
+                      AI 답변이 부정확할 수 있으니, 근거 확인 후 활용해주세요.
+                    </small>
                   </p>
                 </div>
-                <div className="question">이자율 스왑이 뭐야?</div>
-                <div className="aiCont">
+              </div>
+              <div className="question">
+                <div className="cont">이자율 스왑이 뭐야?</div>
+              </div>
+              <div className="aiTxt">
+                <div className="cont">
                   <p>
                     이자율 스왑이란 금융시장에서 차입자의 기존부채 또는 신규
                     부채에 대한 금리리스크의 헤징이나 차입비용의 절감을 위하여
@@ -261,27 +577,61 @@ const MainP = () => {
                     일반적으로 변동(고정)금리 dl부채를 고정(변동)금리부채로
                     전환하는 형식을 취하게 됩니다.
                   </p>
-                  <button className="answerLink">
-                    <strong>1</strong> <strong>고객센터</strong> 링크 없는
-                    근거문서 케이스
-                  </button>
-                  <button className="answerLink">
+                </div>
+
+                <button className="answerLink">
+                  <span>
+                    <strong>1</strong> <strong>고객센터</strong>
+                    링크 없는 근거문서 케이스
+                  </span>
+                  <em>2023-07-21</em>
+                </button>
+                <button className="answerLink">
+                  <span>
                     <strong>2</strong> <strong>부서홈페이지</strong> 링크가 있는
                     근거문서 케이스
                     <i className="iconLink" />
-                  </button>
+                  </span>
+                  <em>2023-07-21</em>
+                  <div className="download">
+                    <button type="button">
+                      <i className="iconPdf" />
+                      ★통화스왑(부채)_업무안내.pdf
+                    </button>
+                    <button type="button">
+                      <i className="iconExcel" />
+                      ★통화스왑(부채)_업무안내.pdf
+                    </button>
+                    <button type="button">
+                      <i className="iconWord" />
+                      ★통화스왑(부채)_업무안내.pdf
+                    </button>
+                    <button type="button">
+                      <i className="iconHwp" />
+                      ★통화스왑(부채)_업무안내.pdf
+                    </button>
+                  </div>
+                </button>
+
+                <div className="keywordLink">
+                  <button type="button">IRP한도</button>
+                  <button type="button">IRP 가입자격</button>
+                  <button type="button">IRP 세금혜택</button>
                 </div>
               </div>
+            </div>
 
-              <div className="serachArea">
-                <input type="text" placeholder="궁금한 것을 질문해 보세요" />
-                <button type="button" className="enter" />
-              </div>
+            <div className="serachArea">
+              <input type="text" placeholder="궁금한 것을 질문해 보세요" />
+              <button type="submit" className="enter" />
             </div>
           </div>
+
           <div className="chetbotContainer">
-            <div className="title">
-              <i className="iconAi" /> AI챗봇에게 물어보기
+            <div className="title borderNone">
+              <span className="flexS alignC">
+                <i className="iconAi mr1" /> AI챗봇에게 물어보기
+              </span>
             </div>
 
             <div className="content">
@@ -299,33 +649,6 @@ const MainP = () => {
                       수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
                       문의하시기 바랍니다.
                     </span>
-                  </dd>
-                  <dd className="down">
-                    <button type="button">
-                      <i className="iconPdf" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconExcel" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconWord" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconHwp" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                  </dd>
-                  <dd className="etc">
-                    <span>
-                      <button type="button">북마크</button>
-                      <button type="button">
-                        00개의 유사문서(팝업 디자인 나올거임)
-                      </button>
-                    </span>
-                    <button type="button">Preview</button>
                   </dd>
                 </dl>
               </div>
@@ -343,33 +666,6 @@ const MainP = () => {
                       수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
                       문의하시기 바랍니다.
                     </span>
-                  </dd>
-                  <dd className="down">
-                    <button type="button">
-                      <i className="iconPdf" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconExcel" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconWord" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                    <button type="button">
-                      <i className="iconHwp" />
-                      ★통화스왑(부채)_업무안내.pdf
-                    </button>
-                  </dd>
-                  <dd className="etc">
-                    <span>
-                      <button type="button">북마크</button>
-                      <button type="button">
-                        00개의 유사문서(팝업 디자인 나올거임)
-                      </button>
-                    </span>
-                    <button type="button">Preview</button>
                   </dd>
                 </dl>
               </div>
@@ -380,23 +676,28 @@ const MainP = () => {
             <div className="tabList">
               <button
                 type="button"
-                className={`${activeTab === "tab01" ? "active" : ""}`}
+                className={  `tab01 ${activeTab === "tab01" ? "active" : " "}`}
                 onClick={() => handleTabClick("tab01")}
                 ref={(el) => (tabButtonsRef.current[0] = el)}
               >
-                북마크 <button type="button" className="setting" />
+                북마크
+                {activeTab === "tab01" && (
+                  <button type="button" className="setting" />
+                )}
               </button>
               <button
                 type="button"
-                className={`${activeTab === "tab02" ? "active" : ""}`}
+                className={`tab02 ${activeTab === "tab02" ? "active" : ""}`}
                 onClick={() => handleTabClick("tab02")}
                 ref={(el) => (tabButtonsRef.current[1] = el)}
               >
-                My 헬프데스크 <button type="button" className="setting" />
+                My 헬프데스크 {activeTab === "tab02" && (
+                  <button type="button" className="setting" />
+              )}
               </button>
               <button
                 type="button"
-                className={`${activeTab === "tab03" ? "active" : ""}`}
+                className={`tab03  ${activeTab === "tab03" ? "active" : ""}`}
                 onClick={() => handleTabClick("tab03")}
                 ref={(el) => (tabButtonsRef.current[2] = el)}
               >
@@ -404,20 +705,23 @@ const MainP = () => {
               </button>
               <button
                 type="button"
-                className={`${activeTab === "tab04" ? "active" : ""}`}
+                className={`tab04  ${activeTab === "tab04" ? "active" : ""}`}
                 onClick={() => handleTabClick("tab04")}
                 ref={(el) => (tabButtonsRef.current[3] = el)}
               >
-                알림 검색어 <button type="button" className="setting" />
+                알림 검색어 {activeTab === "tab04" && (
+                  <button type="button" className="setting" />
+              )}
               </button>
               <button
                 type="button"
-                className={`${activeTab === "tab05" ? "active" : ""}`}
+                className={`tab05 ${activeTab === "tab05" ? "active" : ""}`}
                 onClick={() => handleTabClick("tab05")}
                 ref={(el) => (tabButtonsRef.current[4] = el)}
               >
                 인기 검색어
               </button>
+              <div className="underline" ref={underlineRef} />
             </div>
 
             <div className="tabWrap">
@@ -426,84 +730,103 @@ const MainP = () => {
                   <div className="cont">
                     <ol>
                       <li>
-                        <em>1</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>1</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>2</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>2</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>3</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>3</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>4</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>4</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>5</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>5</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>6</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>6</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>7</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>7</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>8</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>8</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>9</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>9</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
-                        <em>10</em>
-                        <button type="button" className="txt">
-                          일이삼사오육칠팔구십일이삼사오육칠
-                        </button>
+                        <span>
+                          <em>10</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                          </span>
                         <button type="button" className="iconDel" />
                       </li>
-
                     </ol>
                   </div>
                 </>
               )}
-              {activeTab === "tab02" && <>tab02</>}
-              {activeTab === "tab03" && <>tab03</>}
-              {activeTab === "tab04" && <>tab04</>}
-              {activeTab === "tab05" && <>tab05</>}
+              {activeTab === "tab02" && <><div className="cont">tab02</div></>}
+              {activeTab === "tab03" && <><div className="cont">tab03</div></>}
+              {activeTab === "tab04" && <><div className="cont">tab04</div></>}
+              {activeTab === "tab05" && <><div className="cont">tab05</div></>}
             </div>
           </div>
         </aside>
