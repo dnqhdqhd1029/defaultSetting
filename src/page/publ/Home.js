@@ -49,8 +49,16 @@ const HomeContainer = styled.div`
 
         }
         &.date{
-          background-color: #666;
+          background-color: #ccc;
           color: #fff;
+          
+          &.ing{
+            background: rgba(0, 83, 138, 0.50);
+          }
+
+          &.ok{
+            background: rgba(255, 62, 62, 0.50);
+          }
         
       }
     }
@@ -60,18 +68,34 @@ const HomeContainer = styled.div`
 const Home = () => {
     const links = [
         { path: "main", label: "메인화면", status: "진행중",date:"2024-09-13 금" },
-        { path: "main", label: "상세검색 팝업" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "검색 설정 팝업" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "업무 카테고리 편집" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "데이터 최신성 관리", status: "진행중" ,date:"2024-09-13 금"},
-        { path: "main", label: "업무별 보기" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "업무 구성항목 편집" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "검색결과 Preview 팝업", status: "진행중" ,date:"2024-09-13 금"},
-        { path: "main", label: "유사문서보기" , status: "진행중",date:"2024-09-13 금"},
+        { path: "main", label: "상세검색 팝업" , status: "완료",date:"2024-09-13 금"},
+        { path: "main", label: "검색 설정 팝업" , status: "완료",date:"2024-09-13 금"},
+        { path: "main", label: "업무 카테고리 편집" , status: "완료",date:"2024-09-13 금"},
+        { path: "main", label: "데이터 최신성 관리 (없어짐)", status: "" ,date:""},
+        { path: "main", label: "업무별 보기(원천,신정보별)" , status: "완료",date:"2024-09-13 금"},
+        { path: "main", label: "업무 구성항목 편집 (편집기능 없어짐)" , status: "완료",date:"2024-09-13 금"},
+        { path: "main", label: "검색결과 Preview 팝업", status: "완료" ,date:"2024-09-13 금"},
+        { path: "main", label: "유사문서보기" , status: "진행중",date:"2024-09-20 금"},
         { path: "main", label: "Hot검색어 목록" , status: "완료",date:"2024-09-13 금"},
-        { path: "main", label: "AI검색 목록형_고객센터", status: "진행중" ,date:"2024-09-13 금"},
-        { path: "main", label: "AI검색 프리뷰형_컨시어지_5" , status: "진행중",date:"2024-09-13 금"},
-        { path: "main", label: "AI검색 목록형_컨시어지" , status: "대기중",date:"2024-09-13 금"}
+        { path: "main", label: "AI검색 목록형_고객센터 ( 기획서 필요)", status: "대기중" ,date:"2024-10-11 금"},
+        { path: "main", label: "AI검색 프리뷰형_컨시어지_5  ( 기획서 필요)" , status: "대기중",date:"2024-10-18 금"},
+        { path: "main", label: "AI검색 목록형_컨시어지  ( 기획서 필요)" , status: "대기중",date:"2024-10-18 금"},
+
+        { path: "main", label: "지식상담 메인(고객수정반영이슈)" , status: "대기중",date:"2024-09-27 금"},
+        { path: "main", label: "지식상담 Mini(고객수정반영이슈)" , status: "대기중",date:"2024-09-27 금"},
+        { path: "main", label: "북마크관리 팝업" , status: "대기중",date:"2024-09-27 금"},
+        { path: "main", label: "My헬프데스크 관리 팝업 (새창이동)" , status: ""},
+        { path: "main", label: "최근검색어(텍스트입력필드 내 드롭다운)" , status: "대기중",date:"2024-10-18 금"},
+        { path: "main", label: "알림 검색어 관리 팝업" , status: "대기중",date:"2024-09-27 금"},
+        { path: "main", label: "나의 파일관리 팝업" , status: "대기중",date:"2024-10-02 수"},
+        { path: "main", label: "나의 프롬프트 관리 팝업" , status: "대기중",date:"2024-10-02 수"},
+        { path: "main", label: "대표 AI 관리 팝업" , status: "대기중",date:"2024-10-11 금"},
+        { path: "main", label: "지난상담내역 관리 팝업" , status: "대기중",date:"2024-10-02 수"},
+        { path: "main", label: "안내페이지 문구 관리" , status: "대기중",date:"2024-10-17 목"},
+        { path: "main", label: "안내페이지 문구 상세 팝업" , status: "대기중",date:"2024-10-17 목"},
+        { path: "main", label: "신지식정보 관리" , status: "대기중",date:"2024-10-11 금"},
+        { path: "main", label: "신정보관리체계 등록 팝업" , status: "대기중",date:"2024-10-11 금"},
+        { path: "main", label: "신정보관리체계 파일 등록 팝업" , status: "대기중",date:"2024-10-11 금"}
     ];
   return (
     <HomeContainer>
@@ -94,12 +118,18 @@ const Home = () => {
                     {label}
                 </Link></td>
                 <td>
+                    <Link to={`/publ/${path}`}>
                     {status == "진행중" && <span className="ing">{status}</span>}
                     {status == "완료" && <span className="ok">{status}</span>}
                     {status == "대기중" && <span className="">{status}</span>}
+                    </Link>
 
                 </td>
-                <td>{date && <span className="date">{date}</span>}</td>
+                <td>
+                    {date && status == "진행중" &&  <span className="ing date">{date}</span>}
+                    {date && status == "완료" &&  <span className="ok date">{date}</span>}
+                    {date && status == "대기중" &&  <span className=" date">{date}</span>}
+                </td>
             </tr>
             ))}
             </tbody>

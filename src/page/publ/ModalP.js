@@ -3,7 +3,7 @@ import "../../assets/style/modal.scss";
 
 
 
-const ModalP = ({ header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref):ReactElement => {
+const ModalP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref):ReactElement => {
     const [visible, setVisible] = useState(false);
     const handleOk = () => {
         setVisible(false);
@@ -27,7 +27,7 @@ const ModalP = ({ header, title, content, callback ,close ,btnText01 ,btnText02,
         <>
             {visible ? (
                  <div className="modalContainer">
-                      <div className="modalWrap">
+                      <div className="modalWrap" style={{ width: `${width}` }}>
 
                           {title && close && (
                               <div className="top ">

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeaderP from "./HeaderP";
+import ModalP from "./ModalP";
 import { Table } from "antd";
 //import type { TableColumnsType, TableProps } from 'antd';
 import "../../assets/style/style.scss";
@@ -10,6 +11,15 @@ const MainP = () => {
   const [activeMenuTab, setActiveMenuTab] = useState("tab01");
   const underlineRef = useRef(null);
   const tabButtonsRef = useRef([]);
+  const modalPreviewRef = useRef(null);
+  const [clicked, setClicked] = useState([false, false, false, false, false]);
+  const handleStarClick = (index: number) => {
+    const clickStates = [...clicked];
+    for (let i = 1; i < 6; i++) {
+      clickStates[i] = i <= index;
+    }
+    setClicked(clickStates);
+  };
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
@@ -329,7 +339,8 @@ const MainP = () => {
               <dl>
                 <dt>
                   <span className="txt">
-                    통화<strong>스왑</strong> 업무게시업무게시업무게시업무게시업무게시업무게시업무게시업무게시
+                    통화<strong>스왑</strong>{" "}
+                    업무게시업무게시업무게시업무게시업무게시업무게시업무게시업무게시
                   </span>
                   <em>
                     기업고객부 서유리 차장
@@ -374,7 +385,12 @@ const MainP = () => {
                       00개의 유사문서(팝업 디자인 나올거임)
                     </button>
                   </span>
-                  <button type="button">Preview</button>
+                  <button
+                    type="button"
+                    onClick={() => modalPreviewRef.current.show()}
+                  >
+                    Preview
+                  </button>
                 </dd>
               </dl>
             </div>
@@ -435,7 +451,12 @@ const MainP = () => {
                       00개의 유사문서(팝업 디자인 나올거임)
                     </button>
                   </span>
-                  <button type="button">Preview</button>
+                  <button
+                      type="button"
+                      onClick={() => modalPreviewRef.current.show()}
+                  >
+                    Preview
+                  </button>
                 </dd>
               </dl>
             </div>
@@ -676,7 +697,7 @@ const MainP = () => {
             <div className="tabList">
               <button
                 type="button"
-                className={  `tab01 ${activeTab === "tab01" ? "active" : " "}`}
+                className={`tab01 ${activeTab === "tab01" ? "active" : " "}`}
                 onClick={() => handleTabClick("tab01")}
                 ref={(el) => (tabButtonsRef.current[0] = el)}
               >
@@ -691,9 +712,10 @@ const MainP = () => {
                 onClick={() => handleTabClick("tab02")}
                 ref={(el) => (tabButtonsRef.current[1] = el)}
               >
-                My 헬프데스크 {activeTab === "tab02" && (
+                My 헬프데스크{" "}
+                {activeTab === "tab02" && (
                   <button type="button" className="setting" />
-              )}
+                )}
               </button>
               <button
                 type="button"
@@ -709,9 +731,10 @@ const MainP = () => {
                 onClick={() => handleTabClick("tab04")}
                 ref={(el) => (tabButtonsRef.current[3] = el)}
               >
-                알림 검색어 {activeTab === "tab04" && (
+                알림 검색어{" "}
+                {activeTab === "tab04" && (
                   <button type="button" className="setting" />
-              )}
+                )}
               </button>
               <button
                 type="button"
@@ -735,7 +758,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -744,7 +767,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -753,7 +776,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -762,7 +785,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -771,7 +794,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -780,7 +803,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -789,7 +812,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -798,7 +821,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -807,7 +830,7 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                       <li>
@@ -816,21 +839,92 @@ const MainP = () => {
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
-                          </span>
+                        </span>
                         <button type="button" className="iconDel" />
                       </li>
                     </ol>
                   </div>
                 </>
               )}
-              {activeTab === "tab02" && <><div className="cont">tab02</div></>}
-              {activeTab === "tab03" && <><div className="cont">tab03</div></>}
-              {activeTab === "tab04" && <><div className="cont">tab04</div></>}
-              {activeTab === "tab05" && <><div className="cont">tab05</div></>}
+              {activeTab === "tab02" && (
+                <>
+                  <div className="cont">tab02</div>
+                </>
+              )}
+              {activeTab === "tab03" && (
+                <>
+                  <div className="cont">tab03</div>
+                </>
+              )}
+              {activeTab === "tab04" && (
+                <>
+                  <div className="cont">tab04</div>
+                </>
+              )}
+              {activeTab === "tab05" && (
+                <>
+                  <div className="cont">tab05</div>
+                </>
+              )}
             </div>
           </div>
         </aside>
       </main>
+
+      <ModalP
+        ref={modalPreviewRef}
+        width="900px"
+        content={
+          <>
+            <div className="previewContainer">
+              <div className="previewHeader">
+                 <div className="searchWrap">
+                   <input type="search" placeholder="검색어를 입력하세요" />
+                   <button
+                       type="button"
+                       className="iconSearch"
+                   />
+                 </div>
+
+                <div className="state">
+                  <span><strong>10</strong> <em>/</em> <em>10</em></span>
+                  <button type="button" className="iconUp" />
+                  <button type="button" className="iconDown" />
+                </div>
+              </div>
+              <div className="previewContent">
+                <div className="lnb">
+                  업무포탈 > 기업금융WON클릭 > <b>기업「T.O.P of WOORI」영업지원</b>
+                </div>
+
+                <div className="title">
+                  2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적
+                </div>
+                <div className="cont">
+                  dfdfdfd
+                </div>
+              </div>
+            </div>
+          </>
+        }
+        info={
+          <>
+            답변 만족도를 평가해 주세요
+            <div className="gradeContent ml1">
+              {[5, 4, 3, 2, 1].map(r => (
+                  <button key={r} onClick={() => handleStarClick(r)} className={clicked[r] ? 'on' : ''}>
+                    {r}
+                  </button>
+              ))}
+            </div>
+          </>
+        }
+        btnText01="닫기"
+       // btnText02="초기화"
+        callback={() => {
+          console.log("callback");
+        }}
+      />
     </>
   );
 };

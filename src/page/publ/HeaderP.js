@@ -124,6 +124,7 @@ const HeaderP = () => {
         ref={modalDetailRef}
         title="상세 검색"
         close
+        width="543px"
         content={
           <>
             <div className="formContainer">
@@ -147,30 +148,28 @@ const HeaderP = () => {
                 <div className="tit">검색대상</div>
                 <div className="cont">
                   <div className="flexWrap">
-                    <div className="buttonStyle">
-                      <label className="button">
-                        <input type="checkbox" />
-                        <span>전체</span>
-                      </label>
-                      <label className="button">
-                        <input type="checkbox" />
-                        <span>내용</span>
-                      </label>
-                      <label className="button">
-                        <input type="checkbox" />
-                        <span>첨부파일</span>
-                      </label>
-                    </div>
+                    <label className="button">
+                      <input type="checkbox" />
+                      <span>전체</span>
+                    </label>
+                    <label className="button">
+                      <input type="checkbox" />
+                      <span>내용</span>
+                    </label>
+                    <label className="button">
+                      <input type="checkbox" />
+                      <span>첨부파일</span>
+                    </label>
                   </div>
                 </div>
               </div>
               <div className="flexWrap flexS">
                 <div className="tit">등록일자</div>
                 <div className="cont">
-                  <div className="flexWrap">
+                  <div className="flexWrap moth">
                     <input
                       type="date"
-                      placeholder="날짜를 선택해주세요."
+                      placeholder="0000-00-00"
                       required
                       //value={props.date}
                       //onChange={props.changeHandler}
@@ -180,7 +179,7 @@ const HeaderP = () => {
                     <em>-</em>
                     <input
                       type="date"
-                      placeholder="날짜를 선택해주세요."
+                      placeholder="0000-00-00"
                       required
                       //value={props.date}
                       //onChange={props.changeHandler}
@@ -193,10 +192,10 @@ const HeaderP = () => {
               <div className="flexWrap flexS">
                 <div className="tit">수정일자</div>
                 <div className="cont">
-                  <div className="flexWrap">
+                  <div className="flexWrap moth">
                     <input
                       type="date"
-                      placeholder="날짜를 선택해주세요."
+                      placeholder="0000-00-00"
                       required
                       //value={props.date}
                       //onChange={props.changeHandler}
@@ -206,7 +205,7 @@ const HeaderP = () => {
                     <em>-</em>
                     <input
                       type="date"
-                      placeholder="날짜를 선택해주세요."
+                      placeholder="0000-00-00"
                       required
                       //value={props.date}
                       //onChange={props.changeHandler}
@@ -230,6 +229,7 @@ const HeaderP = () => {
         ref={modalSettingRef}
         title="설정"
         close
+        width="700px"
         content={
           <>
             <div className="formContainer">
@@ -237,17 +237,17 @@ const HeaderP = () => {
                 <div className="tit">검색 서비스 선택</div>
                 <div className="cont">
                   <div className="flexWrap">
-                    <div className="buttonStyle">
+                    <div className="buttonStyle mb1">
                       <label className="button">
-                        <input type="radio" />
+                        <input type="radio" checked name="01" />
                         <span>AI 검색</span>
                       </label>
                       <label className="button">
-                        <input type="radio" />
+                        <input type="radio"  name="01" />
                         <span>통합검색</span>
                       </label>
-                      <label className="button">
-                        <input type="radio" />
+                      <label className="button" >
+                        <input type="radio"  name="01" />
                         <span>지식상담</span>
                       </label>
                     </div>
@@ -259,13 +259,13 @@ const HeaderP = () => {
               <div className="flexWrap flexS">
                 <div className="tit">AI 서비스 설정</div>
                 <div className="cont">
-                  <label>
-                    <input type="radio" />
+                  <label className="mb1">
+                    <input type="checkbox" />
                     <span>AI 지식상담 검색 자동 연동</span>
                   </label>
                   <br />
-                  <label>
-                    <input type="radio" />
+                  <label className="mb1">
+                    <input type="checkbox" />
                     <span>AI 챗봇 검색 자동 연동</span>
                   </label>
                   <br />
@@ -278,17 +278,17 @@ const HeaderP = () => {
                 <div className="tit">검색 카테고리 구분</div>
                 <div className="cont">
                   <div className="flexWrap">
-                    <div className="buttonStyle">
+                    <div className="buttonStyle mb1">
                       <label className="button">
-                        <input type="radio" />
+                        <input type="radio" checked name="02" />
                         <span>전체보기</span>
                       </label>
                       <label className="button">
-                        <input type="radio" />
+                        <input type="radio"   name="02" />
                         <span>통합검색</span>
                       </label>
-                      <label className="button">
-                        <input type="radio" />
+                      <label className="button" >
+                        <input type="radio"  name="02" />
                         <span>나눠보기</span>
                       </label>
                     </div>

@@ -11,7 +11,8 @@ input[type="text"] {
   border: 1px solid #E9E9E9;
   color: $gray;
   padding: 0 10px;
-  width: 100%;
+  width: 93%;
+  border-radius: 6px;
 }
 input.inline {
   display: inline-block;
@@ -229,6 +230,67 @@ label.toggleSwitch span {
   color: $gray;
 }
 
+/*버튼스타일 체크박스 라이오 박스*/
+.buttonStyle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FAFAFA;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.buttonStyle label input[type="radio"],
+.buttonStyle label input[type="checkbox"] {
+  display: none;
+}
+.buttonStyle label{
+  flex: 1;
+  height: 40px;
+  border-radius: 6px;
+  background:transparent;
+}
+.buttonStyle label input[type="radio"] + span,
+.buttonStyle label input[type="checkbox"] + span {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background:none;
+  padding-left: 0;
+  color: $lightGray;
+  font-size: 16px;
+}
+.buttonStyle label input[type="radio"]:checked + span,
+.buttonStyle label input[type="checkbox"]:checked + span {
+
+  border: 1px solid #219BF1;
+  border-radius: 6px;
+  background-size:20px;
+  color: $black;
+  background-color: #fff;
+}
+.buttonStyle label input[type="radio"]:checked + span:before,
+.buttonStyle label input[type="checkbox"]:checked + span:before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../images/svg/icon-check.svg) center center no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+
+.buttonStyle label input[type="radio"]:disabled + span,
+.buttonStyle label input[type="checkbox"]:disabled + span {
+
+  @include iconLeft;
+}
+
+
+.buttonStyle  label input + span {
+  margin-right: 0;
+}
+
 /*select*/
 .selectContent {
   position: relative;
@@ -301,40 +363,78 @@ input[type="date"] {
   border: none; // 테두리 설정은 본인 맘대로
   position: relative; // 캘린더 아이콘을 클릭해야만 달력이 보이기 때문에 이 영역 자체를 제어하기 위해 설정
   width: 100%;
-  padding: 10px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #E9E9E9;
+  background: #FFF;
   background: url(../images/svg/icon-moth.svg) no-repeat right 10px center;
-  border-radius: 8px;
   text-align: center;
   font-size: 100%;
-  margin-bottom: 20px;
+  color: $gray;
+  text-align: left;
+  padding-left: 10px;
 }
 
-// 실제 캘린더 아이콘을 클릭하는 영역을 의미하는 선택자
-// 이 영역을 확장해서 input의 어떤 곳을 클릭해도 캘린더를 클릭한 것과 같은 효과를 만들자!
+
+// ispnput의 어떤 곳을 클릭해도 캘린더를 클릭한 것과 같은 효과
 input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute; // 이를 설정하기 위해 사전에 relative를 설정한 것이다.
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: transparent; // 배경은 투명하게,
-  color: transparent; // 글자도 투명하게! 이 두 설정을 통해 캘린더 아이콘을 사라지게 만든다.
+  background: transparent;
+  color: transparent;
   cursor: pointer;
+  font-size: 0;
 }
 
 // type이 date인 input의 placeholder를 커스텀하기 위한 선택자
 // 기본적으로 type date인 input은 placeholder가 먹히지 않기 때문이다!
 input[type="date"]::before {
+  font-family: "Noto Sans", sans-serif;
   content: attr(
     placeholder
-  ); // input 태그의 placeholder라는 속성값을 가져와서 content로 사용한다. 보통은 placeholder보다는 data-placeholder라는 커스텀 속성을 만들어서 사용하시는 것 같다.
+  ); // input 태그의 placeholder라는 속성값을 가져와서 content로 사용한다.
+  // 보통은 placeholder보다는 data-placeholder라는 커스텀 속성을 만들어서 사용하시는 것 같다.
   width: 100%;
   height: 100%;
+  color: #ddd;
+  padding-top: 27px;
+  margin-bottom: 14px;
 }
 
 // input에 어떠한 유효값이 입력된 상태인지 확인하는 선택자
 // 날짜를 선택하면 유효값이 입력된다.
 // 이 속성을 활용하고자 한다면 반드시 태그에 required 속성을 달아줘야한다.
 input[type="date"]:valid::before {
-  display: none; // 유효값이 입력된 경우 before에 있는 것을 사라지게 한다. 즉, placeholder를 사라지게 한다.
+  display: none; // 유효값이 입력된 경우 before에 있는 것을 사라지게 한다.
+  // 즉, placeholder를 사라지게 한다.
 }
+
+
+/*gradeContent 평점*/
+.gradeContent{
+  direction: rtl; /* 이모지 순서 반전 */
+  display: inline-block;
+}
+
+.gradeContent button,
+.gradeContent button.off{
+  margin: 0 5px 0 5px;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/svg/icon-grade-off.svg);
+  @include iconCenter;
+  background-size: contain;
+  font-size: 0;
+}
+
+.gradeContent button:hover ~ button,
+.gradeContent button:hover,
+.gradeContent button.on{
+
+  background-image: url(../images/svg/icon-grade-on.svg);
+  @include iconCenter;
+}
+
