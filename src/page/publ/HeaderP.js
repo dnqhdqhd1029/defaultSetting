@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import ModalP from "./ModalP";
+import ConfirmP from "./ConfirmP";
 
 const HeaderP = () => {
-  const modalRef = useRef(null);
+  const confirmRef = useRef(null);
   const modalDetailRef = useRef(null);
   const modalSettingRef = useRef(null);
   const [activeState, setActiveState] = useState({
@@ -20,7 +21,7 @@ const HeaderP = () => {
             <button
                 type="button"
                 className="iconSearch"
-                onClick={() => modalRef.current.show()}
+                onClick={() => confirmRef.current.show()}
             />
 
             {/*<div className="searchList">
@@ -97,10 +98,9 @@ const HeaderP = () => {
         </div>
       </header>
 
-      <ModalP
-        ref={modalRef}
+      <ConfirmP
+        ref={confirmRef}
         //title="ddd"
-        close
         content={
           <>
             <div className="noneSearch">
@@ -114,7 +114,7 @@ const HeaderP = () => {
           </>
         }
         btnText01="확인"
-        btnText02="취소"
+        //btnText02="확인"
         callback={() => {
           console.log("callback");
         }}
