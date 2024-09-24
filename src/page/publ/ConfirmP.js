@@ -3,7 +3,7 @@ import "../../assets/style/confirm.scss";
 
 
 
-const ConfirmP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref):ReactElement => {
+const ConfirmP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
     const [visible, setVisible] = useState(false);
     const handleOk = () => {
         setVisible(false);

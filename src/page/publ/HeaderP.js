@@ -9,19 +9,39 @@ const HeaderP = () => {
   const [activeState, setActiveState] = useState({
     detail: false,
     setting: false,
+    btnDown: false,
   });
+
+  const toggle = (type) => {
+    setActiveState((prevState) => ({
+      btnDown: type === "btnDown" ? !prevState.btnDown : false,
+    }));
+  };
 
   return (
     <>
       <header>
         <div className="header">
-          <h1 className="logo">AI 검색</h1>
+          <h1 className="logo">
+            AI 검색
+            <button
+              type="button"
+              className={`btnDown ${activeState.btnDown ? "on" : ""}`}
+              onClick={() => toggle("btnDown")}
+            />
+            <div className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}>
+              디자인중
+            </div>
+
+          </h1>
+
+
           <div className="searchWrap">
             <input type="search" placeholder="검색어를 입력하세요" />
             <button
-                type="button"
-                className="iconSearch"
-                onClick={() => confirmRef.current.show()}
+              type="button"
+              className="iconSearch"
+              onClick={() => confirmRef.current.show()}
             />
 
             {/*<div className="searchList">
@@ -76,17 +96,26 @@ const HeaderP = () => {
               </div>*/}
           </div>
           <div className="lnb">
-            <button
+            <div>
+              <button
+                  type="button"
+                  className="keyword"
+              >
+                키워드 검색
+              </button>
+              <button
                 type="button"
                 className={`detail ${activeState.detail ? "on" : ""}`}
                 onClick={() => modalDetailRef.current.show()}
-            >
-              상세검색
-            </button>
-            <label>
-              <input type="checkbox" />
-              <span>결과 내 재검색</span>
-            </label>
+              >
+                상세검색
+              </button>
+              <label>
+                <input type="checkbox" />
+                <span>결과 내 재검색</span>
+              </label>
+            </div>
+
             <button
                 className={`setting ${activeState.setting ? "on" : ""}`}
                 type="button"
@@ -94,7 +123,10 @@ const HeaderP = () => {
             >
               설정
             </button>
+
           </div>
+
+
         </div>
       </header>
 
@@ -243,11 +275,11 @@ const HeaderP = () => {
                         <span>AI 검색</span>
                       </label>
                       <label className="button">
-                        <input type="radio"  name="01" />
+                        <input type="radio" name="01" />
                         <span>통합검색</span>
                       </label>
-                      <label className="button" >
-                        <input type="radio"  name="01" />
+                      <label className="button">
+                        <input type="radio" name="01" />
                         <span>지식상담</span>
                       </label>
                     </div>
@@ -284,11 +316,11 @@ const HeaderP = () => {
                         <span>전체보기</span>
                       </label>
                       <label className="button">
-                        <input type="radio"   name="02" />
+                        <input type="radio" name="02" />
                         <span>통합검색</span>
                       </label>
-                      <label className="button" >
-                        <input type="radio"  name="02" />
+                      <label className="button">
+                        <input type="radio" name="02" />
                         <span>나눠보기</span>
                       </label>
                     </div>

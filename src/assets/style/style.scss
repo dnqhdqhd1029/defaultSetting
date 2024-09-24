@@ -24,38 +24,106 @@ header {
 
 
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include fs;
     width: 1280px;
     height: 80px;
     margin: 0 auto;
-    border: 1px solid red;
 
     color: #fff;
     box-sizing: border-box;
     h1.logo {
-      width: 154px;
+      width: 260px;
       height: 46px;
-      background: url("../images/svg/h1-logo.svg") left top no-repeat;
-      background-size: contain;
+      position: relative;
       font-size: 0;
+      margin-right: 20px;
+      @include fs;
+
+      &:before{
+        content: "";
+        width: 154px;
+        height: 36px;
+        background: url("../images/svg/h1-logo.svg") left top no-repeat;
+        background-size: contain;
+
+      }
+
+      button{
+        width: 16px;
+        height: 16px;
+        background: url("../images/svg/icon-arrow-logo-down.svg") center center no-repeat;
+        background-size: contain;
+
+        &.on{
+          background: url("../images/svg/icon-arrow-logo-up.svg") center center no-repeat;
+        }
+      }
+
+      .btnDownPopup{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        font-size: 12px;
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+        width: 210px;
+        height: 136px;
+        padding: 10px;
+        overflow: hidden;
+        border-radius: 20px;
+        z-index: 100;
+        opacity: 0;
+        &.show{
+          opacity: 1;
+        }
+      }
     }
 
     .lnb {
+      @include fj;
+      flex: 1;
       color: $black;
-      & > button {
+
+      button {
         font-size: 0;
         margin-left: 12px;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        font-size: 12px;
 
-        &.detail {
-          font-size: 16px;
+
+        &.keyword {
           position: relative;
-          height: 40px;
-          background: url("../images/svg/icon-select-01.svg") right center
-            no-repeat;
-          padding-right: 30px;
           margin-right: 10px;
+          min-width: 58px;
+          height: 48px;
+          &:before{
+            content: '';
+            width: 28px;
+            height: 28px;
+            background: url("../images/svg/icon-keyword.svg") center center
+            no-repeat;
+            background-size: 28px;
+            margin-bottom: 5px;
+          }
+        }
+        &.detail {
+          position: relative;
+          margin-right: 10px;
+          width: 58px;
+          height: 48px;
+
+          &:before{
+            content: '';
+            width: 28px;
+            height: 28px;
+            margin-bottom: 5px;
+            background: url("../images/svg/icon-detail.svg") center center
+            no-repeat;
+            background-size: 28px;
+          }
         }
         &.setting {
           width: 40px;
@@ -63,6 +131,7 @@ header {
           background: url("../images/svg/icon-setting.svg") left top no-repeat;
           background-size: contain;
           position: relative;
+          font-size: 0;
 
           .popupContainer {
             width: 543px;
@@ -70,18 +139,25 @@ header {
           }
         }
       }
+
+      label{
+        font-size: 14px;
+        span{
+          background-size: 16px;
+          padding-left: 20px;
+        }
+      }
+
     }
 
     .searchWrap {
       position: relative;
-      width: 600px;
+      width: 480px;
       height: 56px;
       border-radius: 28px;
-      border: 4px solid #219bf1;
+      border: 1px solid #0C0C0D;
       background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include fj;
       padding: 0 10px 0 20px;
       input[type="search"] {
         border: 0;
@@ -121,9 +197,7 @@ header {
           padding: 20px 0;
           li {
             padding: 5px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include fj;
 
             span {
               strong {
@@ -154,9 +228,7 @@ header {
         }
 
         .top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include fj;
           padding: 20px;
           span {
             color: #7996b7;
@@ -192,19 +264,14 @@ main {
   width: 1560px;
   margin: 0 auto;
   padding-top: 70px;
-  border: 1px solid red;
 
-
-  display: flex;
-  justify-content: space-between;
+  @include fj;
   align-items: flex-start;
 
   /*공통*/
   ul.dot{
     li{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @include fs;
       margin-bottom: 5px;
       &:before{
         content: '';
@@ -220,9 +287,7 @@ main {
   .title{
     border-bottom: 1px solid #E9E9E9;
     padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include fj;
     width: 100%;
     color: #000;
     font-size: 20px;
@@ -260,12 +325,10 @@ main {
 
     .tabMenu{
       width: 260px;
-      height: 36px;
+      height: 47px;
       background: #F1F1F1;
       margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include fj;
       button{
         flex: 1;
         text-align: center;
@@ -274,7 +337,7 @@ main {
 
         &.on{
           color:$black;
-          font-weight: 600;
+          font-weight: 800;
         }
         &:first-of-type{
           position: relative;
@@ -300,9 +363,7 @@ main {
       background: #fff;
 
       .menuTab{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include fj;
         height: 58px;
 
         button{
@@ -343,9 +404,7 @@ main {
 
             .depthFirst{
               padding: 8px 10px;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
+              @include fj;
               height: 40px;
               border-radius: 12px;
 
@@ -375,10 +434,10 @@ main {
             //li
             &.on{
               .depthFirst{
-                background-color: #F6FCFF;
+                //background-color: #F6FCFF;
                 button{
-                  color: $black;
-                  font-weight: 600;
+                  //color: $black;
+                 // font-weight: 600;
                   em{
                     color: $primary;
                   }
@@ -473,6 +532,19 @@ main {
     position: relative;
     margin: 0 20px;
 
+    .total{
+      color: #898989;
+      font-size: 20px;
+      height: 47px;
+      @include fs;
+      margin-bottom: 10px;
+
+      strong{
+        color: #20C4F4;
+        font-weight: 500;
+      }
+    }
+
 
 
 
@@ -520,9 +592,7 @@ main {
         dl{
           margin-top: 5px;
           dt{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include fj;
             margin-bottom: 10px;
             span.txt{
               font-weight: 600;
@@ -559,8 +629,7 @@ main {
             button{
               display: block;
               text-align: left;
-              display: flex;
-              align-items: center;
+              @include fs;
               margin-bottom: 5px;
 
               i{
@@ -593,9 +662,7 @@ main {
             }
           }
           dd.etc{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include fj;
             margin-top: 10px;
             button{
               height: 28px;
@@ -638,9 +705,7 @@ main {
       .paginate{
         border-top:1px solid #F1F1F1 ;
         padding-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include fc;
         strong{
           width: 40px;
           height: 40px;
@@ -679,10 +744,9 @@ main {
           height: 60px;
           border-radius: 12px;
           background:#FAFAFA;
-          display: flex;
+
           width: 100%;
-          align-items: center;
-          justify-content: center;
+          @include fc;
           font-weight: 600;
           font-size: 16px;
           i.iconAdd{
@@ -731,15 +795,15 @@ main {
     width: 580px;
 
     .aiContainer{
-      background-color: #F1F8FD;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      padding: 20px;
+
       margin-bottom: 20px;
 
       .title{
+        @include fj;
         span{
-          font-weight: 400;
+          font-weight: 600;
+          font-size: 20px;
+          margin-left: 10px;
         }
         .iconScale{
           width: 24px;
@@ -747,202 +811,235 @@ main {
           background: url("../images/svg/icon-scale.svg") center center no-repeat;
           background-size: contain;
         }
-      }
-      .aiWrap{
-
-        .aiTxt{
-          overflow: hidden;
-          //display: inline-flex;
-          //align-items: flex-start;
-          //justify-content: flex-start;
-
-          background: url("../images/svg/icon-mascot.svg") left top no-repeat;
-          background-size: 47px 43px;
-          padding-left: 55px;
-
-
-          .iconMascot{
-            content: '';
-            width: 47px;
-            height: 47px;
-            background: url("../images/svg/icon-mascot.svg") center center no-repeat;
-            background-size: contain;
-            display: inline-block;
-            margin-right: 5px;
-            float: left;
-          }
-          .cont{
-            border-radius: 0px 20px 20px 20px;
-            background: #FFF;
-            padding:20px ;
-            margin-top: 15px;
-            display: inline-block;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px;
-
-
-            p{
-              margin-bottom: 10px;
-
-              button{
-                display: inline-flex;
-                height: 28px;
-                padding: 14px 16px;
-                border-radius: 14px;
-                background: #F1F1F1;
-                align-items: center;
-                margin-bottom: 10px;
-              }
-              .iconInfo{
-                width: 16px;
-                height: 16px;
-                background: url("../images/svg/icon-info.svg") center center no-repeat;
-                background-size: contain;
-                margin-right: 5px;
-              }
-
-              small{
-                color: #A6B0BE;
-              }
-            }
-          }
-
-          button.answerLink{
-            border-radius: var(--Corner-Full, 1000px);
-            background: #E2F0F8;
-            min-height: 40px;
-            padding: 5px 20px;
-            //display: flex;
-            //justify-content: space-between;
-            //align-items: center;
-            margin:10px 0;
-            width: 100%;
-            text-align: left;
-            border-radius: 20px;
-            vertical-align: middle;
-
-            span{
-              float: left;
-              strong{
-                color:$darkBlue;
-                margin-right: 5px;
-
-              }
-
-              i.iconLink{
-                width: 16px;
-                height: 16px;
-                background: url("../images/svg/icon-link.svg") center center no-repeat;
-                background-size: contain;
-                margin-left: 5px;
-              }
-            }
-
-
-            em{
-              float: right;
-              font-size: 12px;
-              color: $lightGray;
-            }
-
-            div.download{
-              color:$gray;
-              font-size: 14px;
-              padding-top: 5px;
-              clear: both;
-
-              button{
-                display: block;
-                text-align: left;
-                display: flex;
-                align-items: center;
-                margin-bottom: 5px;
-                font-size: 12px;
-
-                i{
-                  margin-right: 5px;
-                }
-                .iconPdf{
-                  width: 20px;
-                  height: 20px;
-                  background: url("../images/svg/icon-pdf.svg") center center no-repeat;
-                  background-size: contain;
-                }
-                .iconExcel{
-                  width: 20px;
-                  height: 20px;
-                  background: url("../images/svg/icon-excel.svg") center center no-repeat;
-                  background-size: contain;
-                }
-                .iconWord{
-                  width: 20px;
-                  height: 20px;
-                  background: url("../images/svg/icon-word.svg") center center no-repeat;
-                  background-size: contain;
-                }
-                .iconHwp{
-                  width: 20px;
-                  height: 20px;
-                  background: url("../images/svg/icon-han.svg") center center no-repeat;
-                  background-size: contain;
-                }
-              }
-            }
-          }
-
-          .keywordLink{
-            margin-top: 20px;
-            button{
-              height: 40px;
-              padding: 3px 20px;
-              border-radius:20px;
-              background:#FFF;
-              color: $black;
-              margin-right: 10px;
-            }
-          }
-
+        .iconMascot{
+          width: 47px;
+          height: 47px;
+          background: url("../images/svg/icon-mascot.svg") center center no-repeat;
+          background-size: contain;
         }
 
-        .question{
-
-          text-align: right;
-          margin: 20px 0;
-          .cont{
-            border-radius: 45px 22px 0px 45px;
-            background: var(--3-point-color-33-sky-blue, #219BF1);
-            color: #fff;
-            padding: 8px 20px;
-            display: inline-block;
-          }
-        }
-      }
-
-      .serachArea{
-        margin-top: 20px;
-        border-radius: 28px;
-        background: #3D637C;
-        height: 56px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 5px;
-        input[type="text"]{
-          flex: 1;
-          background: transparent;
-          border: 0;
-          color: #fff;
-        }
-        .enter{
-          width: 40px;
-          height: 40px;
-          background: url("../images/svg/icon-enter.svg") center center no-repeat;
+        .iconDown{
+          width: 20px;
+          height: 20px;
+          background: url("../images/svg/icon-arrow-down.svg") center center no-repeat;
           background-size: contain;
           margin-left: 10px;
         }
+
+        button.setting{
+          height: 24px;
+          margin: 0 10px;
+          color: #67809C;
+          font-size: 14px;
+          border-radius: 29px;
+          padding:3px 30px 3px 10px;
+          background: #F1F1F1 url("../images/svg/icon-setting-sm.svg") 95% center no-repeat;
+          background-size: 16px;
+        }
+
       }
+
+      .counselingWrap{
+        background-color: #F1F8FD;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        padding: 20px;
+
+        .aiWrap{
+
+          .aiTxt{
+            overflow: hidden;
+            //display: inline-flex;
+            //align-items: flex-start;
+            //justify-content: flex-start;
+
+            background: url("../images/svg/icon-mascot.svg") left top no-repeat;
+            background-size: 47px 43px;
+            padding-left: 55px;
+
+
+            .iconMascot{
+              content: '';
+              width: 47px;
+              height: 47px;
+              background: url("../images/svg/icon-mascot.svg") center center no-repeat;
+              background-size: contain;
+              display: inline-block;
+              margin-right: 5px;
+              float: left;
+            }
+            .cont{
+              border-radius: 0px 20px 20px 20px;
+              background: #FFF;
+              padding:20px ;
+              margin-top: 15px;
+              display: inline-block;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+              width: 95%;
+
+
+              p{
+                margin-bottom: 10px;
+
+                button{
+                  display: inline-flex;
+                  height: 28px;
+                  padding: 14px 16px;
+                  border-radius: 14px;
+                  background: #F1F1F1;
+                  align-items: center;
+                  margin-bottom: 10px;
+                }
+                .iconInfo{
+                  width: 16px;
+                  height: 16px;
+                  background: url("../images/svg/icon-info.svg") center center no-repeat;
+                  background-size: contain;
+                  margin-right: 5px;
+                }
+
+                small{
+                  color: #A6B0BE;
+                }
+              }
+            }
+
+            button.answerLink{
+              border-radius: var(--Corner-Full, 1000px);
+              background: #E2F0F8;
+              min-height: 40px;
+              padding: 5px 20px;
+
+              margin:10px 0;
+              width: 95%;
+              text-align: left;
+              border-radius: 20px;
+              vertical-align: middle;
+
+              span{
+                float: left;
+                strong{
+                  color:$darkBlue;
+                  margin-right: 5px;
+
+                }
+
+                i.iconLink{
+                  width: 16px;
+                  height: 16px;
+                  background: url("../images/svg/icon-link.svg") center center no-repeat;
+                  background-size: contain;
+                  margin-left: 5px;
+                }
+              }
+
+
+              em{
+                float: right;
+                font-size: 12px;
+                color: $lightGray;
+              }
+
+              div.download{
+                color:$gray;
+                font-size: 14px;
+                padding-top: 5px;
+                clear: both;
+
+                button{
+                  display: block;
+                  text-align: left;
+                  @include fs;
+                  margin-bottom: 5px;
+                  font-size: 12px;
+
+                  i{
+                    margin-right: 5px;
+                  }
+                  .iconPdf{
+                    width: 20px;
+                    height: 20px;
+                    background: url("../images/svg/icon-pdf.svg") center center no-repeat;
+                    background-size: contain;
+                  }
+                  .iconExcel{
+                    width: 20px;
+                    height: 20px;
+                    background: url("../images/svg/icon-excel.svg") center center no-repeat;
+                    background-size: contain;
+                  }
+                  .iconWord{
+                    width: 20px;
+                    height: 20px;
+                    background: url("../images/svg/icon-word.svg") center center no-repeat;
+                    background-size: contain;
+                  }
+                  .iconHwp{
+                    width: 20px;
+                    height: 20px;
+                    background: url("../images/svg/icon-han.svg") center center no-repeat;
+                    background-size: contain;
+                  }
+                }
+              }
+            }
+
+            .keywordLink{
+              margin-top: 20px;
+              button{
+                height: 40px;
+                padding: 3px 20px;
+                border-radius:20px;
+                background:#FFF;
+                color: $black;
+                margin-right: 10px;
+              }
+            }
+
+          }
+
+          .question{
+
+            text-align: right;
+            margin: 20px 0;
+            .cont{
+              border-radius: 45px 22px 0px 45px;
+              background: var(--3-point-color-33-sky-blue, #219BF1);
+              color: #fff;
+              padding: 8px 20px;
+              display: inline-block;
+            }
+          }
+        }
+
+        .serachArea{
+          margin-top: 20px;
+          border-radius: 28px;
+          background: #3D637C;
+          height: 56px;
+          @include fj;
+          padding: 0 5px;
+          input[type="text"]{
+            flex: 1;
+            background: transparent;
+            border: 0;
+            color: #fff;
+          }
+          .enter{
+            width: 40px;
+            height: 40px;
+            background: url("../images/svg/icon-enter.svg") center center no-repeat;
+            background-size: contain;
+            margin-left: 10px;
+          }
+        }
+      }
+
+
+
     }
 
     .chetbotContainer{
@@ -959,9 +1056,9 @@ main {
       }
 
       .content{
-        display: flex;
+        @include fs;
         align-items: flex-start;
-        justify-content: flex-start;
+
         .cont{
           flex: 1;
           width: 48%;
@@ -1005,8 +1102,7 @@ main {
 
       .tabList{
         position: relative;
-        display: flex;
-        align-items: center;
+        @include fs;
         border-bottom: 1px solid #7F8896;
         height:30px;
 
@@ -1074,9 +1170,7 @@ main {
         .cont{
           margin-top: 20px;
           ol{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            @include fs;
             flex-wrap: wrap;
             li{
               width: 48%;

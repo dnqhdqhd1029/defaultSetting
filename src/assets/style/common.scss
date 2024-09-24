@@ -159,25 +159,25 @@
 }
 
 @for $i from -6 through 6 {
-  .mx#{$i} {
+  .my#{$i} {
     margin: $interval * $i 0 !important;
   }
 }
 
 @for $i from -6 through 6 {
-  .my#{$i} {
+  .mx#{$i} {
     margin: 0 $interval * $i !important;
   }
 }
 
 @for $i from -6 through 6 {
-  .mx#{$i} {
+  .py#{$i} {
     padding: $interval * $i 0 !important;
   }
 }
 
 @for $i from -6 through 6 {
-  .py#{$i} {
+  .px#{$i} {
     padding: 0 $interval * $i !important;
   }
 }
@@ -273,11 +273,11 @@
 }
 
 .tc {
-  text-align: right !important;
+  text-align: center !important;
 }
 
 .tr {
-  text-align: center !important;
+  text-align: right !important;
 }
 
 .vt {
@@ -351,6 +351,10 @@
 .flexFsc {
   @include fcs;
   //Y축 꽉찬 정렬
+}
+
+.flexInline{
+  display: inline-flex;
 }
 
 .flexColumn {

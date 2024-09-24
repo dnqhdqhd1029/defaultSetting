@@ -3,7 +3,7 @@ import "../../assets/style/modal.scss";
 
 
 
-const ModalP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref):ReactElement => {
+const ModalP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
     const [visible, setVisible] = useState(false);
     const handleOk = () => {
         setVisible(false);
