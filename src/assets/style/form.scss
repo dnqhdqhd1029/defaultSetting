@@ -363,6 +363,22 @@ select.select option {
   padding: 10px;
 }
 
+.selectRound {
+  box-sizing: border-box;
+  padding:0 15px;
+  background: $white;
+  line-height: 26px;
+  color: gray;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 140px;
+  height: 40px;
+  border-radius: 26px;
+  font-size: 16px;
+  background:#F1F1F1 url("../images/svg/icon-select.svg") 90% center no-repeat;
+}
+
 /*date*/
 input[type="date"] {
   border: none; // 테두리 설정은 본인 맘대로

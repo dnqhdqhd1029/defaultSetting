@@ -4,7 +4,7 @@ import ModalP from "./ModalP";
 import { Table } from "antd";
 //import type { TableColumnsType, TableProps } from 'antd';
 import "../../assets/style/style.scss";
-import CounselingP from "./CounselingP";
+import ChattingP from "./ChattingP";
 const MainP = () => {
   const [activeTab, setActiveTab] = useState("tab01");
   const [activeView, setActiveView] = useState("tab01");
@@ -31,6 +31,19 @@ const MainP = () => {
   const handleMenuTabClick = (tab) => {
     setActiveMenuTab(tab);
   };
+
+  const [activeState, setActiveState] = useState({
+    counseling: true,
+    chetbot: true,
+  });
+
+  const toggle = (type) => {
+    setActiveState((prevState) => ({
+      counseling: type === "counseling" ? !prevState.counseling : false,
+      chetbot: type === "chetbot" ? !prevState.chetbot : false,
+    }));
+  };
+
 
   useEffect(() => {
     const activeButton = tabButtonsRef.current.find((btn) =>
@@ -569,11 +582,15 @@ const MainP = () => {
                 <span> AI 지식상담 </span>
                 <button type="button" className="setting">전행 모든지식 참조</button>
               </div>
-              <button type="button" className="iconDown" />
+              <button type="button"
+                      className={`iconUp  counseling ${activeState.counseling ? "" : "down"}`}
+                      onClick={() => toggle("counseling")} />
 
             </div>
 
-            <CounselingP />
+            <div className={`toggleWrap ${activeState.counseling ? "show" : ""}`} >
+               <ChattingP search />
+            </div>
           </div>
 
 
@@ -583,9 +600,12 @@ const MainP = () => {
               <span className="flexS alignC">
                 <i className="iconAi mr1" /> AI챗봇에게 물어보기
               </span>
+              <button type="button" className={`iconUp chetbot ${activeState.chetbot ? "" : "down"}`}
+                      onClick={() => toggle("chetbot")} />
             </div>
 
-            <div className="content">
+            <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`} >
+             <div className="content">
               <div className="cont">
                 <dl>
                   <dt>
@@ -620,6 +640,7 @@ const MainP = () => {
                   </dd>
                 </dl>
               </div>
+            </div>
             </div>
           </div>
 
@@ -686,10 +707,10 @@ const MainP = () => {
                         <span>
                           <em>1</em>
                           <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
+                            -
                           </button>
                         </span>
-                        <button type="button" className="iconDel" />
+                        {/*<button type="button" className="iconDel" />*/}
                       </li>
                       <li>
                         <span>

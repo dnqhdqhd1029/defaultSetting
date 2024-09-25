@@ -268,7 +268,37 @@ main {
   @include fj;
   align-items: flex-start;
 
+
+
   /*공통*/
+
+  .toggleWrap{
+    border: 1px solid red;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease ;
+    &.show{
+      opacity: 1;
+      height: auto;
+      overflow: visible;
+      transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease;
+    }
+  }
+  .chetbotWrap{
+    border: 1px solid red;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease ;
+    &.show{
+      opacity: 1;
+      height: auto;
+      overflow: visible;
+      transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease;
+    }
+  }
+
   ul.dot{
     li{
       @include fs;
@@ -316,6 +346,19 @@ main {
       font-size: 16px;
       font-weight: 600;
     }
+
+    .iconUp{
+      width: 24px;
+      height: 24px;
+      background: url("../images/svg/icon-arrow-up.svg") center center no-repeat;
+      background-size: contain;
+      margin-left: 10px;
+
+      &.down{
+        background: url("../images/svg/icon-arrow-down.svg") center center no-repeat;
+      }
+    }
+
   }
 
 
@@ -805,12 +848,7 @@ main {
           font-size: 20px;
           margin-left: 10px;
         }
-        .iconScale{
-          width: 24px;
-          height: 24px;
-          background: url("../images/svg/icon-scale.svg") center center no-repeat;
-          background-size: contain;
-        }
+
         .iconMascot{
           width: 47px;
           height: 47px;
@@ -818,13 +856,7 @@ main {
           background-size: contain;
         }
 
-        .iconDown{
-          width: 20px;
-          height: 20px;
-          background: url("../images/svg/icon-arrow-down.svg") center center no-repeat;
-          background-size: contain;
-          margin-left: 10px;
-        }
+
 
         button.setting{
           height: 24px;
@@ -838,209 +870,8 @@ main {
         }
 
       }
-
-      .counselingWrap{
-        background-color: #F1F8FD;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-        padding: 20px;
-
-        .aiWrap{
-
-          .aiTxt{
-            overflow: hidden;
-            //display: inline-flex;
-            //align-items: flex-start;
-            //justify-content: flex-start;
-
-            background: url("../images/svg/icon-mascot.svg") left top no-repeat;
-            background-size: 47px 43px;
-            padding-left: 55px;
-
-
-            .iconMascot{
-              content: '';
-              width: 47px;
-              height: 47px;
-              background: url("../images/svg/icon-mascot.svg") center center no-repeat;
-              background-size: contain;
-              display: inline-block;
-              margin-right: 5px;
-              float: left;
-            }
-            .cont{
-              border-radius: 0px 20px 20px 20px;
-              background: #FFF;
-              padding:20px ;
-              margin-top: 15px;
-              display: inline-block;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 20px;
-              width: 95%;
-
-
-              p{
-                margin-bottom: 10px;
-
-                button{
-                  display: inline-flex;
-                  height: 28px;
-                  padding: 14px 16px;
-                  border-radius: 14px;
-                  background: #F1F1F1;
-                  align-items: center;
-                  margin-bottom: 10px;
-                }
-                .iconInfo{
-                  width: 16px;
-                  height: 16px;
-                  background: url("../images/svg/icon-info.svg") center center no-repeat;
-                  background-size: contain;
-                  margin-right: 5px;
-                }
-
-                small{
-                  color: #A6B0BE;
-                }
-              }
-            }
-
-            button.answerLink{
-              border-radius: var(--Corner-Full, 1000px);
-              background: #E2F0F8;
-              min-height: 40px;
-              padding: 5px 20px;
-
-              margin:10px 0;
-              width: 95%;
-              text-align: left;
-              border-radius: 20px;
-              vertical-align: middle;
-
-              span{
-                float: left;
-                strong{
-                  color:$darkBlue;
-                  margin-right: 5px;
-
-                }
-
-                i.iconLink{
-                  width: 16px;
-                  height: 16px;
-                  background: url("../images/svg/icon-link.svg") center center no-repeat;
-                  background-size: contain;
-                  margin-left: 5px;
-                }
-              }
-
-
-              em{
-                float: right;
-                font-size: 12px;
-                color: $lightGray;
-              }
-
-              div.download{
-                color:$gray;
-                font-size: 14px;
-                padding-top: 5px;
-                clear: both;
-
-                button{
-                  display: block;
-                  text-align: left;
-                  @include fs;
-                  margin-bottom: 5px;
-                  font-size: 12px;
-
-                  i{
-                    margin-right: 5px;
-                  }
-                  .iconPdf{
-                    width: 20px;
-                    height: 20px;
-                    background: url("../images/svg/icon-pdf.svg") center center no-repeat;
-                    background-size: contain;
-                  }
-                  .iconExcel{
-                    width: 20px;
-                    height: 20px;
-                    background: url("../images/svg/icon-excel.svg") center center no-repeat;
-                    background-size: contain;
-                  }
-                  .iconWord{
-                    width: 20px;
-                    height: 20px;
-                    background: url("../images/svg/icon-word.svg") center center no-repeat;
-                    background-size: contain;
-                  }
-                  .iconHwp{
-                    width: 20px;
-                    height: 20px;
-                    background: url("../images/svg/icon-han.svg") center center no-repeat;
-                    background-size: contain;
-                  }
-                }
-              }
-            }
-
-            .keywordLink{
-              margin-top: 20px;
-              button{
-                height: 40px;
-                padding: 3px 20px;
-                border-radius:20px;
-                background:#FFF;
-                color: $black;
-                margin-right: 10px;
-              }
-            }
-
-          }
-
-          .question{
-
-            text-align: right;
-            margin: 20px 0;
-            .cont{
-              border-radius: 45px 22px 0px 45px;
-              background: var(--3-point-color-33-sky-blue, #219BF1);
-              color: #fff;
-              padding: 8px 20px;
-              display: inline-block;
-            }
-          }
-        }
-
-        .serachArea{
-          margin-top: 20px;
-          border-radius: 28px;
-          background: #3D637C;
-          height: 56px;
-          @include fj;
-          padding: 0 5px;
-          input[type="text"]{
-            flex: 1;
-            background: transparent;
-            border: 0;
-            color: #fff;
-          }
-          .enter{
-            width: 40px;
-            height: 40px;
-            background: url("../images/svg/icon-enter.svg") center center no-repeat;
-            background-size: contain;
-            margin-left: 10px;
-          }
-        }
-      }
-
-
-
     }
+
 
     .chetbotContainer{
       border-radius: 12px;
@@ -1175,9 +1006,12 @@ main {
             li{
               width: 48%;
               position: relative;
-             padding: 5px 0;
+              padding: 5px 0;
+              @include fs;
 
               span{
+                flex: 1;
+                text-align: left;
 
                 em{
                   width: 20px;
@@ -1188,6 +1022,7 @@ main {
 
                   @include ellipsis;
                   width: 75%;
+                  text-align: left;
                 }
               }
 
@@ -1210,4 +1045,801 @@ main {
 
 
   }
+}
+
+
+/*counselingWrap*/
+.counselingWrap{
+  background-color: #F1F8FD;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 20px;
+
+  .chattingWrap{
+
+    .aiTxt{
+      overflow: hidden;
+      //display: inline-flex;
+      //align-items: flex-start;
+      //justify-content: flex-start;
+
+      background: url("../images/svg/icon-mascot.svg") left top no-repeat;
+      background-size: 47px 43px;
+      padding-left: 55px;
+
+
+      .iconMascot{
+        content: '';
+        width: 47px;
+        height: 47px;
+        background: url("../images/svg/icon-mascot.svg") center center no-repeat;
+        background-size: contain;
+        display: inline-block;
+        margin-right: 5px;
+        float: left;
+      }
+      .cont{
+        border-radius: 0px 20px 20px 20px;
+        background: #FFF;
+        padding:20px ;
+        margin-top: 15px;
+        display: inline-block;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        width: 95%;
+
+
+        p{
+          margin-bottom: 10px;
+
+          button.bgGray{
+            display: inline-flex;
+            height: 28px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: #F1F1F1;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-right: 5px;
+          }
+          .iconInfo{
+            width: 16px;
+            height: 16px;
+            background: url("../images/svg/icon-info.svg") center center no-repeat;
+            background-size: contain;
+            margin-right: 5px;
+          }
+          .iconInfoDarkGray{
+            width: 16px;
+            height: 16px;
+            background: url("../images/svg/icon-info-darkGray.svg") center center no-repeat;
+            background-size: contain;
+            margin-right: 5px;
+          }
+
+          small{
+            color: #A6B0BE;
+          }
+
+
+        }
+        .bgYellow{
+          background-color: #FFF5EA;
+          padding: 10px;
+        }
+
+
+      }
+
+      button.answerLink{
+        border-radius: var(--Corner-Full, 1000px);
+        background: #E2F0F8;
+        min-height: 40px;
+        padding: 5px 20px;
+
+        margin:10px 0;
+        width: 95%;
+        text-align: left;
+        border-radius: 20px;
+        vertical-align: middle;
+
+        span{
+          float: left;
+          strong{
+            color:$darkBlue;
+            margin-right: 5px;
+
+          }
+
+          i.iconLink{
+            width: 16px;
+            height: 16px;
+            background: url("../images/svg/icon-link.svg") center center no-repeat;
+            background-size: contain;
+            margin-left: 5px;
+          }
+        }
+
+
+        em{
+          float: right;
+          font-size: 12px;
+          color: $lightGray;
+        }
+
+        div.download{
+          color:$gray;
+          font-size: 14px;
+          padding-top: 5px;
+          clear: both;
+
+          button{
+            display: block;
+            text-align: left;
+            @include fs;
+            margin-bottom: 5px;
+            font-size: 12px;
+
+            i{
+              margin-right: 5px;
+            }
+            .iconPdf{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-pdf.svg") center center no-repeat;
+              background-size: contain;
+            }
+            .iconExcel{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-excel.svg") center center no-repeat;
+              background-size: contain;
+            }
+            .iconWord{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-word.svg") center center no-repeat;
+              background-size: contain;
+            }
+            .iconHwp{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-han.svg") center center no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+
+      .keywordLink{
+        margin-top: 20px;
+        button{
+          height: 40px;
+          padding: 3px 20px;
+          border-radius:20px;
+          background:#FFF;
+          color: $black;
+          margin-right: 10px;
+        }
+      }
+
+    }
+
+    .question{
+
+      text-align: right;
+      margin: 20px 0;
+      .cont{
+        border-radius: 45px 22px 0px 45px;
+        background: var(--3-point-color-33-sky-blue, #219BF1);
+        color: #fff;
+        padding: 8px 20px;
+        display: inline-block;
+      }
+    }
+  }
+  .etcArea{
+    margin: 20px 0;
+    padding-left: 55px;
+
+    .ect{
+      button{
+        position: relative;
+        width: 28px;
+        height: 28px;
+        border-radius: 10px;
+        background-size: contain;
+        margin-left: 10px;
+        &.like{
+          background: url("../images/svg/icon-like.svg") center center no-repeat;
+        }
+        &.dislike{
+          background: url("../images/svg/icon-dislike.svg") center center no-repeat;
+        }
+        &.message{
+          background: url("../images/svg/icon-message.svg") center center no-repeat;
+        }
+        &.hashtag{
+          background: url("../images/svg/icon-hashtag.svg") center center no-repeat;
+        }
+        &.document{
+          background: url("../images/svg/icon-document.svg") center center no-repeat;
+
+        }
+
+
+        span{
+          opacity: 0;
+          height: 0;
+          border-radius: 14px;
+          background: var(--1-dark-color-11-black, #0C0C0D);
+          //transition: opacity 0.3s ease, height 0.1s ease;
+          position: relative;
+          //min-width: 90px;
+          //height: 28px;
+          color: #fff;
+          display: inline-flex;
+          align-items: center;
+          text-align: center;
+
+
+        }
+
+        &.on{
+          background-color: #E2F0F8;
+        }
+
+        &:hover{
+          background-color: #E2F0F8;
+
+
+          span{
+            opacity: 1;
+            min-width: 90px;
+            min-height: 28px;
+            transition: opacity 0.3s ease, height 0.1s ease;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            top: 30px;
+            left: -30px;
+
+            em{
+              min-width: 80px;
+              padding: 0 10px;
+            }
+          }
+
+          span::before {
+            content: "";
+            position: absolute;
+            top: -5px; /* 화살표가 말풍선에서 떨어지는 거리 */
+            left: 50%; /* 화살표를 중앙에 위치 */
+            transform: translateX(-50%);
+            width: 5px;
+            height:5px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #0C0C0D; /* 화살표 색상 (말풍선과 동일) */
+            //border: 1px solid red;
+          }
+
+          &.document span{
+            line-height: 18px;
+            min-height: 45px;
+          }
+        }
+      }
+    }
+  }
+
+  .serachArea{
+    clear: both;
+    @include fj;
+    margin-top: 20px;
+
+    button.iconScale{
+
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #fff url("../images/svg/icon-scale.svg") center center no-repeat;
+      background-size: 24px;
+      margin-right: 5px;
+
+      span{
+        opacity: 0;
+        height: 0;
+        border-radius: 14px;
+        background: var(--1-dark-color-11-black, #0C0C0D);
+        position: relative;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+      }
+
+      &:hover{
+        span{
+          opacity: 1;
+          min-width: 120px;
+          min-height: 28px;
+          transition: opacity 0.3s ease, height 0.1s ease;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          top: -50px;
+          left: -30px;
+
+          em{
+            min-width: 80px;
+            padding: 0 10px;
+          }
+        }
+
+        span::before {
+          content: "";
+          position: absolute;
+          top: 28px; /* 화살표가 말풍선에서 떨어지는 거리 */
+          left: 50%; /* 화살표를 중앙에 위치 */
+          transform: translateX(-50%);
+          width: 5px;
+          height:5px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #0C0C0D; /* 화살표 색상 (말풍선과 동일) */
+          //border: 1px solid red;
+        }
+
+        &.document span{
+          line-height: 18px;
+          min-height: 45px;
+        }
+      }
+    }
+    .search{
+
+      border-radius: 28px;
+      background: #3D637C;
+      height: 56px;
+      flex: 1;
+      @include fj;
+      padding: 0 5px;
+
+      input[type="text"]{
+        flex: 1;
+        background: transparent;
+        border: 0;
+        color: #fff;
+      }
+      .enter{
+        width: 40px;
+        height: 40px;
+        background: url("../images/svg/icon-enter.svg") center center no-repeat;
+        background-size: contain;
+        margin-left: 10px;
+      }
+    }
+
+
+  }
+
+  .swiper {
+    width: 520px;
+    height: 126px;
+    margin: 20px 0;
+    padding: 0 50px;
+
+    .swiper-slide {
+      width: 200px !important;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid $primary;
+      border-radius: 12px;
+      background-color: transparent;
+
+
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-child(even){
+        //margin-right: 70px !important;
+      }
+
+      .slideCont{
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+
+        dl{
+          dt{
+            text-align: left;
+            margin-bottom: 10px;
+            @include fs;
+            .iconNotice{
+              width: 16px;
+              height: 16px;
+              background: url("../images/svg/icon-notice.svg") center center no-repeat;
+              background-size: contain;
+              margin-right: 5px;
+
+            }
+
+            strong{
+              @include ellipsis;
+              color: $black;
+            }
+
+
+          }
+          dd{
+            text-align: left;
+
+            &.txt{
+              color: #7F8896;
+              @include ellipsisLine;
+              -webkit-line-clamp: 2;
+              text-align: left;
+            }
+            &.date{
+              margin-top: 10px;
+
+              span{
+                color:#A6B0BE;
+              }
+              button{
+                @include fe;
+              }
+              .iconRight{
+                width: 16px;
+                height: 16px;
+                background: url("../images/svg/icon-arrow-next.svg") center center no-repeat;
+                background-size: contain;
+                margin-right: 5px;
+              }
+            }
+          }
+
+
+
+        }
+      }
+    }
+
+    .swiper-button-prev, .swiper-button-next{
+      color: #D5E0E7;
+    }
+  }
+
+  .memberData{
+    border-top: 1px solid #F1F1F1;
+    & > .flexS{
+      border-bottom: 1px solid #F1F1F1;
+      padding: 10px 0;
+    }
+    em{
+      color: #00538A;
+    }
+    dt{
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+  }
+
+  .noneTable{
+
+    .iconCall{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-call.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+    .iconProfile{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-profile.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+    .iconSns{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-sns.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+    table{
+
+      width: 100%;
+      table-layout: fixed;
+      //border-top: 1px solid #F1F1F1;
+      border-collapse: separate;
+      color: $black;
+
+      th {
+        color: #7996B7;
+        font-size: 10px;
+        text-align: left;
+        padding: 5px;
+        width: 10%;
+      }
+
+      td{
+        font-size: 14px;
+        padding: 5px;
+      }
+
+      .fontSm{
+        font-size: 12px;
+        color: $gray;
+      }
+
+      th:last-of-type,td:last-of-type{
+        border-right: none;
+      }
+
+      tbody th{
+        background-color: #FAFAFA;
+        color: $black;
+      }
+
+    }
+  }
+
+  table.dataTable{
+    width: 100%;
+    table-layout: fixed;
+    border-top: 1px solid #7F8896;
+    border-bottom: 1px solid #7F8896;
+    border-collapse: separate;
+
+    th {
+      border-right: 1px solid #E9E9E9;
+      background:  #F1F1F1;
+      padding: 5px;
+    }
+
+    td{
+      border-right: 1px solid var(--2-light-color-21-gray, #F1F1F1);
+      border-bottom: 1px solid var(--2-light-color-21-gray, #F1F1F1);
+      background: var(--2-light-color-24-white, #FFF);
+      padding: 5px;
+    }
+
+    th:last-of-type,td:last-of-type{
+      border-right: none;
+    }
+
+    tbody th{
+      background-color: #FAFAFA;
+      color: $black;
+    }
+  }
+
+
+
+
+
+}
+
+/*counselingContainer*/
+.counselingContainer{
+  width: 100%;
+  height: 100vh;
+  background: #F1F8FD;
+  overflow: hidden;
+
+
+  .header{
+    height: 57px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0 20px;
+    @include fj;
+
+    h1.logo {
+      width: 260px;
+      height: 46px;
+      position: relative;
+      font-size: 0;
+      margin-right: 20px;
+      @include fs;
+
+      &:before{
+        content: "";
+        width: 154px;
+        height: 36px;
+        background: url("../images/svg/h1-logo.svg") left top no-repeat;
+        background-size: contain;
+
+      }
+
+      button{
+        width: 16px;
+        height: 16px;
+        background: url("../images/svg/icon-arrow-logo-down.svg") center center no-repeat;
+        background-size: contain;
+
+        &.on{
+          background: url("../images/svg/icon-arrow-logo-up.svg") center center no-repeat;
+        }
+      }
+
+      .btnDownPopup{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        font-size: 12px;
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+        width: 210px;
+        height: 136px;
+        padding: 10px;
+        overflow: hidden;
+        border-radius: 20px;
+        z-index: 100;
+        opacity: 0;
+        &.show{
+          opacity: 1;
+        }
+      }
+    }
+
+    .lnb {
+      @include fs;
+      color: $black;
+
+      button {
+        font-size: 0;
+        margin-left: 20px;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        font-size: 0;
+        width: 28px;
+        height: 28px;
+        &.counseling {
+
+          background: url("../images/svg/icon-time.svg") center center
+          no-repeat;
+          background-size:28px;
+        }
+        &.setting {
+          background: url("../images/svg/icon-setting-line.svg") center center no-repeat;
+          background-size: 34px;
+
+        }
+      }
+
+      label{
+        font-size: 14px;
+        span{
+          background-size: 16px;
+          padding-left: 20px;
+        }
+      }
+
+    }
+
+
+  }
+
+  .aiContainer{
+
+    overflow: hidden;
+    height: calc(100vh - 57px );
+    overflow-y: auto;
+    .counselingWrap{
+      border: none;
+      border-radius: 0;
+      overflow-y: auto;
+    }
+
+    .chattingFooter{
+      background-color: #fff;
+      height: 100px;
+      padding: 0 30px;
+      @include fj;
+
+      .searchWrap{
+
+        flex: 1;
+        .serachArea{
+          width: 570px;
+          position: relative;
+          @include fj;
+          .search{
+            border-radius: 28px;
+            background: #3D637C;
+            height: 40px;
+            flex: 1;
+            @include fj;
+            padding: 0 5px;
+
+            input[type="text"]{
+              flex: 1;
+              background: transparent;
+              border: 0;
+              color: #fff;
+            }
+            .enter{
+              width: 32px;
+              height: 32px;
+              background: url("../images/svg/icon-enter.svg") center center no-repeat;
+              background-size: contain;
+              margin-left: 10px;
+            }
+          }
+
+          .iconRefresh{
+            width: 40px;
+            height: 40px;
+            background: url("../images/svg/icon-refresh.svg") center center no-repeat;
+            background-size: contain;
+            margin-left: 10px;
+          }
+          .info{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            top: 46px;
+            font-size: 12px;
+            color: $gray;
+            @include fc;
+
+            .iconInfo{
+              width: 16px;
+              height: 16px;
+              margin-right: 5px;
+              background: url("../images/svg/icon-info.svg") center center no-repeat;
+            }
+          }
+
+
+
+        }
+
+
+
+      }
+      .etc{
+        border-left: 1px solid #DDDDDD;
+        width:150px;
+        height: 40px;
+        @include fc;
+        .iconFolder{
+          width: 24px;
+          height: 24px;
+          background: url("../images/svg/icon-folder.svg") center center no-repeat;
+          background-size: contain;
+          margin-left: 10px;
+          margin-right: 20px;
+        }
+        .iconMenu{
+          width: 24px;
+          height: 24px;
+          background: url("../images/svg/icon-menu.svg") center center no-repeat;
+          background-size: contain;
+          margin-left: 10px;
+        }
+      }
+    }
+
+  }
+
+
+
+
 }

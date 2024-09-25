@@ -82,7 +82,7 @@ const Home = () => {
         { path: "main", label: "AI검색 프리뷰형_컨시어지_5  ( 기획서 필요)" , status: "대기중",date:"2024-10-18 금"},
         { path: "main", label: "AI검색 목록형_컨시어지  ( 기획서 필요)" , status: "대기중",date:"2024-10-18 금"},
 
-        { path: "main", label: "지식상담 메인(고객수정반영이슈)" , status: "진행중",date:"2024-09-25 수"},
+        { path: "counselingMain", label: "지식상담 메인(고객수정반영이슈)" , status: "진행중",date:"2024-09-25 수"},
         { path: "main", label: "지식상담 Mini(고객수정반영이슈)" , status: "진행중",date:"2024-09-25 수"},
         { path: "main", label: "북마크관리 팝업" , status: "대기중",date:"2024-09-25 수"},
         { path: "main", label: "My헬프데스크 관리 팝업 (새창이동)" , status: ""},
