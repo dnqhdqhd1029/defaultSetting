@@ -49,15 +49,16 @@ const ChattingP = ({search ,chattingFooter}) => {
 
             <button className="answerLink">
               <span>
-                <strong>1</strong> <strong>고객센터</strong>
-                링크 없는 근거문서 케이스
+                <strong>1</strong>
+                <strong>고객센터</strong>링크 없는 근거문서 케이스
               </span>
               <em>2023-07-21</em>
             </button>
             <button className="answerLink">
               <span>
-                <strong>2</strong> <strong>부서홈페이지</strong> 링크가 있는
-                근거문서 케이스
+                <strong>2</strong> 
+               <strong>부서홈페이지</strong>
+               링크가 있는 근거문서 케이스
                 <i className="iconLink" />
               </span>
               <em>2023-07-21</em>
@@ -392,8 +393,31 @@ const ChattingP = ({search ,chattingFooter}) => {
             </button>
           </div>
 
-
         </div>{/*etcArea*/}
+
+        <div className="aiSelect">
+          <small>AI를 선택해 주세요</small>
+          <ul>
+            <li>
+              <button type="button">
+                <strong>전행 모든 지식 참조</strong> <br/>
+                <span>검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에 적합합니다.</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <strong>전행 모든 지식 참조</strong> <br/>
+                <span>검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에 적합합니다.</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <strong>전행 모든 지식 참조</strong> <br/>
+                <span>검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에 적합합니다.</span>
+              </button>
+            </li>
+          </ul>
+        </div>
 
 
         {search && (

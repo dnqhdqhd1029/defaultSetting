@@ -3,7 +3,7 @@ import "../../assets/style/modal.scss";
 
 
 
-const ModalP = ({ width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
+const ModalP = ({ btnSetting , width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
     const [visible, setVisible] = useState(false);
     const handleOk = () => {
         setVisible(false);
@@ -31,7 +31,13 @@ const ModalP = ({ width,header, title, content, callback ,close ,btnText01 ,btnT
 
                           {title && close && (
                               <div className="top ">
-                                  <strong>{title}</strong>
+                                  <strong>{title}
+
+                                      {btnSetting && (
+                                          <button type="button" className="btnSetting" />
+                                      )}
+                                  </strong>
+
                                   <button
                                       type="button"
                                       className="close"
