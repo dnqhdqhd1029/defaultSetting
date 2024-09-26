@@ -273,7 +273,6 @@ main {
   /*공통*/
 
   .toggleWrap{
-    border: 1px solid red;
     opacity: 0;
     height: 0;
     overflow: hidden;
@@ -286,7 +285,6 @@ main {
     }
   }
   .chetbotWrap{
-    border: 1px solid red;
     opacity: 0;
     height: 0;
     overflow: hidden;
@@ -298,6 +296,8 @@ main {
       transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease;
     }
   }
+
+
 
   ul.dot{
     li{
@@ -745,36 +745,7 @@ main {
         }
       }
 
-      .paginate{
-        border-top:1px solid #F1F1F1 ;
-        padding-top: 20px;
-        @include fc;
-        strong{
-          width: 40px;
-          height: 40px;
-          margin: 0 5px;
-          font-weight: 600;
-          color: $primary;
-          text-align: center;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-        }
-        button{
-          width: 40px;
-          height: 40px;
-          margin: 0 5px;
-          text-align: center;
-          &.prev{
-            background: url("../images/svg/icon-paginate-prev.svg") center center no-repeat;
 
-          }
-          &.next{
-            background: url("../images/svg/icon-paginate-next.svg") center center no-repeat;
-
-          }
-        }
-      }
 
       .more{
 
@@ -1047,13 +1018,44 @@ main {
   }
 }
 
+.paginate{
+  border-top:1px solid #F1F1F1 ;
+  padding-top: 20px;
+  @include fc;
+  strong{
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    font-weight: 600;
+    color: $primary;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button{
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    text-align: center;
+    &.prev{
+      background: url("../images/svg/icon-paginate-prev.svg") center center no-repeat;
 
+    }
+    &.next{
+      background: url("../images/svg/icon-paginate-next.svg") center center no-repeat;
+
+    }
+  }
+}
 /*counselingWrap*/
 .counselingWrap{
   background-color: #F1F8FD;
   border-radius: 12px;
   border: 1px solid #ddd;
   padding: 20px;
+  height: 856px;
+  overflow-y: auto;
 
   .chattingWrap{
 
@@ -1166,7 +1168,6 @@ main {
           }
           strong.txt{
             @include ellipsis;
-            border: 1px solid red;
             width: 80%;
             color: $gray;
           }

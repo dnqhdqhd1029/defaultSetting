@@ -12,6 +12,8 @@ const MainP = () => {
   const underlineRef = useRef(null);
   const tabButtonsRef = useRef([]);
   const modalPreviewRef = useRef(null);
+  const modalBookMarkRef = useRef(null);
+  const modalNoticeRef = useRef(null);
   const [clicked, setClicked] = useState([false, false, false, false, false]);
   const handleStarClick = (index: number) => {
     const clickStates = [...clicked];
@@ -654,7 +656,7 @@ const MainP = () => {
               >
                 북마크
                 {activeTab === "tab01" && (
-                  <button type="button" className="setting" />
+                  <button type="button" className="setting"  onClick={() => modalBookMarkRef.current.show()} />
                 )}
               </button>
               <button
@@ -663,10 +665,8 @@ const MainP = () => {
                 onClick={() => handleTabClick("tab02")}
                 ref={(el) => (tabButtonsRef.current[1] = el)}
               >
-                My 헬프데스크{" "}
-                {activeTab === "tab02" && (
-                  <button type="button" className="setting" />
-                )}
+                My 헬프데스크
+
               </button>
               <button
                 type="button"
@@ -682,9 +682,9 @@ const MainP = () => {
                 onClick={() => handleTabClick("tab04")}
                 ref={(el) => (tabButtonsRef.current[3] = el)}
               >
-                알림 검색어{" "}
+                알림 검색어
                 {activeTab === "tab04" && (
-                  <button type="button" className="setting" />
+                  <button type="button" className="setting" onClick={() => modalNoticeRef.current.show()} />
                 )}
               </button>
               <button
@@ -876,6 +876,275 @@ const MainP = () => {
           console.log("callback");
         }}
       />
+
+      <ModalP
+          ref={modalBookMarkRef}
+          width="683px"
+          title="북마크 관리"
+          close
+          content={
+            <>
+              <div className="boardContainer">
+                <div className="boardSearch flexS ">
+                  <div className="tit">검색 대상</div>
+                  <div className="cont">
+                    <select className="select">
+                      <option>전체</option>
+                      <option>전체</option>
+                    </select>
+                  </div>
+
+                  <div className="tit ml2">검색어</div>
+                  <div className="cont flexJ">
+                    <input type="text" className="flex mr1" style={{width:'200px'}} />
+                    <button type="button" className="btn bgDarkBlue radius" style={{width:'80px'}}>검색</button>
+                  </div>
+                </div>
+                
+                <div className="boardList mt2">
+                  <table className="boardTabel">
+                   <colgroup>
+                     <col style={{width:'10%'}} />
+                     <col style={{width:'20%'}}/>
+                     <col/>
+                     <col style={{width:'15%'}}/>
+                     <col style={{width:'10%'}}/>
+                   </colgroup>
+                    <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>카테고리</th>
+                      <th>제목</th>
+                      <th>등록일자</th>
+                      <th>삭제</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                      <tr>
+                        <td className="textBlack tc">1</td>
+                        <td className="">우리상품 바로알기</td>
+                        <td>이름네자</td>
+                        <td>2024-07-30</td>
+                        <td className="tc"><i className="iconDel"/></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="paginate">
+                  <button type="button" className="prev" />
+                  <strong>1</strong>
+                  <button type="button">2</button>
+                  <button type="button">3</button>
+                  <button type="button">4</button>
+                  <button type="button">5</button>
+                  <button type="button">6</button>
+                  <button type="button">7</button>
+                  <button type="button">8</button>
+                  <button type="button">9</button>
+                  <button type="button">10</button>
+                  <button type="button" className="next" />
+                </div>
+              </div>
+            </>
+          }
+
+
+      />
+      <ModalP
+          ref={modalNoticeRef}
+          width="683px"
+          title="알림검색어 관리"
+          close
+          content={
+            <>
+              <div className="boardContainer">
+                <div className="boardSearch flexS ">
+                  <div className="tit">검색대상</div>
+                  <div className="cont">
+                    <select className="select">
+                      <option>고객센터</option>
+                      <option>전체</option>
+                    </select>
+                  </div>
+
+                  <div className="tit ml2">알림 검색어</div>
+                  <div className="cont flexJ">
+                    <input type="text" className="flex mr1" style={{width:'180px'}} />
+                    <button type="button" className="btn bgDarkBlue radius" style={{width:'80px'}}>검색</button>
+                  </div>
+                </div>
+
+                <div className="boardList mt2">
+                  <table className="boardTabel">
+                    <colgroup>
+                      <col style={{width:'10%'}} />
+                      <col style={{width:'25%'}}/>
+                      <col/>
+                      <col style={{width:'10%'}}/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>카테고리</th>
+                      <th>검색어</th>
+
+                      <th>삭제</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+
+                      <td className="tc"><i className="iconDel"/></td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="paginate">
+                  <button type="button" className="prev" />
+                  <strong>1</strong>
+                  <button type="button">2</button>
+                  <button type="button">3</button>
+                  <button type="button">4</button>
+                  <button type="button">5</button>
+                  <button type="button">6</button>
+                  <button type="button">7</button>
+                  <button type="button">8</button>
+                  <button type="button">9</button>
+                  <button type="button">10</button>
+                  <button type="button" className="next" />
+                </div>
+              </div>
+            </>
+          }
+
+
+      />
+
     </>
   );
 };

@@ -311,50 +311,194 @@
   min-height: 200px;
 }
 
+
 .counselingAdmin{
-  border: 1px solid red;
-  height: 710px;
+  height: 650px;
+  position: relative;
+  & > .flexJ{
+    height: 536px;
 
-  .flexJ{
-    height: 526px;
     & > div{
-      flex: 1;
       height: 100%;
-      border: 1px solid red;
     }
+
+    div.list{
+      width: 45%;
+      ul{
+        li{
+          @include fs;
+          align-items: flex-start;
+          border-bottom: 1px solid #F1F1F1;
+          padding: 10px 0;
+
+          &:last-of-type{
+            border-bottom: none;
+          }
+
+          .iconDel{
+            width: 16px;
+            height: 16px;
+            background:url("../images/svg/icon-close-gray.svg") center center no-repeat ;
+            background-size: contain;
+          }
+
+          & > strong{
+            color: $black;
+            margin-right: 10px;
+          }
+
+          & > div.info{
+            width: 90%;
+            dl{
+              color: $gray;
+
+
+              dt{
+                @include fj;
+                strong{
+                  @include ellipsis;
+                  margin-right: 5px;
+                  margin-bottom: 5px;
+                }
+              }
+              dd.txt{
+                @include ellipsisLine;
+                line-height: 20px;
+                -webkit-line-clamp: 2;
+                margin-bottom: 5px;
+              }
+              dd.date{
+                color: #A6B0BE;
+                font-size: 12px;
+              }
+            }
+          }
+
+
+
+        }
+      }
+    }
+    div.chatting{
+      width: 60%;
+      height: 536px;
+      overflow-x:hidden;
+      overflow-y: auto;
+      background-color: #F5F5F5;
+      position: relative !important;
+
+
+
+      .emptyContainer{
+        @include fc;
+        height: 100%;
+
+        .emptyWrap{
+          width:330px;
+          height:80px;
+          border-radius: 0px 20px 20px 20px;
+          background: #FFF;
+          color: $gray;
+          padding: 20px;
+          @include fc;
+        }
+      }
+
+      .counselingWrap{
+
+        border: none;
+        background-color: transparent;
+        overflow-y: hidden;
+
+        height: auto;
+
+      }
+
+
+
+      .paginate{
+        border-top: none;
+      }
+
+    }
+
   }
 
+  .btnWrap{
+    position: absolute;
+    right: 20px;
+    bottom: 130px;
+    width:50%;
+    padding: 0 ;
+    z-index: 100;
+    .btn{
+      border-radius: 6px;
+    }
+  }
 }
 
-.paginate{
-  border-top:1px solid #F1F1F1 ;
-  padding-top: 20px;
-  @include fc;
-  strong{
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    font-weight: 600;
-    color: $primary;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  button{
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    text-align: center;
-    &.prev{
-      background: url("../images/svg/icon-paginate-prev.svg") center center no-repeat;
 
+.boardContainer{
+  padding: 20px 0;
+
+  .boardSearch{
+    height: 82px;
+    background-color: #FAFAFA;
+    padding: 20px;
+    @include fs;
+
+    .tit{
+
+      font-size: 12px;
+      color: #7996B7;
+      font-weight: 600;
     }
-    &.next{
-      background: url("../images/svg/icon-paginate-next.svg") center center no-repeat;
+    .cont{
+      flex: 1;
+      margin-left: 10px;
+    }
 
+    .select{
+      border: 1px solid #E9E9E9;
+      border-radius: 6px;
+      height: 40px;
+      min-width: 150px;
+      background-position: 90% center;
+      background-color: #fff;
+    }
+  }
+
+  .boardTabel{
+    table-layout: fixed;
+    width: 100%;
+
+    th{
+      border-bottom: 1px solid #E5E5E5;
+      color: #7F8896;
+      font-size: 14px;
+      font-weight: 600;
+      padding:8px 5px;
+      text-align: center;
+    }
+    td{
+      border-bottom: 1px solid #F1F1F1;
+      padding:8px 5px;
+      color: $gray;
+    }
+
+    .iconDel{
+      width: 16px;
+      height: 16px;
+      background: url("../images/svg/icon-close-gray.svg") center center no-repeat;
+
+      background-size: contain;
+    }
+
+    .tl{
+      text-align: left;
     }
   }
 }
+
 
 

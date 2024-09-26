@@ -146,8 +146,8 @@ const CounselingMainP = () => {
         ref={modalCounselingRef}
         title="지난 상담내역 관리"
         close
-        btnSetting
-        width="743px"
+
+        width="943px"
         content={
           <>
             <div className="counselingAdmin">
@@ -159,15 +159,102 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong>체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong></dt>
+                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <button type="button" className="iconDel" />
+                          </dt>
+                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
+                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
                     </li>
+                    <li>
+                      <strong>2</strong>
+                      <div className="info">
+                        <dl>
+                          <dt>
+                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <button type="button" className="iconDel" />
+                          </dt>
+                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
+                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="date">2024.07.30</dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li>
+                      <strong>3</strong>
+                      <div className="info">
+                        <dl>
+                          <dt>
+                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <button type="button" className="iconDel" />
+                          </dt>
+                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
+                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="date">2024.07.30</dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li>
+                      <strong>4</strong>
+                      <div className="info">
+                        <dl>
+                          <dt>
+                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <button type="button" className="iconDel" />
+                          </dt>
+                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
+                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="date">2024.07.30</dd>
+                        </dl>
+                      </div>
+                    </li>
+                    <li>
+                      <strong>5</strong>
+                      <div className="info">
+                        <dl>
+                          <dt>
+                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <button type="button" className="iconDel" />
+                          </dt>
+                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
+                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="date">2024.07.30</dd>
+                        </dl>
+                      </div>
+                    </li>
+
                   </ul>
                 </div>
-                <div className="chatting">dd</div>
+                <div className="chatting">
+
+                  <ChattingP />
+
+                  {/*
+                  <div className="emptyContainer">
+                    <div className="emptyWrap">
+                      지난 상담내역의 제목 또는 상담 내용을 클릭하시면
+                      상담했던 내역을 보실 수 있습니다.
+                    </div>
+
+                  </div>
+                  */}
+
+
+
+                </div>
               </div>
+
+              <div className="btnWrap">
+                <button type="button" className="btn bgDarkBlue radius pull">이어서 상담하기</button>
+              </div>
+
 
               <div className="paginate">
                 <button type="button" className="prev" />
@@ -208,10 +295,7 @@ const CounselingMainP = () => {
                         <input type="radio" checked name="01" />
                         <span>AI 검색</span>
                       </label>
-                      <label className="button">
-                        <input type="radio" name="01" />
-                        <span>통합검색</span>
-                      </label>
+                 
                       <label className="button">
                         <input type="radio" name="01" />
                         <span>지식상담</span>
@@ -223,7 +307,7 @@ const CounselingMainP = () => {
                 </div>
               </div>
               <div className="flexWrap flexS">
-                <div className="tit">AI 서비스 설정</div>
+                <div className="tit">대표AI 선택</div>
                 <div className="cont">
                   <label className="mb1">
                     <input type="checkbox" />
@@ -285,8 +369,8 @@ const CounselingMainP = () => {
             <a href="#none">관리포탈 바로가기</a>
           </>
         }
-        btnText01="검색"
-        btnText02="초기화"
+        btnText01="저장"
+        btnText02="취소"
         callback={() => {
           console.log("callback");
         }}
