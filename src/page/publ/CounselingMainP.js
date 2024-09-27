@@ -16,12 +16,6 @@ const CounselingMainP = () => {
     btnDown: false,
   });
 
-  // const toggle = (type) => {
-  //   setActiveState((prevState) => ({
-  //     btnDown: type === "btnDown" ? !prevState.btnDown : false,
-  //     counseling: type === "counseling" ? !prevState.counseling : false,
-  //   }));
-  // };
 
   const toggle = (type) => {
     setActiveState((prevState) => ({
@@ -30,26 +24,21 @@ const CounselingMainP = () => {
     }));
   };
 
-  // 상담 내역 팝업 닫기
-  const handleCloseCounseling = () => {
-    toggle("counseling"); // counseling 상태를 토글해서 닫음
-  };
 
   return (
     <>
       <div className="counselingContainer">
         <div className="header">
           <h1 className="logo">
-            AI 검색
+            AI 지식상담
             <button
               type="button"
               className={`btnDown ${activeState.btnDown ? "on" : ""}`}
               onClick={() => toggle("btnDown")}
             />
-            <div
-              className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}
-            >
-              디자인중
+            <div className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}>
+              <button type="button" className="logo" />
+              <button type="button" className="logoAi" />
             </div>
           </h1>
 
@@ -85,7 +74,7 @@ const CounselingMainP = () => {
                 />
               </strong>
 
-              <button type="button" className="close"  onClick={handleCloseCounseling}  />
+              <button type="button" className="close"  onClick={() => toggle("counseling")}  />
             </div>
 
             <div className="content">

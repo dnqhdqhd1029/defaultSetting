@@ -459,3 +459,45 @@ input[type="date"]:valid::before {
   @include iconCenter;
 }
 
+
+
+/* 숨겨진 실제 파일 입력 필드 */
+.fileUpload{
+  input[type="file"] {
+    display: none;
+  }
+  label{
+    display: inline-block;
+    padding:5px 10px;
+    background-color: #7996B7;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    min-width: 80px;
+
+    &:hover{
+      background-color: #7996B7;
+    }
+  }
+
+  .fileName{
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  em{
+    font-size: 12px;
+    color: #7996B7;
+  }
+}
+
+textarea {
+  width: 300px; /* 기본 너비 */
+  height: 150px; /* 기본 높이 */
+  resize: none;
+  //min-height: 100px;
+  //max-height: 500px;
+  //min-width: 200px;
+  //max-width: 600px;
+}

@@ -12,9 +12,15 @@ const HeaderP = () => {
     btnDown: false,
   });
 
+  // const toggle = (type) => {
+  //   setActiveState((prevState) => ({
+  //     btnDown: type === "btnDown" ? !prevState.btnDown : false,
+  //   }));
+  // };
   const toggle = (type) => {
     setActiveState((prevState) => ({
-      btnDown: type === "btnDown" ? !prevState.btnDown : false,
+      ...prevState, // 기존 상태 유지
+      [type]: !prevState[type], // 전달된 타입에 해당하는 상태만 토글
     }));
   };
 
@@ -30,7 +36,8 @@ const HeaderP = () => {
               onClick={() => toggle("btnDown")}
             />
             <div className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}>
-              디자인중
+              <button type="button" className="logo" />
+              <button type="button" className="logoAi" />
             </div>
 
           </h1>
@@ -44,7 +51,7 @@ const HeaderP = () => {
               onClick={() => confirmRef.current.show()}
             />
 
-            {/*<div className="searchList">
+            <div className="searchList">
                 <div className="top">
                   <span>최근검색어</span>
                   <button type="button">전체삭제</button>
@@ -89,11 +96,11 @@ const HeaderP = () => {
 
                 <div className="bottom">
                   <label className="toggleSwitch">
-                    <span>자동완성 끄기</span>
+                    <span className="mr1">자동완성 끄기</span>
                     <input role="switch" type="checkbox" />
                   </label>
                 </div>
-              </div>*/}
+              </div>
           </div>
           <div className="lnb">
             <div>

@@ -10,12 +10,12 @@
 /*color*/
 @each $color, $value in $theme-colors {
   .bg#{$color} {
-    background-color: $value;
+    background-color: $value ;
     color: $white;
   }
 
   .text#{$color} {
-    color: $value;
+    color: $value !important;
   }
 }
 

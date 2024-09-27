@@ -61,8 +61,8 @@ header {
 
       .btnDownPopup{
         position: absolute;
-        left: 0;
-        top: 50px;
+        left:-10px;
+        top: 55px;
         font-size: 12px;
         background-color: #fff;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
@@ -73,8 +73,34 @@ header {
         border-radius: 20px;
         z-index: 100;
         opacity: 0;
+        @include fc;
+        flex-direction: column;
+        display: none;
         &.show{
           opacity: 1;
+          display: flex;
+        }
+
+
+
+
+        & > button{
+          width: 154px;
+          height: 36px;
+          margin-bottom: 20px;
+          &.logo{
+            width: 154px;
+            height: 36px;
+            background: url("../images/svg/h1-logo.svg") left top no-repeat;
+            background-size: contain;
+          }
+          &.logoAi{
+            width: 154px;
+            height: 36px;
+            background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
+            background-size: contain;
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -187,6 +213,7 @@ header {
         top: 52px;
         min-height: 100px;
         text-align: left;
+        z-index: 100;
 
         border-radius: 20px;
         box-sizing: border-box;
@@ -440,7 +467,7 @@ main {
 
       .menuList{
         padding: 20px;
-        height: 617px;
+        min-height: 617px;
         ul {
           li{
             border-radius: 8px;
@@ -916,10 +943,8 @@ main {
           transition: color 0.3s;
           color: #A6B0BE;
 
-
           text-align: center;
-          align-items: center;
-          justify-content: flex-start;
+          @include fc;
 
 
           &.tab01{
@@ -949,8 +974,8 @@ main {
           }
 
           button.setting{
-            width:20px;
-            height: 20px;
+            width:16px;
+            height: 16px;
             background: url("../images/svg/icon-setting-sm.svg") center center no-repeat;
             background-size: contain;
           }
@@ -1313,12 +1338,30 @@ main {
         }
 
         &.on{
-          background-color: #E2F0F8;
+
+          &.like{
+            background: url("../images/svg/icon-like-on.svg") center center no-repeat;
+          }
+          &.dislike{
+            background: url("../images/svg/icon-dislike-on.svg") center center no-repeat;
+          }
+          &.message{
+            background: url("../images/svg/icon-message-on.svg") center center no-repeat;
+          }
+          &.hashtag{
+            background: url("../images/svg/icon-hashtag-on.svg") center center no-repeat;
+          }
+          &.document{
+            background: url("../images/svg/icon-document-on.svg") center center no-repeat;
+
+          }
+          &:hover{
+            background-color: #E2F0F8;
+          }
         }
 
         &:hover{
           background-color: #E2F0F8;
-
 
           span{
             opacity: 1;
@@ -1430,18 +1473,25 @@ main {
     }
     .search{
 
-      border-radius: 28px;
+      border-radius: 20px;
       background: #3D637C;
-      height: 56px;
+      min-height: 40px;
       flex: 1;
       @include fj;
       padding: 0 5px;
 
-      input[type="text"]{
+      textarea{
         flex: 1;
         background: transparent;
         border: 0;
         color: #fff;
+        border: 1px solid red;
+        max-height: 100px;
+        overflow-y: auto;
+        line-height: 20px;
+
+        font-size: 14px;
+        font-family: "Noto Sans", sans-serif;
       }
       .enter{
         width: 40px;
@@ -1726,7 +1776,7 @@ main {
         content: "";
         width: 154px;
         height: 36px;
-        background: url("../images/svg/h1-logo.svg") left top no-repeat;
+        background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
         background-size: contain;
 
       }
@@ -1744,8 +1794,8 @@ main {
 
       .btnDownPopup{
         position: absolute;
-        left: 0;
-        top: 50px;
+        left:-10px;
+        top: 55px;
         font-size: 12px;
         background-color: #fff;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
@@ -1756,8 +1806,33 @@ main {
         border-radius: 20px;
         z-index: 100;
         opacity: 0;
+        @include fc;
+        flex-direction: column;
+        display: none;
+
         &.show{
           opacity: 1;
+          display: flex;
+        }
+
+
+        & > button{
+          width: 154px;
+          height: 36px;
+          margin-bottom: 20px;
+          &.logo{
+            width: 154px;
+            height: 36px;
+            background: url("../images/svg/h1-logo.svg") left top no-repeat;
+            background-size: contain;
+          }
+          &.logoAi{
+            width: 154px;
+            height: 36px;
+            background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
+            background-size: contain;
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -1824,6 +1899,7 @@ main {
     .chattingFooter{
       background-color: #fff;
       height: 100px;
+      position: relative;
 
 
       padding: 0 30px;
@@ -1867,11 +1943,14 @@ main {
               height: 56px;
             }
 
-            input[type="text"]{
+            textarea{
               flex: 1;
               background: transparent;
               border: 0;
               color: #fff;
+              border: 1px solid red;
+              font-size: 14px;
+              font-family: "Noto Sans", sans-serif;
             }
             .enter{
               width: 32px;
@@ -1937,25 +2016,112 @@ main {
           display: none;
 
         }
-
-
-
-
-
         .iconFolder{
-          width: 24px;
-          height: 24px;
+          width: 40px;
+          height: 40px;
           background: url("../images/svg/icon-folder.svg") center center no-repeat;
-          background-size: contain;
+          background-size: 24px;;
           margin-left: 10px;
           margin-right: 20px;
+          &.on{
+            background-color: #E9EDF5;
+
+          }
         }
         .iconMenu{
-          width: 24px;
-          height: 24px;
+          width: 40px;
+          height: 40px;
           background: url("../images/svg/icon-menu.svg") center center no-repeat;
-          background-size: contain;
+          background-size: 24px;
           margin-left: 10px;
+          border-radius: 12px;
+
+          &.on{
+            background-color: #E9EDF5;
+
+          }
+        }
+      }
+
+      .iconMenuPopup{
+        width: 305px;
+        position: absolute;
+        right:20px;
+        bottom:100px;
+
+        z-index: 100;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        &.show{
+          opacity: 1;
+          transform: translateY(0);
+          animation: slideUp 0.3s ease;
+        }
+
+
+        & > button{
+
+          &:hover{
+            background: #E9EDF5;
+          }
+
+          width: 305px;
+          height: 60px;
+          margin-bottom: 10px;
+          color: $gray;
+          font-size: 12px;
+          border-radius: 12px;
+          background: #FFF;
+          @include fj;
+          padding: 10px 15px;
+
+          & > div{
+            flex: 1;
+            text-align: left;
+            strong{
+              font-size: 14px;
+              color: #000;
+              display: block;
+              margin-bottom: 5px;
+            }
+          }
+
+
+
+          &.mainAi{
+            &:after{
+              content:'';
+              width: 40px;
+              height: 40px;
+              background: url("../images/svg/icon-myAi.svg") left top no-repeat;
+              background-size: contain;
+            }
+
+
+          }
+          &.myPrompt{
+            &:after{
+              content:'';
+              width: 40px;
+              height: 40px;
+              background: url("../images/svg/icon-prompt.svg") left top no-repeat;
+              background-size: contain;
+            }
+
+          }
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
         }
       }
     }

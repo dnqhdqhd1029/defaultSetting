@@ -442,13 +442,17 @@
   padding: 20px 0;
 
   .boardSearch{
-    height: 82px;
+    min-height: 82px;
     background-color: #FAFAFA;
     padding: 20px;
-    @include fs;
+
+    .flexS{
+      @include fs;
+    }
+
 
     .tit{
-
+      min-width: 100px;
       font-size: 12px;
       color: #7996B7;
       font-weight: 600;
@@ -493,10 +497,18 @@
 
       background-size: contain;
     }
+    .iconEdit{
+      width: 16px;
+      height: 16px;
+      background: url("../images/svg/icon-edeit.svg") center center no-repeat;
+
+      background-size: contain;
+    }
 
     .tl{
       text-align: left;
     }
+
   }
 }
 

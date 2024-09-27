@@ -66,23 +66,24 @@ const ConfirmP = ({ width,header, title, content, callback ,close ,btnText01 ,bt
                         <div className="bottom">
 
                             <div className="btnWrap">
-                                {btnText01 &&
-                                <button
-                                    type="button"
-                                    className="btn bgDarkBlue"
-                                    onClick={handleOk}
-                                >
-                                    {btnText01}
-                                </button>
-                                }
+
                                 {btnText02 &&
                                 <button
                                     type="button"
                                     className="btn bgLight textGray "
-                                    onClick={handleOk}
+                                    onClick={handleCancel}
                                 >
                                     {btnText02}
                                 </button>
+                                }
+                                {btnText01 &&
+                                    <button
+                                        type="button"
+                                        className="btn bgDarkBlue"
+                                        onClick={handleOk}
+                                    >
+                                        {btnText01}
+                                    </button>
                                 }
                             </div>
                         </div>

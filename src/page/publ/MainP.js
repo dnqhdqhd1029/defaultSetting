@@ -39,12 +39,19 @@ const MainP = () => {
     chetbot: true,
   });
 
+  // const toggle = (type) => {
+  //   setActiveState((prevState) => ({
+  //     counseling: type === "counseling" ? !prevState.counseling : false,
+  //     chetbot: type === "chetbot" ? !prevState.chetbot : false,
+  //   }));
+  // };
   const toggle = (type) => {
     setActiveState((prevState) => ({
-      counseling: type === "counseling" ? !prevState.counseling : false,
-      chetbot: type === "chetbot" ? !prevState.chetbot : false,
+      ...prevState, // 기존 상태 유지
+      [type]: !prevState[type], // 전달된 타입에 해당하는 상태만 토글
     }));
   };
+
 
 
   useEffect(() => {
