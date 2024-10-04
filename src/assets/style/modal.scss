@@ -512,5 +512,62 @@
   }
 }
 
+.mainAiContainer{
+  ul li{
+    @include fs;
+    border-bottom: 1px solid #F1F1F1;
+    padding:10px 20px ;
+    &:last-of-type{
+      border-bottom: none;
+    }
+
+    &.checked{
+      background-color: #F6FCFF;
+    }
+
+    & > .mascoat{
+      @include fs;
+      i{
+        width: 60px;
+        height: 60px;
+
+        &.mascoatA{
+          background: url("../images/svg/icon-mascotA.svg") center center no-repeat;
+          background-size:contain;
+        }
+        &.mascoatB{
+          background: url("../images/svg/icon-mascotB.svg") center center no-repeat;
+          background-size:contain;
+        }
+        &.mascoatC{
+          background: url("../images/svg/icon-mascotC.svg") center center no-repeat;
+          background-size:contain;
+        }
+        &.mascoatD{
+          background: url("../images/svg/icon-mascotD.svg") center center no-repeat;
+          background-size:contain;
+        }
+      }
+
+      dl{
+        flex: 1;
+        margin-left: 10px;
+        dt{
+          font-weight: 700;
+          color: #4D545B;
+          margin-bottom: 5px;
+
+          span{
+            font-weight: 400;
+          }
+        }
+        dd{
+          color: #A6B0BE;
+        }
+      }
+    }
+  }
+}
+
 
 

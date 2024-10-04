@@ -65,27 +65,6 @@ input[type="text"]:disabled::placeholder {
   color: $lightGray;
 }
 
-/*textarea*/
-
-textarea {
-  border: 1px solid $info;
-  color: $gray;
-  font-size: inherit;
-  width: 100%;
-  padding: 10px;
-}
-
-textarea:focus {
-  border: 1px solid $primary;
-  color: $gray;
-  outline: 0;
-  box-shadow: none;
-}
-
-textarea::placeholder {
-  color: $info;
-  opacity: 1;
-}
 
 /*checkbox*/
 
@@ -492,12 +471,43 @@ input[type="date"]:valid::before {
   }
 }
 
+
+
+/*textarea*/
+
 textarea {
-  width: 300px; /* 기본 너비 */
-  height: 150px; /* 기본 높이 */
+  border: 1px solid $info;
+  color: $gray;
+  font-size: inherit;
+  width: 100%;
+  padding: 9px 0;
+  min-width: 100%;
+  height: 40px;
+  max-height: 200px;
+  font-family: "Noto Sans", sans-serif;
+  box-sizing: border-box;
   resize: none;
-  //min-height: 100px;
-  //max-height: 500px;
-  //min-width: 200px;
-  //max-width: 600px;
+  //overflow-y: auto;
+  position: relative;
+  background-color: #fff;
+
+
+  &.resize{
+    background:#fff url("../images/svg/icon-scale-sm.svg") 94% 3px no-repeat;
+    background-size: 20px;
+    padding-right: 30px;
+
+  }
+}
+
+textarea:focus {
+  border: 1px solid $primary;
+  color: $gray;
+  outline: 0;
+  box-shadow: none;
+}
+
+textarea::placeholder {
+  color: $info;
+  opacity: 1;
 }

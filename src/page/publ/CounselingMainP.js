@@ -269,7 +269,7 @@ const CounselingMainP = () => {
 
       <ModalP
         ref={modalSettingRef}
-        title="설정"
+        title="설정 (디자인진행중)"
         close
         width="700px"
         content={
@@ -291,7 +291,6 @@ const CounselingMainP = () => {
                       </label>
                     </div>
                   </div>
-
                   <small>선택된 검색 서비스를 포탈 검색 시 사용합니다.</small>
                 </div>
               </div>

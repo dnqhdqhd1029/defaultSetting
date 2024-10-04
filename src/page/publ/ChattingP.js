@@ -13,16 +13,17 @@ const ChattingP = ({ search, chattingFooter }) => {
   const modalMyPromptRef = useRef(null);
   const modalMainAiRef = useRef(null);
   const [swiperRef, setSwiperRef] = useState(null);
-  const [height, setHeight] = useState('100px'); // 초기 높이 설정
+  const [height, setHeight] = useState("100px"); // 초기 높이 설정
   const textareaRef = useRef(null);
 
   const handleInput = (event) => {
     const textarea = event.target;
 
     // 현재 높이를 'auto'로 설정해 스크롤 높이를 다시 계산
-    textarea.style.height = 'auto';
+    textarea.style.height = "200px";
+    textarea.style.minHeight = "10px";
 
-    // 내용에 맞게 높이 조정하되, 최대 높이를 150px로 제한
+    // 내용에 맞게 높이 조정하되, 최대 높이를 200px로 제한
     const newHeight = Math.min(textarea.scrollHeight, 200);
 
     // 새 높이를 설정
@@ -33,6 +34,11 @@ const ChattingP = ({ search, chattingFooter }) => {
     setting: false,
     btnDown: false,
     iconMenu: false,
+    etc01: false,
+    etc02: false,
+    etc03: false,
+    etc04: false,
+    etc05: false,
   });
 
   const toggle = (type) => {
@@ -43,9 +49,9 @@ const ChattingP = ({ search, chattingFooter }) => {
   };
   return (
     <>
-      <div className="counselingWrap">
+      <div className={`counselingWrap ${activeState.etc05 ? "show" : ""}`}>
         <div className="chattingWrap">
-          {" "}
+
           {/*class 이름 변경*/}
           <div className="aiTxt">
             <div className="cont">
@@ -70,6 +76,55 @@ const ChattingP = ({ search, chattingFooter }) => {
                 </small>
               </p>
             </div>
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
           </div>
           <div className="question">
             <div className="cont">이자율 스왑이 뭐야?</div>
@@ -84,6 +139,56 @@ const ChattingP = ({ search, chattingFooter }) => {
                 취하게 됩니다.
               </p>
             </div>
+
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
 
             <button className="answerLink">
               <span>
@@ -144,6 +249,56 @@ const ChattingP = ({ search, chattingFooter }) => {
                 없다고 직원이 오안내
               </p>
             </div>
+
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
 
             <Swiper
               slidesPerView={2}
@@ -306,6 +461,55 @@ const ChattingP = ({ search, chattingFooter }) => {
                 {/* end memberData*/}
               </p>
             </div>
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
           </div>
           <div className="aiTxt">
             <div className="cont">
@@ -372,6 +576,55 @@ const ChattingP = ({ search, chattingFooter }) => {
                 </div>
               </p>
             </div>
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
           </div>
           <div className="aiTxt">
             <div className="cont">
@@ -385,6 +638,55 @@ const ChattingP = ({ search, chattingFooter }) => {
                 </span>
               </p>
             </div>
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
+
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
+              <span>
+                근거문서
+                <br />
+                보기
+              </span>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
           </div>
           <div className="aiTxt">
             <div className="cont">
@@ -455,39 +757,63 @@ const ChattingP = ({ search, chattingFooter }) => {
                 </table>
               </p>
             </div>
-          </div>
-        </div>
-        {/*end chattingWrap*/}
+            <div className="etcArea flexJ">
+              <label className="toggleSwitch">
+                <span className="mr1 ">검색연결</span>
+                <input type="checkbox" />
+              </label>
+              <div className="ect">
+                <button
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle('etc01')}
+                >
 
-        <div className="etcArea flexJ">
-          <label className="toggleSwitch">
-            <span className="mr1 ">검색연결</span>
-            <input type="checkbox" />
-          </label>
-          <div className="ect">
-            <button type="button" className="like on">
-              <span>좋아요</span>
-            </button>
-            <button type="button" className="dislike">
-              <span>별로에요</span>
-            </button>
-            <button type="button" className="message">
-              <span>AI선택</span>
-            </button>
-            <button type="button" className="hashtag">
-              <span>연관질문</span>
-            </button>
-            <button type="button" className="document">
+                  <span>좋아요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle('etc02')}
+                >
+                  <span>별로에요</span>
+                </button>
+                <button
+                    type="button"
+                    className={`message ${activeState.etc03 ? "on" : ""}`}
+                    onClick={() => toggle('etc03')}
+                >
+                  <span>AI선택</span>
+                </button>
+                <button
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle('etc04')}
+                >
+                  <span>연관질문</span>
+                </button>
+                <button
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle('etc05')}
+                >
               <span>
                 근거문서
                 <br />
                 보기
               </span>
-            </button>
+                </button>
+              </div>
+            </div>
+            {/* end etcArea*/}
           </div>
         </div>
-        {/*etcArea*/}
+        {/*end chattingWrap*/}
 
+
+
+        {/*AI 선택*/}
+        {activeState.etc03 && (
         <div className="aiSelect">
           <small>AI를 선택해 주세요</small>
           <ul>
@@ -520,6 +846,21 @@ const ChattingP = ({ search, chattingFooter }) => {
             </li>
           </ul>
         </div>
+        )}
+        {/*end AI 선택*/}
+
+        {/*연관 질문*/}
+        {activeState.etc04 && (
+        <div className="questionsSelect">
+          <button type="button">질문에 대한 연관 질문 태그영역입니다 </button>
+          <button type="button">
+            연관검색어 선택 시 선택한 연관질문으로 다시 질문을 조회합니다{" "}
+          </button>
+        </div>
+        )}
+        {/*end 연관 질문*/}
+
+
 
         {search && (
           <div className="serachArea">
@@ -532,7 +873,17 @@ const ChattingP = ({ search, chattingFooter }) => {
             </div>
           </div>
         )}
+      </div >
+      {/*end counselingWrap*/}
+
+
+      {/*근거문서*/}
+      <div className={`documentSelect aside ${activeState.etc05 ? "show" : "hide"}`}>
+        dfdfd
       </div>
+
+
+      {/* end 근거문서*/}
       {chattingFooter && (
         <div className="chattingFooter">
           <div className="searchWrap flexS">
@@ -766,15 +1117,21 @@ const ChattingP = ({ search, chattingFooter }) => {
           <>
             <div className="boardContainer">
               <div className="boardSearch  ">
-                <div className="row flexS mb2">
-                  <div className="tit">나의 프롬프트</div>
-                  <div className="cont flexJ">
-                    <div className="flexJ">
-                       <textarea
-                           ref={textareaRef}
-                           style={{ height, maxHeight: '180px', width: '100%' }} // 기본 높이와 최대 높이
-                           onInput={handleInput} // 입력 이벤트 발생 시 처리
-                       />
+                <div className="row flexS mb2 alignS">
+                  <div className="tit ">나의 프롬프트</div>
+                  <div className="cont flexJ alignS">
+                    <div className="flexJ flex mr1 alignS">
+                      <textarea
+                        ref={textareaRef}
+                        className="resize"
+                        style={{
+                          minHeight: "40px",
+                          maxHeight: "200px",
+                          width: "100%",
+                          overflowY: "auto",
+                        }} // 기본 높이와 최대 높이
+                        onInput={handleInput} // 입력 이벤트 발생 시 처리
+                      />
                     </div>
 
                     <button
@@ -927,8 +1284,85 @@ const ChattingP = ({ search, chattingFooter }) => {
         ref={modalMainAiRef}
         title="대표 AI 선택"
         close
-        width="638px"
-        content={<>dfdf</>}
+        width="374px"
+        content={
+          <>
+            <div className="mainAiContainer">
+              <ul>
+                <li className="checked">
+                  <label>
+                    <input type="radio" name="mascoat" />
+                    <span />
+                  </label>
+
+                  <div className="mascoat">
+                    <i className="mascoatA" />
+                    <dl>
+                      <dt>
+                        A Type <span className="textPrimary">현재 기본값</span>
+                      </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="mascoat" />
+                    <span />
+                  </label>
+
+                  <div className="mascoat">
+                    <i className="mascoatB" />
+                    <dl>
+                      <dt>B Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="mascoat" />
+                    <span />
+                  </label>
+
+                  <div className="mascoat">
+                    <i className="mascoatC" />
+                    <dl>
+                      <dt>C Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="mascoat" />
+                    <span />
+                  </label>
+
+                  <div className="mascoat">
+                    <i className="mascoatD" />
+                    <dl>
+                      <dt>D Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </>
+        }
         btnText01="저장"
         btnText02="취소"
         callback={() => {

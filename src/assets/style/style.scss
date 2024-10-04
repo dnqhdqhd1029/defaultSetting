@@ -1081,6 +1081,7 @@ main {
   padding: 20px;
   height: 856px;
   overflow-y: auto;
+  position: relative;
 
   .chattingWrap{
 
@@ -1288,10 +1289,11 @@ main {
   .etcArea{
     margin: 20px 0;
     margin-bottom: 0;
-    padding-left: 55px;
+    padding-right:85px;
 
     @include mobile{
       padding-left: 0;
+      padding-right: 0;
     }
 
     .ect{
@@ -1485,7 +1487,6 @@ main {
         background: transparent;
         border: 0;
         color: #fff;
-        border: 1px solid red;
         max-height: 100px;
         overflow-y: auto;
         line-height: 20px;
@@ -1742,11 +1743,31 @@ main {
     }
   }
 
+  .questionsSelect{
+    margin-left: 55px;
+    margin-top: 15px;
+    & > button{
+      padding: 4px 16px;
+      background-color: #fff;
+      border-radius: 20px;
+      display: block;
+      margin-bottom: 10px;
+
+      &:hover{
+        background-color:#E2F0F8;
+      }
+    }
+  }
+
+
+
 
 
 
 
 }
+
+
 
 /*counselingContainer*/
 .counselingContainer{
@@ -1885,6 +1906,11 @@ main {
     height: calc(100vh - -60px );
     //height: 100vh;
     overflow-y: auto;
+
+
+   // @include fs;
+
+
     .counselingWrap{
       border: none;
       border-radius: 0;
@@ -1894,12 +1920,69 @@ main {
       @include mobile{
         height: calc(100vh - 132px );
       }
+
+      &.show{
+        float: left;
+        width: 60%;
+      }
     }
+
+    .documentSelect{
+      background-color: #fff;
+      width: 38%;
+      float: left;
+      height: calc(100vh - 158px );
+      overflow-y: auto;
+      //border: 1px solid red;
+
+      /* 왼쪽으로 슬라이드 애니메이션 정의 */
+      &.show {
+        animation: slideLeftIn 0.5s forwards;
+      }
+
+      /* 숨길 때 애니메이션 */
+      &.hide {
+        animation: slideLeftOut 0.5s forwards;
+      }
+
+
+      /* 오른쪽에서 왼쪽으로 나오는 애니메이션 */
+      @keyframes slideLeftIn {
+        from {
+          transform: translateX(420px); /* 오른쪽에서 시작 */
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0); /* 원래 위치로 */
+          opacity: 1;
+        }
+      }
+
+      /* 왼쪽에서 오른쪽으로 사라지는 애니메이션 */
+      @keyframes slideLeftOut {
+        from {
+          transform: translateX(0); /* 원래 위치에서 */
+          opacity: 1;
+        }
+        to {
+          transform: translateX(420px); /* 오른쪽으로 사라짐 */
+          opacity: 0;
+        }
+      }
+
+
+    }
+
+
+
+
+
 
     .chattingFooter{
       background-color: #fff;
       height: 100px;
       position: relative;
+      clear: both;
 
 
       padding: 0 30px;
@@ -1948,7 +2031,6 @@ main {
               background: transparent;
               border: 0;
               color: #fff;
-              border: 1px solid red;
               font-size: 14px;
               font-family: "Noto Sans", sans-serif;
             }
@@ -2050,12 +2132,13 @@ main {
         bottom:100px;
 
         z-index: 100;
-        opacity: 0;
+        display: none;
         transform: translateY(50px);
         transition: opacity 0.3s ease, transform 0.3s ease;
 
         &.show{
-          opacity: 1;
+          //opacity: 1;
+          display: block;
           transform: translateY(0);
           animation: slideUp 0.3s ease;
         }
