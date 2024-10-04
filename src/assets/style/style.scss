@@ -287,6 +287,7 @@ header {
   }
 }
 
+
 main {
   width: 1560px;
   margin: 0 auto;
@@ -1407,7 +1408,7 @@ main {
     }
   }
 
-  .serachArea{
+  .searchArea{
     clear: both;
     @include fj;
     margin-top: 20px;
@@ -1475,25 +1476,15 @@ main {
     }
     .search{
 
-      border-radius: 20px;
+      border-radius: 28px;
       background: #3D637C;
       min-height: 40px;
       flex: 1;
       @include fj;
       padding: 0 5px;
+      height: 56px;
 
-      textarea{
-        flex: 1;
-        background: transparent;
-        border: 0;
-        color: #fff;
-        max-height: 100px;
-        overflow-y: auto;
-        line-height: 20px;
 
-        font-size: 14px;
-        font-family: "Noto Sans", sans-serif;
-      }
       .enter{
         width: 40px;
         height: 40px;
@@ -2003,7 +1994,7 @@ main {
         }
 
         flex: 1;
-        .serachArea{
+        .searchArea{
           width: 570px;
           position: relative;
           @include fj;
@@ -2017,7 +2008,7 @@ main {
           .search{
             border-radius: 28px;
             background: #3D637C;
-            height: 40px;
+            min-height: 40px;
             flex: 1;
             @include fj;
             padding: 0 5px;
@@ -2033,10 +2024,13 @@ main {
               color: #fff;
               font-size: 14px;
               font-family: "Noto Sans", sans-serif;
+              min-width: auto;
+              padding-left: 10px;
             }
+
             .enter{
-              width: 32px;
-              height: 32px;
+              width: 32px ;
+              height: 32px ;
               background: url("../images/svg/icon-enter.svg") center center no-repeat;
               background-size: contain;
               margin-left: 10px;
@@ -2046,6 +2040,8 @@ main {
                 height: 40px;
               }
             }
+
+
           }
 
           .iconRefresh{
@@ -2301,4 +2297,10 @@ main {
 
 
 
+
+
+
 }
+
+
+

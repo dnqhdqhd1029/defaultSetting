@@ -863,7 +863,7 @@ const ChattingP = ({ search, chattingFooter }) => {
 
 
         {search && (
-          <div className="serachArea">
+          <div className="searchArea">
             <button type="button" className="iconScale">
               <span>큰 창으로 보기</span>
             </button>
@@ -894,7 +894,7 @@ const ChattingP = ({ search, chattingFooter }) => {
             <select className="selectRound ml3">
               <option>프롬프트 선택</option>
             </select>
-            <div className="serachArea ml3">
+            <div className="searchArea ml3">
               <div className="search">
                 <textarea placeholder="궁금한 것을 질문해 보세요" />
                 <button type="submit" className="enter" />

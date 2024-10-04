@@ -511,3 +511,46 @@ textarea::placeholder {
   color: $info;
   opacity: 1;
 }
+
+
+/*searchArea*/
+.searchArea{
+  .search{
+
+    border-radius: 28px;
+    background: #3D637C;
+    height: 40px;
+    @include fs;
+    padding: 0 5px;
+
+    @include mobile{
+      height: 56px;
+    }
+
+    textarea{
+      flex: 1;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 14px;
+      font-family: "Noto Sans", sans-serif;
+      min-width: auto;
+      padding-left: 10px;
+    }
+
+    .enter{
+      width: 32px ;
+      height: 32px ;
+      background: url("../images/svg/icon-enter.svg") center center no-repeat;
+      background-size: contain;
+      margin-left: 10px;
+
+      @include mobile{
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+  }
+
+}
