@@ -405,6 +405,14 @@ const MainP = () => {
                     <i className="iconHwp" />
                     ★통화스왑(부채)_업무안내.pdf
                   </button>
+                  <button type="button">
+                    <i className="iconPpt" />
+                    ★PPT파일
+                  </button>
+                  <button type="button">
+                    <i className="iconEtc" />
+                    ★기타 파일
+                  </button>
                 </dd>
                 <dd className="etc">
                   <span>
@@ -597,7 +605,7 @@ const MainP = () => {
 
             </div>
 
-            <div className={`toggleWrap ${activeState.counseling ? "show" : ""}`} >
+            <div className={` toggleWrap ${activeState.counseling ? "show" : ""}`} >
                <ChattingP search />
             </div>
           </div>
@@ -886,7 +894,7 @@ const MainP = () => {
 
       <ModalP
           ref={modalBookMarkRef}
-          width="683px"
+          width="750px"
           title="북마크 관리"
           close
           content={
@@ -1023,7 +1031,7 @@ const MainP = () => {
       />
       <ModalP
           ref={modalNoticeRef}
-          width="683px"
+          width="750px"
           title="알림검색어 관리"
           close
           content={

@@ -68,7 +68,7 @@ const HomeContainer = styled.div`
 const Home = () => {
     const links = [
         { path: "main", label: "메인화면", status: "완료",date:"2024-09-13 금" },
-        { path: "main", label: "메인화면-디테일수정", status: "진행중",date:"2024-09-25 tn" },
+        { path: "main", label: "메인화면-디테일수정", status: "완료",date:"2024-09-25 tn" },
         { path: "main", label: "상세검색 팝업" , status: "완료",date:"2024-09-13 금"},
         { path: "main", label: "검색 설정 팝업" , status: "완료",date:"2024-09-13 금"},
         { path: "main", label: "업무 카테고리 편집(디자인 수정)" , status: "진행중",date:"2024-09-25 금"},

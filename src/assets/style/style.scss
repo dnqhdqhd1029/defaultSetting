@@ -204,13 +204,13 @@ header {
       }
 
       .searchList {
-        border: 1px solid #219bf1;
+        border: 1px solid #0C0C0D;
         background-color: #fff;
         max-width: 100%;
         position: absolute;
         left: 0;
         right: 0;
-        top: 52px;
+        top: 56px;
         min-height: 100px;
         text-align: left;
         z-index: 100;
@@ -730,6 +730,19 @@ main {
                 background: url("../images/svg/icon-han.svg") center center no-repeat;
                 background-size: contain;
               }
+              .iconPpt{
+                width: 20px;
+                height: 20px;
+                background: url("../images/svg/icon-ppt.svg") center center no-repeat;
+                background-size: contain;
+              }
+              .iconEtc{
+                 width: 20px;
+                 height: 20px;
+                 background: url("../images/svg/icon-etc.svg") center center no-repeat;
+                 background-size: contain;
+               }
+
             }
           }
           dd.etc{
@@ -836,8 +849,9 @@ main {
   aside {
     width: 580px;
 
+    //메인에서
     .aiContainer{
-
+      //border: 5px solid #000;
       margin-bottom: 20px;
 
       .title{
@@ -867,6 +881,14 @@ main {
           background: #F1F1F1 url("../images/svg/icon-setting-sm.svg") 95% center no-repeat;
           background-size: 16px;
         }
+
+      }
+
+      .gridContainer{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1, 1fr); //열
+        grid-template-rows: repeat(3,auto); //행
 
       }
     }
@@ -1171,48 +1193,58 @@ main {
 
       }
 
-      button.answerLink{
+      .answerLink{
         border-radius: var(--Corner-Full, 1000px);
         background: #E2F0F8;
         min-height: 40px;
         padding: 5px 20px;
-
         margin:10px 0;
         width: 95%;
         text-align: left;
         border-radius: 20px;
         vertical-align: middle;
 
-        span{
-          float: left;
-          width: 80%;
+        & > button{
+          display: block;
+          width: 100%;
+          text-align: left;
+          @include fj;
+          align-items: flex-start;
 
 
-          strong{
-            color:$darkBlue;
-            margin-right: 5px;
 
-          }
-          strong.txt{
-            @include ellipsis;
+          & > div{
             width: 80%;
-            color: $gray;
+            @include fs;
+            b{
+              width: 15px;
+            }
+            b,strong{
+              color:$darkBlue;
+              margin-right: 5px;
+            }
+            span.txt{
+              @include ellipsis;
+              flex: 1;
+              width: 50%;
+              color: $gray;
+              &.link{
+                color: $primary;
+              }
+            }
+
+
+
           }
-          i.iconLink{
-            width: 16px;
-            height: 16px;
-            background: url("../images/svg/icon-link.svg") center center no-repeat;
-            background-size: contain;
-            margin-left: 5px;
+
+          em{
+            font-size: 12px;
+            color: $lightGray;
+            padding-top: 5px;
           }
         }
 
 
-        em{
-          float: right;
-          font-size: 12px;
-          color: $lightGray;
-        }
 
         div.download{
           color:$gray;
@@ -1252,6 +1284,18 @@ main {
               width: 20px;
               height: 20px;
               background: url("../images/svg/icon-han.svg") center center no-repeat;
+              background-size: contain;
+            }
+            .iconPpt{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-ppt.svg") center center no-repeat;
+              background-size: contain;
+            }
+            .iconEtc{
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-etc.svg") center center no-repeat;
               background-size: contain;
             }
           }
@@ -1412,6 +1456,9 @@ main {
     clear: both;
     @include fj;
     margin-top: 20px;
+    position: sticky;
+    left: 0;
+    bottom: 0;
 
     button.iconScale{
 
@@ -1513,7 +1560,7 @@ main {
       font-size: 18px;
       border: 1px solid $primary;
       border-radius: 12px;
-      background-color: transparent;
+      background-color: #fff;
 
 
       /* Center slide text vertically */
@@ -1595,6 +1642,10 @@ main {
     & > .flexS{
       border-bottom: 1px solid #F1F1F1;
       padding: 10px 0;
+
+      .info{
+        flex: 1;
+      }
     }
     em{
       color: #00538A;
@@ -1604,6 +1655,114 @@ main {
       margin-bottom: 5px;
     }
 
+
+
+  }
+  .gridContainer{
+    .iconCall{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-call.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+    .iconProfile{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-profile.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+    .iconSns{
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/icon-sns.svg") center center no-repeat;
+      background-size: contain;
+      margin: 0 5px;
+    }
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr); //열
+    grid-template-rows: repeat(4 ,auto); //행
+
+    &.etc{
+      grid-template-columns: repeat(1, 1fr); //열
+      grid-template-rows: repeat(3,auto); //행
+    }
+
+    .grid-item {
+      @include fs;
+      width: 100%;
+
+      dl{
+        @include fs;
+        width:100%;
+        dt {
+          color: #7996B7;
+          font-size: 12px;
+          text-align: left;
+          padding: 5px;
+          min-width:100px;
+          font-weight: 600;
+        }
+
+        dd{
+          flex: 1;
+          font-size: 14px;
+          padding: 5px;
+          color: #0C0C0D;
+          display: inline-block;
+          font-weight: 600;
+        }
+
+        .fontSm{
+          font-size: 12px;
+          color: $gray;
+        }
+      }
+
+
+
+
+    }
+
+    table{
+
+      width: 100%;
+      table-layout: fixed;
+      //border-top: 1px solid #F1F1F1;
+      border-collapse: separate;
+      color: $black;
+
+      th {
+        color: #7996B7;
+        font-size: 10px;
+        text-align: left;
+        padding: 5px;
+        width: 10%;
+      }
+
+      td{
+        font-size: 14px;
+        padding: 5px;
+      }
+
+      .fontSm{
+        font-size: 12px;
+        color: $gray;
+      }
+
+      th:last-of-type,td:last-of-type{
+        border-right: none;
+      }
+
+      tbody th{
+        background-color: #FAFAFA;
+        color: $black;
+      }
+
+    }
   }
 
   .noneTable{
@@ -1749,13 +1908,6 @@ main {
       }
     }
   }
-
-
-
-
-
-
-
 }
 
 
@@ -1899,13 +2051,15 @@ main {
     overflow-y: auto;
 
 
+
+
    // @include fs;
 
 
     .counselingWrap{
       border: none;
       border-radius: 0;
-      height: calc(100vh - 158px );
+      height: calc(100vh - 173px );
       overflow-y: auto;
 
       @include mobile{
@@ -1920,9 +2074,10 @@ main {
 
     .documentSelect{
       background-color: #fff;
-      width: 38%;
+      width:40%;
       float: left;
       height: calc(100vh - 158px );
+      padding: 20px;
       overflow-y: auto;
       //border: 1px solid red;
 
@@ -1961,6 +2116,130 @@ main {
         }
       }
 
+      .title{
+        font-size: 20px;
+        color: #7F8896;
+        line-height: 30px;
+        position: relative;
+        margin-bottom: 20px;
+
+        strong{
+          color: #0C0C0D;
+          display: block;
+        }
+
+        span{
+          display: block;
+        }
+
+        button.close{
+          width: 20px;
+          height: 20px;
+          background: url("../images/svg/icon-close-gray.svg") center center no-repeat;
+          background-size: contain;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      .documentList{
+         ul li{
+           @include fs;
+           align-items: flex-start;
+           margin-bottom: 20px;
+           & > span{
+             font-weight: 700;
+             color: #00538A;
+             width: 20px;
+           }
+
+           & > dl{
+              flex: 1;
+
+
+             dt{
+               margin-bottom: 5px;
+               button{
+                 width: 100%;
+                 text-align: left;
+                 @include fj;
+                 .iconLink{
+                   width: 16px;
+                   height: 16px;
+                   background: url("../images/svg/icon-link.svg") center center no-repeat;
+                   background-size: contain;
+                   margin-left: 5px;
+                 }
+
+                 & > div {
+                   color: #00538A;
+                   font-weight: 700;
+                   width: 85%;
+                   @include fs;
+
+                   b{
+                     margin-right: 10px;
+                   }
+
+
+                   span.txt{
+                     @include ellipsis;
+
+                     color: #4D545B;
+                     flex: 1;
+
+
+                     &.link{
+                       color: #0A86DA;
+                     }
+
+
+                   }
+                 }
+
+                 em{
+                   font-size: 12px;
+                   color: #7F8896;
+                 }
+
+               }
+             }
+             dd{
+               span.txt{
+                 @include ellipsis;
+               }
+
+               .download{
+                 margin-top: 10px;
+                 .iconLink{
+                   width: 16px;
+                   height: 16px;
+                   background: url("../images/svg/icon-link.svg") center center no-repeat;
+                   background-size: contain;
+                   margin-right: 5px;
+                 }
+
+                 & > button{
+                   display: block;
+                   width: 100%;
+                   border-radius: 14px;
+                   background: #F9F9F9;
+                   font-size: 12px;
+                   text-align: left;
+                   margin-bottom: 5px;
+                   height: 28px;
+                   @include fs;
+                   padding-left: 10px;
+                 }
+               }
+             }
+           }
+         }
+      }
+
+
+
 
     }
 
@@ -1974,6 +2253,7 @@ main {
       height: 100px;
       position: relative;
       clear: both;
+      border-top: 1px solid #EEEEEE;
 
 
       padding: 0 30px;

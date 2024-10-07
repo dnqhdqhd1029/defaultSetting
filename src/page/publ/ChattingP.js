@@ -49,8 +49,8 @@ const ChattingP = ({ search, chattingFooter }) => {
   };
   return (
     <>
-      <div className={`counselingWrap ${activeState.etc05 ? "show" : ""}`}>
-        <div className="chattingWrap">
+      <div className={`counselingWrap scroll ${activeState.etc05 ? "show" : ""}`}>
+        <div className="chattingWrap ">
 
           {/*class 이름 변경*/}
           <div className="aiTxt">
@@ -190,21 +190,27 @@ const ChattingP = ({ search, chattingFooter }) => {
             </div>
             {/* end etcArea*/}
 
-            <button className="answerLink">
-              <span>
-                <strong>1</strong>
-                <strong>고객센터</strong>링크 없는 근거문서 케이스
-              </span>
-              <em>2023-07-21</em>
-            </button>
-            <button className="answerLink">
-              <span>
-                <strong>2</strong>
-                <strong>부서홈페이지</strong>
-                링크가 있는 근거문서 케이스
-                <i className="iconLink" />
-              </span>
-              <em>2023-07-21</em>
+            {/*근거문서 작은화면일때*/}
+            <div className="answerLink">
+              <button type="button" style={{cursor:'default'}}>
+                <div>
+                  <b>1</b>
+                  <strong >고객센터</strong>
+                  <span className="txt">링크 없는 근거문서 케이스링크 없는 근거문서 케이스링크 없는 근거문서 케이스</span>
+                </div>
+                <em>2023-07-21</em>
+              </button>
+            </div>
+            <div className="answerLink">
+              <button type="button">
+                <div>
+                  <b>2</b>
+                  <strong>부서홈페이지</strong>
+                  <span className="txt link">링크가 있는 근거문서 케이스링크가 있는 근거문서 케이스링크가 있는 근거문서 케이스</span>
+                </div>
+                <em>2023-07-21</em>
+              </button>
+
               <div className="download">
                 <button type="button">
                   <i className="iconPdf" />
@@ -222,8 +228,18 @@ const ChattingP = ({ search, chattingFooter }) => {
                   <i className="iconHwp" />
                   ★통화스왑(부채)_업무안내.pdf
                 </button>
+                <button type="button">
+                  <i className="iconPpt" />
+                  ★통화스왑(부채)_업무안내.pdf
+                </button>
+                <button type="button">
+                  <i className="iconEtc" />
+                  ★통화스왑(부채)_업무안내.pdf
+                </button>
               </div>
-            </button>
+            </div>
+
+            {/* end 근거문서 작은화면일때*/}
 
             <div className="keywordLink">
               <button type="button">IRP한도</button>
@@ -519,12 +535,91 @@ const ChattingP = ({ search, chattingFooter }) => {
               </p>
               <p>
                 <div className="memberData">
+                
                   <div className="flexS alignS mb2">
                     <div className="img mr2">
                       <img src={imgImg} alt="" />
                     </div>
                     <div className="info">
-                      <div className="noneTable">
+                      <div className="gridContainer">
+                        <div className="grid-item">
+                          <dl>
+                            <dt>성명</dt>
+                            <dd>홍길동</dd>
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>직위/호칭</dt>
+                            <dd>부부장</dd>
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>소속</dt>
+                            <dd>우리은행/빅데이터플랫폼부</dd>
+
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>행번</dt>
+                            <dd>32544447</dd>
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>전화번호</dt>
+                            <dd>
+                              <div className="flexS">
+                                800012345
+                                <button type="button" className="iconCall" />
+                                <button type="button" className="iconProfile" />
+                                <button type="button" className="iconSns" />
+                              </div>
+                            </dd>
+
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>대직자</dt>
+                            <dd>김난희 부장 대우 유난희 차장</dd>
+                          </dl>
+                        </div>
+
+
+                      </div>
+
+                      <div className="gridContainer etc">
+                        <div className="grid-item">
+                          <dl>
+                            <dt>담당업무</dt>
+                            <dd  className="fontSm">
+                              데이터 자산화 팀장 - 팀업무 전반
+                            </dd>
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>세부업무</dt>
+                            <dd className="fontSm">
+                              FA/CS매니저/대여금고관리/방카슈랑스/은퇴설계/특정거래승인권/해외유학이주/장애인전담/출납책임/금융사기담당/FATCA관리/금융소비자보호담당자/카드개인정보보호/교환/시공과금/신용카드총괄/압류/중요증서취급중요증서취급책임/외화출납책임/당행보관통장관리
+                            </dd>
+                          </dl>
+                        </div>
+                        <div className="grid-item">
+                          <dl>
+                            <dt>담당업무</dt>
+                            <dd className="fontSm">
+                              FA/CS매니저/대여금고관리/방카슈랑스
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+
+
+                      {/*<div className="noneTable">
                         <table>
                           <tr>
                             <th>성명</th>
@@ -569,11 +664,11 @@ const ChattingP = ({ search, chattingFooter }) => {
                               FA/CS매니저/대여금고관리/방카슈랑스
                             </td>
                           </tr>
-                        </table>
+                        </table>*/}
                       </div>
                     </div>
                   </div>
-                </div>
+
               </p>
             </div>
             <div className="etcArea flexJ">
@@ -879,7 +974,80 @@ const ChattingP = ({ search, chattingFooter }) => {
 
       {/*근거문서*/}
       <div className={`documentSelect aside ${activeState.etc05 ? "show" : "hide"}`}>
-        dfdfd
+        <div className="title">
+          <strong>이자율 스왑</strong>
+          <span>검색결과에 대한 근거문서입니다.</span>
+          <button type="button" className="close" />
+        </div>
+        <div className="documentList">
+          <ul>
+            <li>
+              <span>1</span>
+              <dl>
+                 <dt>
+                   <button>
+                     <div>
+                       <b>고객센터</b>
+                       <span className="txt link">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
+                     </div>
+                     <em>2023-07-21</em>
+
+                   </button>
+                 </dt>
+                 <dd>
+                   <span className="txt ">10. Q&A(상품설명서 內)1. Q&A 의무가입대상 기준은 어떻게 되나요? </span>
+                 </dd>
+              </dl>
+            </li>
+            <li>
+              <span>2</span>
+              <dl>
+                <dt>
+                  <button>
+                    <div>
+                      <b>부서홈페이지</b>
+                      <span className="txt link">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
+                    </div>
+                    <em>2023-07-21</em>
+                  </button>
+                </dt>
+                <dd>
+                  <span className="txt">금융시장에서 차입자의 기존부채 또는 신규 부채에 대한</span>
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <span>3</span>
+              <dl>
+                <dt>
+                  <button>
+                    <div>
+                      <b>부서홈페이지</b>
+                      <span className="txt">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
+                    </div>
+                    <em>2023-07-21</em>
+                  </button>
+                </dt>
+                <dd>
+                  <span className="txt">금융시장에서 차입자의 기존부채 또는 신규 부채에</span>
+                  <div className="download">
+                    <button type="button">
+                      <i className="iconLink" /> 통화스왑(부채) 업무안내.hwp
+                    </button>
+                    <button type="button">
+                      <i className="iconLink" />  통화스왑(부채) 업무안내.hwp
+                    </button>
+                    <button type="button">
+                      <i className="iconLink" /> 통화스왑(부채) 업무안내.hwp
+                    </button>
+                  </div>
+                </dd>
+
+              </dl>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
 
@@ -1123,7 +1291,7 @@ const ChattingP = ({ search, chattingFooter }) => {
                     <div className="flexJ flex mr1 alignS">
                       <textarea
                         ref={textareaRef}
-                        className="resize"
+                        //className="resize"
                         style={{
                           minHeight: "40px",
                           maxHeight: "200px",
