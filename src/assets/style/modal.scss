@@ -569,5 +569,44 @@
   }
 }
 
+/*연관 검색어*/
+.keyWordContainer{
+  padding: 20px 0;
+  .content{
+
+
+    ul.dot{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        //display: inline-block;
+        @include fs;
+        width: 48%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:before{
+          content: '';
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $black;
+          margin-right: 10px;
+        }
+        button{
+          @include ellipsis;
+          flex: 1;
+          text-align: left;
+          width: 90%;
+        }
+        &:nth-of-type(even){
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+
+}
+
 
 

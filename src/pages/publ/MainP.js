@@ -15,7 +15,7 @@ const MainP = () => {
   const modalBookMarkRef = useRef(null);
   const modalNoticeRef = useRef(null);
   const [clicked, setClicked] = useState([false, false, false, false, false]);
-  const handleStarClick = (index: number) => {
+  const handleStarClick = (index) => {
     const clickStates = [...clicked];
     for (let i = 1; i < 6; i++) {
       clickStates[i] = i <= index;
@@ -37,6 +37,8 @@ const MainP = () => {
   const [activeState, setActiveState] = useState({
     counseling: true,
     chetbot: true,
+    similar: true,
+    more: false,
   });
 
   // const toggle = (type) => {
@@ -51,8 +53,6 @@ const MainP = () => {
       [type]: !prevState[type], // 전달된 타입에 해당하는 상태만 토글
     }));
   };
-
-
 
   useEffect(() => {
     const activeButton = tabButtonsRef.current.find((btn) =>
@@ -417,7 +417,11 @@ const MainP = () => {
                 <dd className="etc">
                   <span>
                     <button type="button">북마크</button>
-                    <button type="button">
+                    <button
+                      type="button"
+                      className={` ${activeState.similar ? "" : "down"}`}
+                      onClick={() => toggle("similar")}
+                    >
                       00개의 유사문서(팝업 디자인 나올거임)
                     </button>
                   </span>
@@ -428,6 +432,53 @@ const MainP = () => {
                     Preview
                   </button>
                 </dd>
+                {activeState.similar && (
+                  <dd className="similarData">
+                    <dl>
+                      <dt>
+                        <div>
+                          <span className="label">고객센터</span>
+                          <span className="txt">
+                            2024년 상반기「T.O.P of WOORI」영업지원 실적 최대
+                            텍스트
+                          </span>
+                        </div>
+                        <em>
+                          기업고객부 서유리 차장
+                          <samll className="ml1">2024-05-22</samll>
+                        </em>
+                      </dt>
+                      <dd className="info">
+                        <div className="flexE">
+                          <span className="txt">
+                            소제목 텍스트 최대1줄 넘치는텍스트 말줄임 소제목
+                            텍스트 최대1줄 넘치는텍스트 말줄임소제목 텍스트
+                            최대1줄 넘치는텍스트 말줄임
+                          </span>
+                          <button
+                            type="button"
+                            className={` btnMore ${activeState.more ? "" : "up"}`}
+                            onClick={() => toggle("more")}
+                          >
+                            {activeState.more ? "접기" : "더보기"}
+                          </button>
+                        </div>
+
+                        {activeState.more && (
+                        <div className="infoMore">
+                          2024년 年初 집중영업을 위한 ‘24. 상반기「T.O.P of
+                          WOORI」스왑포인트 영업지원 운영 (2024.02.14) CIB 그룹
+                          1 취지 ? 기업금융 名家 재건을 위한 우량자산 확대 및
+                          ‘24년 금융시장 환경 * 감안 수익성 증대 추진 * 회사채
+                          만기 도래 규모 최대(70조원), ‘24.上 고금리 기조 유지
+                          이후 텍스트 최대 3줄 노출 후 넘치는 텍스트는 말줄임 해
+                          주세요
+                        </div>
+                        )}
+                      </dd>
+                    </dl>
+                  </dd>
+                )}
               </dl>
             </div>
 
@@ -488,8 +539,8 @@ const MainP = () => {
                     </button>
                   </span>
                   <button
-                      type="button"
-                      onClick={() => modalPreviewRef.current.show()}
+                    type="button"
+                    onClick={() => modalPreviewRef.current.show()}
                   >
                     Preview
                   </button>
@@ -591,73 +642,78 @@ const MainP = () => {
           </div>
         </section>
         <aside>
-
           <div className="aiContainer">
             <div className="title borderNone">
               <div className="flexS">
-                <i className="iconMascot"/>
+                <i className="iconMascot" />
                 <span> AI 지식상담 </span>
-                <button type="button" className="setting">전행 모든지식 참조</button>
+                <button type="button" className="setting">
+                  전행 모든지식 참조
+                </button>
               </div>
-              <button type="button"
-                      className={`iconUp  counseling ${activeState.counseling ? "" : "down"}`}
-                      onClick={() => toggle("counseling")} />
-
+              <button
+                type="button"
+                className={`iconUp  counseling ${activeState.counseling ? "" : "down"}`}
+                onClick={() => toggle("counseling")}
+              />
             </div>
 
-            <div className={` toggleWrap ${activeState.counseling ? "show" : ""}`} >
-               <ChattingP search />
+            <div
+              className={` toggleWrap ${activeState.counseling ? "show" : ""}`}
+            >
+              <ChattingP search />
             </div>
           </div>
-
-
 
           <div className="chetbotContainer">
             <div className="title borderNone">
               <span className="flexS alignC">
                 <i className="iconAi mr1" /> AI챗봇에게 물어보기
               </span>
-              <button type="button" className={`iconUp chetbot ${activeState.chetbot ? "" : "down"}`}
-                      onClick={() => toggle("chetbot")} />
+              <button
+                type="button"
+                className={`iconUp chetbot ${activeState.chetbot ? "" : "down"}`}
+                onClick={() => toggle("chetbot")}
+              />
             </div>
 
-            <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`} >
-             <div className="content">
-              <div className="cont">
-                <dl>
-                  <dt>
-                    <span>자금세탁방지</span>
-                  </dt>
-                  <dd className="info">
-                    <span className="txt">
-                      우리사잇돌중금리대 모바일 신청 시 비대면으로
-                    </span>
-                    <span>
-                      필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
-                      수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
-                      문의하시기 바랍니다.
-                    </span>
-                  </dd>
-                </dl>
+            <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`}>
+              <div className="content">
+                <div className="cont">
+                  <dl>
+                    <dt>
+                      <span>자금세탁방지</span>
+                    </dt>
+                    <dd className="info">
+                      <span className="txt">
+                        우리사잇돌중금리대 모바일 신청 시 비대면으로
+                      </span>
+                      <span>
+                        필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
+                        수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
+                        문의하시기 바랍니다.
+                      </span>
+                    </dd>
+                  </dl>
+                </div>
+                <div className="cont">
+                  <dl>
+                    <dt>
+                      <span>자금세탁방지</span>
+                    </dt>
+                    <dd className="info">
+                      <span className="txt">
+                        우리사잇돌중금리대 모바일 신청 시 비대면으로
+                      </span>
+                      <span>
+                        필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
+                        수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
+                        문의하시기 바랍니다.
+                      </span>
+                    </dd>
+                  </dl>
+                </div>
               </div>
-              <div className="cont">
-                <dl>
-                  <dt>
-                    <span>자금세탁방지</span>
-                  </dt>
-                  <dd className="info">
-                    <span className="txt">
-                      우리사잇돌중금리대 모바일 신청 시 비대면으로
-                    </span>
-                    <span>
-                      필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
-                      수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
-                      문의하시기 바랍니다.
-                    </span>
-                  </dd>
-                </dl>
-              </div>
-            </div>
             </div>
           </div>
 
@@ -671,7 +727,11 @@ const MainP = () => {
               >
                 북마크
                 {activeTab === "tab01" && (
-                  <button type="button" className="setting"  onClick={() => modalBookMarkRef.current.show()} />
+                  <button
+                    type="button"
+                    className="setting"
+                    onClick={() => modalBookMarkRef.current.show()}
+                  />
                 )}
               </button>
               <button
@@ -681,7 +741,6 @@ const MainP = () => {
                 ref={(el) => (tabButtonsRef.current[1] = el)}
               >
                 My 헬프데스크
-
               </button>
               <button
                 type="button"
@@ -699,7 +758,11 @@ const MainP = () => {
               >
                 알림 검색어
                 {activeTab === "tab04" && (
-                  <button type="button" className="setting" onClick={() => modalNoticeRef.current.show()} />
+                  <button
+                    type="button"
+                    className="setting"
+                    onClick={() => modalNoticeRef.current.show()}
+                  />
                 )}
               </button>
               <button
@@ -844,31 +907,34 @@ const MainP = () => {
           <>
             <div className="previewContainer">
               <div className="previewHeader">
-                 <div className="searchWrap">
-                   <input type="search" placeholder="검색어를 입력하세요" />
-                   <button
-                       type="button"
-                       className="iconSearch"
-                   />
-                 </div>
+                <div className="searchWrap">
+                  <input type="search" placeholder="검색어를 입력하세요" />
+                  <button type="button" className="iconSearch" />
+                </div>
 
                 <div className="state">
-                  <span><strong>10</strong> <em>/</em> <em>10</em></span>
+                  <span>
+                    <strong>10</strong> <em>/</em> <em>10</em>
+                  </span>
                   <button type="button" className="iconUp" />
                   <button type="button" className="iconDown" />
                 </div>
               </div>
               <div className="previewContent">
                 <div className="lnb">
-                  업무포탈 > 기업금융WON클릭 > <b>기업「T.O.P of WOORI」영업지원</b>
+                  업무포탈 > 기업금융WON클릭 >{" "}
+                  <b>기업「T.O.P of WOORI」영업지원</b>
                 </div>
 
                 <div className="title">
-                  2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원 실적
+                  2024년 상반기「T.O.P of WOORI」영업지원 실적2024년
+                  상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of
+                  WOORI」영업지원 실적2024년 상반기「T.O.P of WOORI」영업지원
+                  실적2024년 상반기「T.O.P of WOORI」영업지원 실적2024년
+                  상반기「T.O.P of WOORI」영업지원 실적2024년 상반기「T.O.P of
+                  WOORI」영업지원 실적
                 </div>
-                <div className="cont">
-                  dfdfdfd
-                </div>
+                <div className="cont">dfdfdfd</div>
               </div>
             </div>
           </>
@@ -877,55 +943,69 @@ const MainP = () => {
           <>
             답변 만족도를 평가해 주세요
             <div className="gradeContent ml1">
-              {[5, 4, 3, 2, 1].map(r => (
-                  <button key={r} onClick={() => handleStarClick(r)} className={clicked[r] ? 'on' : ''}>
-                    {r}
-                  </button>
+              {[5, 4, 3, 2, 1].map((r) => (
+                <button
+                  key={r}
+                  onClick={() => handleStarClick(r)}
+                  className={clicked[r] ? "on" : ""}
+                >
+                  {r}
+                </button>
               ))}
             </div>
           </>
         }
         btnText01="닫기"
-       // btnText02="초기화"
+        // btnText02="초기화"
         callback={() => {
           console.log("callback");
         }}
       />
 
       <ModalP
-          ref={modalBookMarkRef}
-          width="750px"
-          title="북마크 관리"
-          close
-          content={
-            <>
-              <div className="boardContainer">
-                <div className="boardSearch flexS ">
-                  <div className="tit">검색 대상</div>
-                  <div className="cont">
-                    <select className="select">
-                      <option>전체</option>
-                      <option>전체</option>
-                    </select>
-                  </div>
-
-                  <div className="tit ml2">검색어</div>
-                  <div className="cont flexJ">
-                    <input type="text" className="flex mr1" style={{width:'200px'}} />
-                    <button type="button" className="btn bgDarkBlue radius" style={{width:'80px'}}>검색</button>
-                  </div>
+        ref={modalBookMarkRef}
+        width="750px"
+        title="북마크 관리"
+        close
+        content={
+          <>
+            <div className="boardContainer">
+              <div className="boardSearch flexS ">
+                <div className="tit">검색 대상</div>
+                <div className="cont">
+                  <select className="select">
+                    <option>전체</option>
+                    <option>전체</option>
+                  </select>
                 </div>
-                
-                <div className="boardList mt2">
-                  <table className="boardTabel">
-                   <colgroup>
-                     <col style={{width:'10%'}} />
-                     <col style={{width:'20%'}}/>
-                     <col/>
-                     <col style={{width:'15%'}}/>
-                     <col style={{width:'10%'}}/>
-                   </colgroup>
-                    <thead>
+
+                <div className="tit ml2">검색어</div>
+                <div className="cont flexJ">
+                  <input
+                    type="text"
+                    className="flex mr1"
+                    style={{ width: "200px" }}
+                  />
+                  <button
+                    type="button"
+                    className="btn bgDarkBlue radius"
+                    style={{ width: "80px" }}
+                  >
+                    검색
+                  </button>
+                </div>
+              </div>
+
+              <div className="boardList mt2">
+                <table className="boardTabel">
+                  <colgroup>
+                    <col style={{ width: "10%" }} />
+                    <col style={{ width: "20%" }} />
+                    <col />
+                    <col style={{ width: "15%" }} />
+                    <col style={{ width: "10%" }} />
+                  </colgroup>
+                  <thead>
                     <tr>
                       <th>번호</th>
                       <th>카테고리</th>
@@ -933,135 +1013,163 @@ const MainP = () => {
                       <th>등록일자</th>
                       <th>삭제</th>
                     </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                      <tr>
-                        <td className="textBlack tc">1</td>
-                        <td className="">우리상품 바로알기</td>
-                        <td>이름네자</td>
-                        <td>2024-07-30</td>
-                        <td className="tc"><i className="iconDel"/></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="paginate">
-                  <button type="button" className="prev" />
-                  <strong>1</strong>
-                  <button type="button">2</button>
-                  <button type="button">3</button>
-                  <button type="button">4</button>
-                  <button type="button">5</button>
-                  <button type="button">6</button>
-                  <button type="button">7</button>
-                  <button type="button">8</button>
-                  <button type="button">9</button>
-                  <button type="button">10</button>
-                  <button type="button" className="next" />
-                </div>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="textBlack tc">1</td>
+                      <td className="">우리상품 바로알기</td>
+                      <td>이름네자</td>
+                      <td>2024-07-30</td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </>
-          }
 
-
+              <div className="paginate">
+                <button type="button" className="prev" />
+                <strong>1</strong>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+                <button type="button">10</button>
+                <button type="button" className="next" />
+              </div>
+            </div>
+          </>
+        }
       />
       <ModalP
-          ref={modalNoticeRef}
-          width="750px"
-          title="알림검색어 관리"
-          close
-          content={
-            <>
-              <div className="boardContainer">
-                <div className="boardSearch flexS ">
-                  <div className="tit">검색대상</div>
-                  <div className="cont">
-                    <select className="select">
-                      <option>고객센터</option>
-                      <option>전체</option>
-                    </select>
-                  </div>
-
-                  <div className="tit ml2">알림 검색어</div>
-                  <div className="cont flexJ">
-                    <input type="text" className="flex mr1" style={{width:'180px'}} />
-                    <button type="button" className="btn bgDarkBlue radius" style={{width:'80px'}}>검색</button>
-                  </div>
+        ref={modalNoticeRef}
+        width="750px"
+        title="알림검색어 관리"
+        close
+        content={
+          <>
+            <div className="boardContainer">
+              <div className="boardSearch flexS ">
+                <div className="tit">검색대상</div>
+                <div className="cont">
+                  <select className="select">
+                    <option>고객센터</option>
+                    <option>전체</option>
+                  </select>
                 </div>
 
-                <div className="boardList mt2">
-                  <table className="boardTabel">
-                    <colgroup>
-                      <col style={{width:'10%'}} />
-                      <col style={{width:'25%'}}/>
-                      <col/>
-                      <col style={{width:'10%'}}/>
-                    </colgroup>
-                    <thead>
+                <div className="tit ml2">알림 검색어</div>
+                <div className="cont flexJ">
+                  <input
+                    type="text"
+                    className="flex mr1"
+                    style={{ width: "180px" }}
+                  />
+                  <button
+                    type="button"
+                    className="btn bgDarkBlue radius"
+                    style={{ width: "80px" }}
+                  >
+                    검색
+                  </button>
+                </div>
+              </div>
+
+              <div className="boardList mt2">
+                <table className="boardTabel">
+                  <colgroup>
+                    <col style={{ width: "10%" }} />
+                    <col style={{ width: "25%" }} />
+                    <col />
+                    <col style={{ width: "10%" }} />
+                  </colgroup>
+                  <thead>
                     <tr>
                       <th>번호</th>
                       <th>카테고리</th>
@@ -1069,97 +1177,111 @@ const MainP = () => {
 
                       <th>삭제</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                  </thead>
+                  <tbody>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
                     <tr>
                       <td className="textBlack tc">1</td>
                       <td className="">우리상품 바로알기</td>
                       <td>이름네자</td>
 
-                      <td className="tc"><i className="iconDel"/></td>
+                      <td className="tc">
+                        <i className="iconDel" />
+                      </td>
                     </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="paginate">
-                  <button type="button" className="prev" />
-                  <strong>1</strong>
-                  <button type="button">2</button>
-                  <button type="button">3</button>
-                  <button type="button">4</button>
-                  <button type="button">5</button>
-                  <button type="button">6</button>
-                  <button type="button">7</button>
-                  <button type="button">8</button>
-                  <button type="button">9</button>
-                  <button type="button">10</button>
-                  <button type="button" className="next" />
-                </div>
+                  </tbody>
+                </table>
               </div>
-            </>
-          }
 
-
+              <div className="paginate">
+                <button type="button" className="prev" />
+                <strong>1</strong>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+                <button type="button">10</button>
+                <button type="button" className="next" />
+              </div>
+            </div>
+          </>
+        }
       />
-
     </>
   );
 };

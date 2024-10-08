@@ -51,7 +51,7 @@ const HeaderP = () => {
               onClick={() => confirmRef.current.show()}
             />
 
-            <div className="searchList">
+            <div className="searchList hide">
                 <div className="top">
                   <span>최근검색어</span>
                   <button type="button">전체삭제</button>
