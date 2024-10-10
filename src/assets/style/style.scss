@@ -1358,10 +1358,62 @@ main {
 
 
     }
+
+    &.tabWrap{
+      width: 800px;
+      display: block;
+      padding: 10px;
+
+      .csSearchWrap{
+        margin-bottom: 20px;
+        border-bottom: 1px solid #E9E9E9;
+        padding-bottom: 20px;
+        @include fj;
+        .search{
+          width:70%;
+
+          .btn{
+            background-color: #0075C2;
+            border-radius: 4px;
+          }
+        }
+        .view{
+          button{
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            margin-left: 10px;
+
+
+            &.on{
+              background-color:#E9EDF5;
+            }
+
+          }
+          .iconVewList{
+
+            background: url("../images/svg/icon-view-list.svg") center center no-repeat;
+            background-size: 28px;
+
+          }
+          .iconVewSearch{
+            background: url("../images/svg/icon-view-search.svg") center center no-repeat;
+            background-size: 20px;
+
+          }
+        }
+      }
+      section.section{
+        margin-left: 0;
+      }
+
+    }
   }
 
 
-}
+}//main
+
+
 
 .similarSearch{
 
@@ -2838,8 +2890,10 @@ main {
     z-index: 100;
     opacity: 0;
     font-size: 14px;
+    display: none;
     &.show{
       opacity: 1;
+      display: block;
     }
 
     .top {

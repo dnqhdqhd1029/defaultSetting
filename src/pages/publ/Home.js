@@ -81,9 +81,9 @@ const Home = () => {
         { path: "main", label: "Hot검색어 목록" , status: "완료",date:"2024-09-13 금"},
         { path: "main", label: "북마크관리 팝업" , status: "완료",date:"2024-09-25 수"},
         { path: "csMain", label: "============================ ", status: "" ,date:""},
-        { path: "csMain", label: "AI검색 목록형_고객센터 ", status: "진행중" ,date:"2024-10-11 금"},
-        { path: "concierge", label: "AI검색 프리뷰형_컨시어지_5 " , status: "진행중",date:"2024-10-18 금"},
-        { path: "concierge", label: "AI검색 목록형_컨시어지" , status: "진행중",date:"2024-10-18 금"},
+        { path: "csMain", label: "AI검색 목록형_고객센터 ", status: "완료" ,date:"2024-10-11 금"},
+        { path: "concierge", label: "AI검색 프리뷰형_컨시어지_5 " , status: "완료",date:"2024-10-11 금"},
+        { path: "concierge", label: "AI검색 목록형_컨시어지" , status: "완료",date:"2024-10-11 금"},
 
         { path: "counselingMain", label: "============================" , status: "=====",date:"====="},
         { path: "counselingMain", label: "지식상담 메인(고객수정반영이슈)" , status: "완료",date:"2024-09-25 수"},
