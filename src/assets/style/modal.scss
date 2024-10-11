@@ -59,6 +59,8 @@
 
       strong{
         @include fs;
+        width: 80%;
+        height: 50px;
 
         .btnSetting{
           width: 20px;
@@ -69,9 +71,15 @@
         }
       }
 
+      strong.txt{
+        @include ellipsisLine;
+        -webkit-line-clamp: 2;
+        height: 33px;
+      }
+
       span {
         color: #000000;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
       }
       button.close {
@@ -136,7 +144,7 @@
 
       .noneSearch {
         h5 {
-          font-size: 20px;
+          font-size: 18px;
           color: #0c0c0d;
           font-weight: 600;
         }
@@ -284,7 +292,11 @@
   }
 
   .previewContent{
-    min-height: 400px;
+    height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #A6B0BE transparent;
+    border-radius: 4px;
 
     .lnb{
       font-size: 12px;
@@ -300,7 +312,7 @@
       font-weight: 600;
       color: #0C0C0D;
       margin-bottom: 20px;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -513,6 +525,12 @@
 }
 
 .mainAiContainer{
+  height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #A6B0BE transparent;
+  border-radius: 4px;
+
   ul li{
     @include fs;
     border-bottom: 1px solid #F1F1F1;
@@ -545,6 +563,14 @@
         }
         &.mascoatD{
           background: url("../images/svg/icon-mascotD.svg") center center no-repeat;
+          background-size:contain;
+        }
+        &.mascoatE{
+          background: url("../images/svg/icon-mascotE.svg") center center no-repeat;
+          background-size:contain;
+        }
+        &.mascoatF{
+          background: url("../images/svg/icon-mascotF.svg") center center no-repeat;
           background-size:contain;
         }
       }
@@ -607,6 +633,86 @@
 
 
 }
+
+/*나의 프롬프트 선택*/
+.myPromptContainer{
+  margin-top: 30px;
+
+  & > div{
+    border-bottom: 1px solid #F1F1F1 ;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    &:last-of-type{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    button.setting{
+      width:20px;
+      height: 20px;
+      background: url("../images/svg/icon-setting-sm.svg") center center no-repeat;
+      background-size: contain;
+      margin-left: 5px;
+    }
+
+    dl {
+      dt{
+        font-size: 12px;
+        color: #7996B7;
+        margin-bottom:20px;
+        font-weight: 700;
+        @include fs;
+      }
+      dd{
+        & > button{
+          border-radius: 12px;
+          background: #F1F1F1;
+          padding: 8px 16px;
+          @include fc;
+          color: #0C0C0D;
+          font-size: 14px;
+          text-align: left;
+          margin-bottom: 15px;
+
+          &:hover{
+            background-color:#E2F0F8 ;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*자세히보기*/
+.detailViewContainer{
+  margin-top: 30px;
+  .info{
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .more{
+    margin-bottom: 30px;
+    & > button{
+      border-radius: 12px;
+      background: #F1F1F1;
+      padding: 8px 16px;
+      @include fc;
+      color: #0C0C0D;
+      font-size: 14px;
+      text-align: left;
+      margin-bottom: 15px;
+
+      &:hover{
+        background-color:#E2F0F8 ;
+      }
+    }
+  }
+
+}
+
+
 
 
 

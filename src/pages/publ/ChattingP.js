@@ -11,7 +11,9 @@ const ChattingP = ({ search, chattingFooter }) => {
   const confirmRef = useRef(null);
   const modalMyFileRef = useRef(null);
   const modalMyPromptRef = useRef(null);
+  const modalMyPromptSelectRef = useRef(null);
   const modalMainAiRef = useRef(null);
+  const modalSwiperRef = useRef(null);
   const [swiperRef, setSwiperRef] = useState(null);
   const [height, setHeight] = useState("100px"); // 초기 높이 설정
   const textareaRef = useRef(null);
@@ -38,7 +40,7 @@ const ChattingP = ({ search, chattingFooter }) => {
     etc02: false,
     etc03: false,
     etc04: false,
-    etc05: false,
+    etc05: false
   });
 
   const toggle = (type) => {
@@ -49,9 +51,11 @@ const ChattingP = ({ search, chattingFooter }) => {
   };
   return (
     <>
-      <div className={`counselingWrap scroll ${activeState.etc05 ? "show" : ""}`}>
+      
+      <div
+        className={`counselingWrap scroll ${activeState.etc05 ? "show" : ""}`}
+      >
         <div className="chattingWrap ">
-
           {/*class 이름 변경*/}
           <div className="aiTxt">
             <div className="cont">
@@ -83,44 +87,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -147,44 +150,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -192,11 +194,14 @@ const ChattingP = ({ search, chattingFooter }) => {
 
             {/*근거문서 작은화면일때*/}
             <div className="answerLink">
-              <button type="button" style={{cursor:'default'}}>
+              <button type="button" style={{ cursor: "default" }}>
                 <div>
                   <b>1</b>
-                  <strong >고객센터</strong>
-                  <span className="txt">링크 없는 근거문서 케이스링크 없는 근거문서 케이스링크 없는 근거문서 케이스</span>
+                  <strong>고객센터</strong>
+                  <span className="txt">
+                    링크 없는 근거문서 케이스링크 없는 근거문서 케이스링크 없는
+                    근거문서 케이스
+                  </span>
                 </div>
                 <em>2023-07-21</em>
               </button>
@@ -206,7 +211,10 @@ const ChattingP = ({ search, chattingFooter }) => {
                 <div>
                   <b>2</b>
                   <strong>부서홈페이지</strong>
-                  <span className="txt link">링크가 있는 근거문서 케이스링크가 있는 근거문서 케이스링크가 있는 근거문서 케이스</span>
+                  <span className="txt link">
+                    링크가 있는 근거문서 케이스링크가 있는 근거문서 케이스링크가
+                    있는 근거문서 케이스
+                  </span>
                 </div>
                 <em>2023-07-21</em>
               </button>
@@ -273,154 +281,157 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
             {/* end etcArea*/}
 
-            <Swiper
-              slidesPerView={2}
-              loop={true}
-              spaceBetween={20}
-              navigation={true}
-              modules={[Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="slideCont">
-                  <dl>
-                    <dt>
-                      <i className="iconNotice" />{" "}
-                      <strong>
-                        환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율
-                        변경 안내환전주머니 환율 우대율 변경 안내
-                      </strong>{" "}
-                    </dt>
-                    <dd className="txt">
-                      환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
-                      2022년 8월 30일 00시~02시
-                    </dd>
-                    <dd className="flexJ date">
-                      <span>2024.07.30</span>
-                      <button type="button" className="more">
-                        {" "}
-                        자세히 보기 <i className="iconRight" />{" "}
-                      </button>
-                    </dd>
-                  </dl>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="slideCont">
-                  <dl>
-                    <dt>
-                      <i className="iconNotice" />{" "}
-                      <strong>
-                        환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율
-                        변경 안내환전주머니 환율 우대율 변경 안내
-                      </strong>{" "}
-                    </dt>
-                    <dd className="txt">
-                      환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
-                      2022년 8월 30일 00시~02시
-                    </dd>
-                    <dd className="flexJ date">
-                      <span>2024.07.30</span>
-                      <button type="button" className="more">
-                        {" "}
-                        자세히 보기 <i className="iconRight" />{" "}
-                      </button>
-                    </dd>
-                  </dl>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="slideCont">
-                  <dl>
-                    <dt>
-                      <i className="iconNotice" />{" "}
-                      <strong>
-                        333환전주머니 환율 우대율 변경 안내환전주머니 환율
-                        우대율 변경 안내환전주머니 환율 우대율 변경 안내
-                      </strong>{" "}
-                    </dt>
-                    <dd className="txt">
-                      환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
-                      2022년 8월 30일 00시~02시
-                    </dd>
-                    <dd className="flexJ date">
-                      <span>2024.07.30</span>
-                      <button type="button" className="more">
-                        {" "}
-                        자세히 보기 <i className="iconRight" />{" "}
-                      </button>
-                    </dd>
-                  </dl>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="slideCont">
-                  <dl>
-                    <dt>
-                      <i className="iconNotice" />{" "}
-                      <strong>
-                        444환전주머니 환율 우대율 변경 안내환전주머니 환율
-                        우대율 변경 안내환전주머니 환율 우대율 변경 안내
-                      </strong>{" "}
-                    </dt>
-                    <dd className="txt">
-                      환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
-                      2022년 8월 30일 00시~02시
-                    </dd>
-                    <dd className="flexJ date">
-                      <span>2024.07.30</span>
-                      <button type="button" className="more">
-                        {" "}
-                        자세히 보기 <i className="iconRight" />{" "}
-                      </button>
-                    </dd>
-                  </dl>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+            <div className="swiperContainer">
+
+              <Swiper
+                slidesPerView={2}
+                loop={true}
+                spaceBetween={20}
+                navigation={true}
+                modules={[Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="slideCont">
+                    <dl>
+                      <dt>
+                        <i className="iconNotice" />
+                        <strong>
+                          환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율
+                          변경 안내환전주머니 환율 우대율 변경 안내
+                        </strong>
+                      </dt>
+                      <dd className="txt">
+                        환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
+                        2022년 8월 30일 00시~02시
+                      </dd>
+                      <dd className="flexJ date">
+                        <span>2024.07.30</span>
+                        <button type="button" className="more"
+                                onClick={() => modalSwiperRef.current.show()}>
+                          자세히 보기 <i className="iconRight" />
+                        </button>
+                      </dd>
+                    </dl>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="slideCont">
+                    <dl>
+                      <dt>
+                        <i className="iconNotice" />
+                        <strong>
+                          환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율
+                          변경 안내환전주머니 환율 우대율 변경 안내
+                        </strong>
+                      </dt>
+                      <dd className="txt">
+                        환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
+                        2022년 8월 30일 00시~02시
+                      </dd>
+                      <dd className="flexJ date">
+                        <span>2024.07.30</span>
+                        <button type="button" className="more">
+
+                          자세히 보기 <i className="iconRight" />
+                        </button>
+                      </dd>
+                    </dl>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="slideCont">
+                    <dl>
+                      <dt>
+                        <i className="iconNotice" />
+                        <strong>
+                          333환전주머니 환율 우대율 변경 안내환전주머니 환율
+                          우대율 변경 안내환전주머니 환율 우대율 변경 안내
+                        </strong>
+                      </dt>
+                      <dd className="txt">
+                        환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
+                        2022년 8월 30일 00시~02시
+                      </dd>
+                      <dd className="flexJ date">
+                        <span>2024.07.30</span>
+                        <button type="button" className="more">
+
+                          자세히 보기 <i className="iconRight" />
+                        </button>
+                      </dd>
+                    </dl>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="slideCont">
+                    <dl>
+                      <dt>
+                        <i className="iconNotice" />
+                        <strong>
+                          444환전주머니 환율 우대율 변경 안내환전주머니 환율
+                          우대율 변경 안내환전주머니 환율 우대율 변경 안내
+                        </strong>
+                      </dt>
+                      <dd className="txt">
+                        환전주머니 환율 우대율이 변경될 예정입니다. 변경예정일 :
+                        2022년 8월 30일 00시~02시
+                      </dd>
+                      <dd className="flexJ date">
+                        <span>2024.07.30</span>
+                        <button type="button" className="more">
+
+                          자세히 보기 <i className="iconRight" />
+                        </button>
+                      </dd>
+                    </dl>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+
+            </div>
           </div>
           <div className="question">
             <div className="cont">근저당권의 피담보채무 범위를 알려줘</div>
@@ -430,7 +441,7 @@ const ChattingP = ({ search, chattingFooter }) => {
               <p>
                 3명의 담당자가 있습니다.
                 <br />
-                담당자 이름을 선택하시면 상세 직원정보를 확인하실 수 있습니다.{" "}
+                담당자 이름을 선택하시면 상세 직원정보를 확인하실 수 있습니다.
               </p>
               <p>
                 <div className="memberData">
@@ -484,44 +495,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -534,8 +544,7 @@ const ChattingP = ({ search, chattingFooter }) => {
                 같습니다.
               </p>
               <p>
-                <div className="memberData">
-                
+                <div className="memberData person">
                   <div className="flexS alignS mb2">
                     <div className="img mr2">
                       <img src={imgImg} alt="" />
@@ -558,7 +567,6 @@ const ChattingP = ({ search, chattingFooter }) => {
                           <dl>
                             <dt>소속</dt>
                             <dd>우리은행/빅데이터플랫폼부</dd>
-
                           </dl>
                         </div>
                         <div className="grid-item">
@@ -578,7 +586,6 @@ const ChattingP = ({ search, chattingFooter }) => {
                                 <button type="button" className="iconSns" />
                               </div>
                             </dd>
-
                           </dl>
                         </div>
                         <div className="grid-item">
@@ -587,15 +594,13 @@ const ChattingP = ({ search, chattingFooter }) => {
                             <dd>김난희 부장 대우 유난희 차장</dd>
                           </dl>
                         </div>
-
-
                       </div>
 
                       <div className="gridContainer etc">
                         <div className="grid-item">
                           <dl>
                             <dt>담당업무</dt>
-                            <dd  className="fontSm">
+                            <dd className="fontSm">
                               데이터 자산화 팀장 - 팀업무 전반
                             </dd>
                           </dl>
@@ -617,7 +622,6 @@ const ChattingP = ({ search, chattingFooter }) => {
                           </dl>
                         </div>
                       </div>
-
 
                       {/*<div className="noneTable">
                         <table>
@@ -665,10 +669,9 @@ const ChattingP = ({ search, chattingFooter }) => {
                             </td>
                           </tr>
                         </table>*/}
-                      </div>
                     </div>
                   </div>
-
+                </div>
               </p>
             </div>
             <div className="etcArea flexJ">
@@ -678,44 +681,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -740,44 +742,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -859,44 +860,43 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                    type="button"
-                    className={`like ${activeState.etc01 ? "on" : ""}`}
-                    onClick={() => toggle('etc01')}
+                  type="button"
+                  className={`like ${activeState.etc01 ? "on" : ""}`}
+                  onClick={() => toggle("etc01")}
                 >
-
                   <span>좋아요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                    onClick={() => toggle('etc02')}
+                  type="button"
+                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                  onClick={() => toggle("etc02")}
                 >
                   <span>별로에요</span>
                 </button>
                 <button
-                    type="button"
-                    className={`message ${activeState.etc03 ? "on" : ""}`}
-                    onClick={() => toggle('etc03')}
+                  type="button"
+                  className={`message ${activeState.etc03 ? "on" : ""}`}
+                  onClick={() => toggle("etc03")}
                 >
                   <span>AI선택</span>
                 </button>
                 <button
-                    type="button"
-                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                    onClick={() => toggle('etc04')}
+                  type="button"
+                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                  onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                    type="button"
-                    className={`document ${activeState.etc05 ? "on" : ""}`}
-                    onClick={() => toggle('etc05')}
+                  type="button"
+                  className={`document ${activeState.etc05 ? "on" : ""}`}
+                  onClick={() => toggle("etc05")}
                 >
-              <span>
-                근거문서
-                <br />
-                보기
-              </span>
+                  <span>
+                    근거문서
+                    <br />
+                    보기
+                  </span>
                 </button>
               </div>
             </div>
@@ -905,57 +905,53 @@ const ChattingP = ({ search, chattingFooter }) => {
         </div>
         {/*end chattingWrap*/}
 
-
-
         {/*AI 선택*/}
         {activeState.etc03 && (
-        <div className="aiSelect">
-          <small>AI를 선택해 주세요</small>
-          <ul>
-            <li>
-              <button type="button">
-                <strong>전행 모든 지식 참조</strong> <br />
-                <span>
-                  검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                  적합합니다.
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <strong>전행 모든 지식 참조</strong> <br />
-                <span>
-                  검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                  적합합니다.
-                </span>
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <strong>전행 모든 지식 참조</strong> <br />
-                <span>
-                  검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                  적합합니다.
-                </span>
-              </button>
-            </li>
-          </ul>
-        </div>
+          <div className="aiSelect">
+            <small>AI를 선택해 주세요</small>
+            <ul>
+              <li>
+                <button type="button">
+                  <strong>전행 모든 지식 참조</strong> <br />
+                  <span>
+                    검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                    적합합니다.
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <strong>전행 모든 지식 참조</strong> <br />
+                  <span>
+                    검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                    적합합니다.
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <strong>전행 모든 지식 참조</strong> <br />
+                  <span>
+                    검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                    적합합니다.
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
         )}
         {/*end AI 선택*/}
 
         {/*연관 질문*/}
         {activeState.etc04 && (
-        <div className="questionsSelect">
-          <button type="button">질문에 대한 연관 질문 태그영역입니다 </button>
-          <button type="button">
-            연관검색어 선택 시 선택한 연관질문으로 다시 질문을 조회합니다{" "}
-          </button>
-        </div>
+          <div className="questionsSelect">
+            <button type="button">질문에 대한 연관 질문 태그영역입니다 </button>
+            <button type="button">
+              연관검색어 선택 시 선택한 연관질문으로 다시 질문을 조회합니다
+            </button>
+          </div>
         )}
         {/*end 연관 질문*/}
-
-
 
         {search && (
           <div className="searchArea">
@@ -968,12 +964,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             </div>
           </div>
         )}
-      </div >
+      </div>
       {/*end counselingWrap*/}
 
-
-      {/*근거문서*/}
-      <div className={`documentSelect aside ${activeState.etc05 ? "show" : "hide"}`}>
+      {/*근거문서  미니에서는 작동하지 않아요*/}
+      <div
+        className={`documentSelect aside ${activeState.etc05 ? "show" : "hide"}`}
+      >
         <div className="title">
           <strong>이자율 스왑</strong>
           <span>검색결과에 대한 근거문서입니다.</span>
@@ -984,19 +981,23 @@ const ChattingP = ({ search, chattingFooter }) => {
             <li>
               <span>1</span>
               <dl>
-                 <dt>
-                   <button>
-                     <div>
-                       <b>고객센터</b>
-                       <span className="txt link">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
-                     </div>
-                     <em>2023-07-21</em>
-
-                   </button>
-                 </dt>
-                 <dd>
-                   <span className="txt ">10. Q&A(상품설명서 內)1. Q&A 의무가입대상 기준은 어떻게 되나요? </span>
-                 </dd>
+                <dt>
+                  <button>
+                    <div>
+                      <b>고객센터</b>
+                      <span className="txt link">
+                        주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]
+                      </span>
+                    </div>
+                    <em>2023-07-21</em>
+                  </button>
+                </dt>
+                <dd>
+                  <span className="txt ">
+                    10. Q&A(상품설명서 內)1. Q&A 의무가입대상 기준은 어떻게
+                    되나요?
+                  </span>
+                </dd>
               </dl>
             </li>
             <li>
@@ -1006,13 +1007,17 @@ const ChattingP = ({ search, chattingFooter }) => {
                   <button>
                     <div>
                       <b>부서홈페이지</b>
-                      <span className="txt link">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
+                      <span className="txt link">
+                        주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]
+                      </span>
                     </div>
                     <em>2023-07-21</em>
                   </button>
                 </dt>
                 <dd>
-                  <span className="txt">금융시장에서 차입자의 기존부채 또는 신규 부채에 대한</span>
+                  <span className="txt">
+                    금융시장에서 차입자의 기존부채 또는 신규 부채에 대한
+                  </span>
                 </dd>
               </dl>
             </li>
@@ -1023,33 +1028,34 @@ const ChattingP = ({ search, chattingFooter }) => {
                   <button>
                     <div>
                       <b>부서홈페이지</b>
-                      <span className="txt">주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]</span>
+                      <span className="txt">
+                        주택도시보증공사주택도시보증공보증공사 [임대보증금 보증]
+                      </span>
                     </div>
                     <em>2023-07-21</em>
                   </button>
                 </dt>
                 <dd>
-                  <span className="txt">금융시장에서 차입자의 기존부채 또는 신규 부채에</span>
+                  <span className="txt">
+                    금융시장에서 차입자의 기존부채 또는 신규 부채에
+                  </span>
                   <div className="download">
                     <button type="button">
                       <i className="iconLink" /> 통화스왑(부채) 업무안내.hwp
                     </button>
                     <button type="button">
-                      <i className="iconLink" />  통화스왑(부채) 업무안내.hwp
+                      <i className="iconLink" /> 통화스왑(부채) 업무안내.hwp
                     </button>
                     <button type="button">
                       <i className="iconLink" /> 통화스왑(부채) 업무안내.hwp
                     </button>
                   </div>
                 </dd>
-
               </dl>
             </li>
           </ul>
         </div>
-
       </div>
-
 
       {/* end 근거문서*/}
       {chattingFooter && (
@@ -1059,9 +1065,15 @@ const ChattingP = ({ search, chattingFooter }) => {
               <span className="mr1">지식연계</span>
               <input type="checkbox" />
             </label>
-            <select className="selectRound ml3">
-              <option>프롬프트 선택</option>
-            </select>
+            <button
+              className="selectRound ml3"
+              onClick={() => modalMyPromptSelectRef.current.show()}
+            >
+              프롬프트 선택
+            </button>
+            {/*<select className="selectRound ml3">*/}
+            {/*  <option>프롬프트 선택</option>*/}
+            {/*</select>*/}
             <div className="searchArea ml3">
               <div className="search">
                 <textarea placeholder="궁금한 것을 질문해 보세요" />
@@ -1276,6 +1288,73 @@ const ChattingP = ({ search, chattingFooter }) => {
           console.log("callback");
         }}
       />
+      <ModalP
+          ref={modalMyPromptSelectRef}
+          title="프롬프트 선택"
+          close
+          width="638px"
+          content={
+            <>
+              <div className="myPromptContainer">
+                <div>
+                  <dl>
+                    <dt>추천 프롬프트</dt>
+                    <dd>
+                      <button type="button">
+                        빅데이터 사업부에서 관리하는 빅인사이트 연결해줘
+                      </button>
+                      <button type="button">
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                      </button>
+                      <button type="button">IRP 대리인 해지 가능해?</button>
+                      <button type="button">
+                        임대보증금 보증 일부가입 요건 알려줘
+                      </button>
+                      <button type="button">
+                        오늘 주요국 환율 표로 안내해줘
+                      </button>
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <dl>
+                    <dt>
+                      나의 프롬프트
+                      <button
+                          type="button"
+                          className="setting"
+                          onClick={() => modalMyPromptRef.current.show()}
+                      />
+                    </dt>
+                    <dd>
+                      <button type="button">
+                        빅데이터 사업부에서 관리하는 빅인사이트 연결해줘
+                      </button>
+                      <button type="button">
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                        빅데이터 사업부 비정형 데이터 자산화 사업 담당자 찾아줘
+                      </button>
+                      <button type="button">IRP 대리인 해지 가능해?</button>
+                      <button type="button">
+                        임대보증금 보증 일부가입 요건 알려줘
+                      </button>
+                      <button type="button">
+                        오늘 주요국 환율 표로 안내해줘
+                      </button>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </>
+          }
+          callback={() => {
+            console.log("callback");
+          }}
+      />
+      
       <ModalP
         ref={modalMyPromptRef}
         title="나의 프롬프트 관리"
@@ -1527,6 +1606,40 @@ const ChattingP = ({ search, chattingFooter }) => {
                     </dl>
                   </div>
                 </li>
+                <li>
+                  <label>
+                    <input type="radio" name="mascoat" />
+                    <span />
+                  </label>
+
+                  <div className="mascoat">
+                    <i className="mascoatE" />
+                    <dl>
+                      <dt>E Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                </li> <li>
+                <label>
+                  <input type="radio" name="mascoat" />
+                  <span />
+                </label>
+
+                <div className="mascoat">
+                  <i className="mascoatF" />
+                  <dl>
+                    <dt>F Type </dt>
+                    <dd>
+                      AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                      적합합니다.
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+                
               </ul>
             </div>
           </>
@@ -1537,6 +1650,40 @@ const ChattingP = ({ search, chattingFooter }) => {
           console.log("callback");
         }}
       />
+
+      <ModalP
+          ref={modalSwiperRef}
+          titleLine="환전주머니 환율 우대율 변경 안내환전주머니 환율
+          우대율 변경 안내환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율 변경 안내환전주머니 환율 우대율
+          변경 안내환전주머니 환율 우대율 변경 안내"
+          close
+          width="448px"
+          content={
+            <>
+              <div className="detailViewContainer">
+                
+                <div className="info">
+                <p>우리은행 ChatGPT, AI 지식상담입니다.<br/>
+                환전주머니 환율 우대율이 변경될 예정입니다.</p><br/>
+
+                  <p>변경예정일 : 2022년 8월 30일 00시~02시<br/>
+                변경 적용일은 사정에 따라 변경될 수 있습니다.</p>
+                </div>
+
+                <div className="more">
+                  <button type="button">환전주머니 환율 우대율 알려줘</button>
+                  <button type="button">IRP 대리인 해지 가능해?</button>
+                </div>
+              </div>
+            </>
+          }
+
+          callback={() => {
+            console.log("callback");
+          }}
+      />
+
+
     </>
   );
 };

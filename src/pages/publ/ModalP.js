@@ -3,7 +3,7 @@ import "../../assets/style/modal.scss";
 
 
 
-const ModalP = ({ btnSetting , width,header, title, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
+const ModalP = ({ btnSetting , width,header, title,titleLine, content, callback ,close ,btnText01 ,btnText02,info }, ref) => {
     const [visible, setVisible] = useState(false);
     const handleOk = () => {
         setVisible(false);
@@ -45,6 +45,22 @@ const ModalP = ({ btnSetting , width,header, title, content, callback ,close ,bt
                                   />
                               </div>
                           )}
+                          {titleLine && close && (
+                              <div className="top ">
+                                  <strong className="txt">{titleLine}
+
+                                      {btnSetting && (
+                                          <button type="button" className="btnSetting" />
+                                      )}
+                                  </strong>
+
+                                  <button
+                                      type="button"
+                                      className="close"
+                                      onClick={handleCancel}
+                                  />
+                              </div>
+                          )}
 
                           {title && !close && (
                               <div className="top">
@@ -53,7 +69,7 @@ const ModalP = ({ btnSetting , width,header, title, content, callback ,close ,bt
                           )}
 
 
-                          { close && !title && (
+                          { close && !title  && !titleLine &&  (
                               <div className="top borderNone">
                                   <strong />
                                   <button

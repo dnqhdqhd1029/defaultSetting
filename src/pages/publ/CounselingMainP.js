@@ -16,14 +16,12 @@ const CounselingMainP = () => {
     btnDown: false,
   });
 
-
   const toggle = (type) => {
     setActiveState((prevState) => ({
       ...prevState, // 기존 상태 유지
       [type]: !prevState[type], // 전달된 타입에 해당하는 상태만 토글
     }));
   };
-
 
   return (
     <>
@@ -36,7 +34,9 @@ const CounselingMainP = () => {
               className={`btnDown ${activeState.btnDown ? "on" : ""}`}
               onClick={() => toggle("btnDown")}
             />
-            <div className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}>
+            <div
+              className={`btnDownPopup ${activeState.btnDown ? "show" : ""}`}
+            >
               <button type="button" className="logo" />
               <button type="button" className="logoAi" />
             </div>
@@ -49,7 +49,6 @@ const CounselingMainP = () => {
               onClick={() => toggle("counseling")}
             >
               지난상담내역
-
             </button>
 
             <button
@@ -62,19 +61,23 @@ const CounselingMainP = () => {
           </div>
 
           <div
-              className={`counselingPopup ${activeState.counseling ? "show" : ""}`}
+            className={`counselingPopup ${activeState.counseling ? "show" : ""}`}
           >
             <div className="top ">
               <strong>
                 지난 상담 내역
                 <button
-                    type="button"
-                    className="btnSetting"
-                    onClick={() => modalCounselingRef.current.show()}
+                  type="button"
+                  className="btnSetting"
+                  onClick={() => modalCounselingRef.current.show()}
                 />
               </strong>
 
-              <button type="button" className="close"  onClick={() => toggle("counseling")}  />
+              <button
+                type="button"
+                className="close"
+                onClick={() => toggle("counseling")}
+              />
             </div>
 
             <div className="content">
@@ -135,7 +138,6 @@ const CounselingMainP = () => {
         ref={modalCounselingRef}
         title="지난 상담내역 관리"
         close
-
         width="943px"
         content={
           <>
@@ -148,12 +150,18 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <strong className="txt">
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이
+                              가능할까요? 체크카드 수령 시 모바일 운전면허증으로
+                              신분 확인이 가능할까요?
+                            </strong>
                             <button type="button" className="iconDel" />
                           </dt>
-                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
-                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="txt">
+                            AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후
+                            말줄임표시 원칙적으로 불가합니다. 대리인을 통해
+                            신규한 경우라도 대리인 해지는 불가능합니다.
+                          </dd>
                           <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
@@ -163,12 +171,18 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <strong className="txt">
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이
+                              가능할까요? 체크카드 수령 시 모바일 운전면허증으로
+                              신분 확인이 가능할까요?
+                            </strong>
                             <button type="button" className="iconDel" />
                           </dt>
-                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
-                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="txt">
+                            AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후
+                            말줄임표시 원칙적으로 불가합니다. 대리인을 통해
+                            신규한 경우라도 대리인 해지는 불가능합니다.
+                          </dd>
                           <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
@@ -178,12 +192,18 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <strong className="txt">
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이
+                              가능할까요? 체크카드 수령 시 모바일 운전면허증으로
+                              신분 확인이 가능할까요?
+                            </strong>
                             <button type="button" className="iconDel" />
                           </dt>
-                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
-                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="txt">
+                            AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후
+                            말줄임표시 원칙적으로 불가합니다. 대리인을 통해
+                            신규한 경우라도 대리인 해지는 불가능합니다.
+                          </dd>
                           <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
@@ -193,12 +213,18 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <strong className="txt">
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이
+                              가능할까요? 체크카드 수령 시 모바일 운전면허증으로
+                              신분 확인이 가능할까요?
+                            </strong>
                             <button type="button" className="iconDel" />
                           </dt>
-                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
-                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="txt">
+                            AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후
+                            말줄임표시 원칙적으로 불가합니다. 대리인을 통해
+                            신규한 경우라도 대리인 해지는 불가능합니다.
+                          </dd>
                           <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
@@ -208,21 +234,25 @@ const CounselingMainP = () => {
                       <div className="info">
                         <dl>
                           <dt>
-                            <strong  className="txt">체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?
-                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이 가능할까요?</strong>
+                            <strong className="txt">
+                              체크카드 수령 시 모바일 운전면허증으로 신분 확인이
+                              가능할까요? 체크카드 수령 시 모바일 운전면허증으로
+                              신분 확인이 가능할까요?
+                            </strong>
                             <button type="button" className="iconDel" />
                           </dt>
-                          <dd className="txt">AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후 말줄임표시 원칙적으로 불가합니다.
-                            대리인을 통해 신규한 경우라도 대리인 해지는 불가능합니다.</dd>
+                          <dd className="txt">
+                            AI 답변내용 표시영역, 텍스트 최대 2줄 노출 후
+                            말줄임표시 원칙적으로 불가합니다. 대리인을 통해
+                            신규한 경우라도 대리인 해지는 불가능합니다.
+                          </dd>
                           <dd className="date">2024.07.30</dd>
                         </dl>
                       </div>
                     </li>
-
                   </ul>
                 </div>
                 <div className="chatting">
-
                   <ChattingP />
 
                   {/*
@@ -234,16 +264,14 @@ const CounselingMainP = () => {
 
                   </div>
                   */}
-
-
-
                 </div>
               </div>
 
               <div className="btnWrap">
-                <button type="button" className="btn bgDarkBlue radius pull">이어서 상담하기</button>
+                <button type="button" className="btn bgDarkBlue radius pull">
+                  이어서 상담하기
+                </button>
               </div>
-
 
               <div className="paginate">
                 <button type="button" className="prev" />
@@ -284,7 +312,7 @@ const CounselingMainP = () => {
                         <input type="radio" checked name="01" />
                         <span>AI 검색</span>
                       </label>
-                 
+
                       <label className="button">
                         <input type="radio" name="01" />
                         <span>지식상담</span>

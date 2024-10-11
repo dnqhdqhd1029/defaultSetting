@@ -243,7 +243,7 @@ label.toggleSwitch span {
   background:none;
   padding-left: 0;
   color: $lightGray;
-  font-size: 16px;
+  font-size: 14px;
 }
 .buttonStyle label input[type="radio"]:checked + span,
 .buttonStyle label input[type="checkbox"]:checked + span {
@@ -351,11 +351,12 @@ select.select option {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 140px;
+  width: 150px;
   height: 40px;
   border-radius: 26px;
-  font-size: 16px;
-  background:#F1F1F1 url("../images/svg/icon-select.svg") 90% center no-repeat;
+  font-size: 14px;
+  text-align: left;
+  background:#F1F1F1 url("../images/svg/icon-select-right.svg") 90% center no-repeat;
 }
 
 /*date*/

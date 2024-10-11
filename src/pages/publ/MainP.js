@@ -1,11 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeaderP from "./HeaderP";
 import ModalP from "./ModalP";
+import ChattingP from "./ChattingP";
 import { Table } from "antd";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
 //import type { TableColumnsType, TableProps } from 'antd';
 import "../../assets/style/style.scss";
-import ChattingP from "./ChattingP";
+import "swiper/css";
+import 'swiper/css/pagination';
+
 const MainP = () => {
+  const [swiperRef, setSwiperRef] = useState(null);
   const [activeTab, setActiveTab] = useState("tab01");
   const [activeView, setActiveView] = useState("tab01");
   const [activeMenuTab, setActiveMenuTab] = useState("tab01");
@@ -64,6 +71,24 @@ const MainP = () => {
       underlineRef.current.style.width = `${offsetWidth}px`;
     }
   }, [activeTab]);
+
+  const slides = [
+    {
+      title: "여신은행 이자징수일",
+      description1: "자금세탁방지",
+      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+    },
+    {
+      title: "영업점검사",
+      description1: "여신업무 소홀 및 부실여신 사례",
+      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+    },
+    {
+      title: "영업점검사",
+      description1: "여신업무 소홀 및 부실여신 사례",
+      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+    }
+  ];
 
   return (
     <>
@@ -465,15 +490,15 @@ const MainP = () => {
                         </div>
 
                         {activeState.more && (
-                        <div className="infoMore">
-                          2024년 年初 집중영업을 위한 ‘24. 상반기「T.O.P of
-                          WOORI」스왑포인트 영업지원 운영 (2024.02.14) CIB 그룹
-                          1 취지 ? 기업금융 名家 재건을 위한 우량자산 확대 및
-                          ‘24년 금융시장 환경 * 감안 수익성 증대 추진 * 회사채
-                          만기 도래 규모 최대(70조원), ‘24.上 고금리 기조 유지
-                          이후 텍스트 최대 3줄 노출 후 넘치는 텍스트는 말줄임 해
-                          주세요
-                        </div>
+                          <div className="infoMore">
+                            2024년 年初 집중영업을 위한 ‘24. 상반기「T.O.P of
+                            WOORI」스왑포인트 영업지원 운영 (2024.02.14) CIB
+                            그룹 1 취지 ? 기업금융 名家 재건을 위한 우량자산
+                            확대 및 ‘24년 금융시장 환경 * 감안 수익성 증대 추진
+                            * 회사채 만기 도래 규모 최대(70조원), ‘24.上 고금리
+                            기조 유지 이후 텍스트 최대 3줄 노출 후 넘치는
+                            텍스트는 말줄임 해 주세요
+                          </div>
                         )}
                       </dd>
                     </dl>
@@ -601,45 +626,188 @@ const MainP = () => {
             </div>
           </div>
 
-          <div className="keyWordContainer">
-            <div className="title borderNone">연관 검색어</div>
-            <div className="content">
-              <ul className="dot">
-                <li>
-                  <button type="button">
-                    일이삼사오육칠팔구십일이삼사오육칠팔구
-                  </button>
-                </li>
-                <li>
-                  <button type="button">버팀목전세자금대출 한도조회</button>
-                </li>
-                <li>
-                  <button type="button">대출이자납입일</button>
-                </li>
-                <li>
-                  <button type="button">한도미사용수수료 VG</button>
-                </li>
-                <li>
-                  <button type="button">재형저축 비과세 한도</button>
-                </li>
-                <li>
-                  <button type="button">당좌 이자</button>
-                </li>
-                <li>
-                  <button type="button">신용보정서한도</button>
-                </li>
-                <li>
-                  <button type="button">한도 신청</button>
-                </li>
-                <li>
-                  <button type="button">기간연장 이자</button>
-                </li>
-                <li>
-                  <button type="button">이체한도 5억</button>
-                </li>
-              </ul>
+          <div className="otherContainer">
+            <div className="tabList">
+              <button
+                  type="button"
+                  className={`tab01 ${activeTab === "tab01" ? "active" : " "}`}
+                  onClick={() => handleTabClick("tab01")}
+                  ref={(el) => (tabButtonsRef.current[0] = el)}
+              >
+                북마크
+                {activeTab === "tab01" && (
+                    <button
+                        type="button"
+                        className="setting"
+                        onClick={() => modalBookMarkRef.current.show()}
+                    />
+                )}
+              </button>
+              <button
+                  type="button"
+                  className={`tab02 ${activeTab === "tab02" ? "active" : ""}`}
+                  onClick={() => handleTabClick("tab02")}
+                  ref={(el) => (tabButtonsRef.current[1] = el)}
+              >
+                My 헬프데스크
+              </button>
+              <button
+                  type="button"
+                  className={`tab03  ${activeTab === "tab03" ? "active" : ""}`}
+                  onClick={() => handleTabClick("tab03")}
+                  ref={(el) => (tabButtonsRef.current[2] = el)}
+              >
+                나의 즐겨찾기
+              </button>
+              <button
+                  type="button"
+                  className={`tab04  ${activeTab === "tab04" ? "active" : ""}`}
+                  onClick={() => handleTabClick("tab04")}
+                  ref={(el) => (tabButtonsRef.current[3] = el)}
+              >
+                알림 검색어
+                {activeTab === "tab04" && (
+                    <button
+                        type="button"
+                        className="setting"
+                        onClick={() => modalNoticeRef.current.show()}
+                    />
+                )}
+              </button>
+              <button
+                  type="button"
+                  className={`tab05 ${activeTab === "tab05" ? "active" : ""}`}
+                  onClick={() => handleTabClick("tab05")}
+                  ref={(el) => (tabButtonsRef.current[4] = el)}
+              >
+                인기 검색어
+              </button>
+              <div className="underline" ref={underlineRef} />
+            </div>
+
+            <div className="tabWrap">
+              {activeTab === "tab01" && (
+                  <>
+                    <div className="cont">
+                      <ol>
+                        <li>
+                        <span>
+                          <em>1</em>
+                          <button type="button" className="txt">
+                            -
+                          </button>
+                        </span>
+                          {/*<button type="button" className="iconDel" />*/}
+                        </li>
+                        <li>
+                        <span>
+                          <em>2</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>3</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>4</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>5</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>6</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>7</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>8</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>9</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                        <li>
+                        <span>
+                          <em>10</em>
+                          <button type="button" className="txt">
+                            일이삼사오육칠팔구십일이삼사오육칠
+                          </button>
+                        </span>
+                          <button type="button" className="iconDel" />
+                        </li>
+                      </ol>
+                    </div>
+                  </>
+              )}
+              {activeTab === "tab02" && (
+                  <>
+                    <div className="cont">tab02</div>
+                  </>
+              )}
+              {activeTab === "tab03" && (
+                  <>
+                    <div className="cont">tab03</div>
+                  </>
+              )}
+              {activeTab === "tab04" && (
+                  <>
+                    <div className="cont">tab04</div>
+                  </>
+              )}
+              {activeTab === "tab05" && (
+                  <>
+                    <div className="cont">tab05</div>
+                  </>
+              )}
             </div>
           </div>
+
+
         </section>
         <aside>
           <div className="aiContainer">
@@ -678,223 +846,73 @@ const MainP = () => {
             </div>
 
             <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`}>
-              <div className="content">
-                <div className="cont">
-                  <dl>
-                    <dt>
-                      <span>자금세탁방지</span>
-                    </dt>
-                    <dd className="info">
-                      <span className="txt">
-                        우리사잇돌중금리대 모바일 신청 시 비대면으로
-                      </span>
-                      <span>
-                        필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
-                        수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
-                        문의하시기 바랍니다.
-                      </span>
-                    </dd>
-                  </dl>
-                </div>
-                <div className="cont">
-                  <dl>
-                    <dt>
-                      <span>자금세탁방지</span>
-                    </dt>
-                    <dd className="info">
-                      <span className="txt">
-                        우리사잇돌중금리대 모바일 신청 시 비대면으로
-                      </span>
-                      <span>
-                        필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할
-                        수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게
-                        문의하시기 바랍니다.
-                      </span>
-                    </dd>
-                  </dl>
-                </div>
-              </div>
+              <Swiper
+                slidesPerView={slides.length === 1 ? 1 : 2} // 슬라이드가 1개면 전체로 표시
+                loop={true}
+                spaceBetween={20}
+                //navigation={true}
+                pagination={true} modules={[Pagination]}
+                className="mySwiper"
+              >
+                {slides.map((slide, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="content">
+                    <div className="slideCont cont">
+                      <dl>
+                        <dt>
+                          <span>{slide?.title}</span>
+                        </dt>
+                        <dd className="info">
+                          <span className="txt">{slide?.description1}</span>
+                          <span>{slide?.description2}</span>
+                        </dd>
+                      </dl>
+                    </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
             </div>
           </div>
 
-          <div className="otherContainer">
-            <div className="tabList">
-              <button
-                type="button"
-                className={`tab01 ${activeTab === "tab01" ? "active" : " "}`}
-                onClick={() => handleTabClick("tab01")}
-                ref={(el) => (tabButtonsRef.current[0] = el)}
-              >
-                북마크
-                {activeTab === "tab01" && (
-                  <button
-                    type="button"
-                    className="setting"
-                    onClick={() => modalBookMarkRef.current.show()}
-                  />
-                )}
-              </button>
-              <button
-                type="button"
-                className={`tab02 ${activeTab === "tab02" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab02")}
-                ref={(el) => (tabButtonsRef.current[1] = el)}
-              >
-                My 헬프데스크
-              </button>
-              <button
-                type="button"
-                className={`tab03  ${activeTab === "tab03" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab03")}
-                ref={(el) => (tabButtonsRef.current[2] = el)}
-              >
-                나의 즐겨찾기
-              </button>
-              <button
-                type="button"
-                className={`tab04  ${activeTab === "tab04" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab04")}
-                ref={(el) => (tabButtonsRef.current[3] = el)}
-              >
-                알림 검색어
-                {activeTab === "tab04" && (
-                  <button
-                    type="button"
-                    className="setting"
-                    onClick={() => modalNoticeRef.current.show()}
-                  />
-                )}
-              </button>
-              <button
-                type="button"
-                className={`tab05 ${activeTab === "tab05" ? "active" : ""}`}
-                onClick={() => handleTabClick("tab05")}
-                ref={(el) => (tabButtonsRef.current[4] = el)}
-              >
-                인기 검색어
-              </button>
-              <div className="underline" ref={underlineRef} />
-            </div>
-
-            <div className="tabWrap">
-              {activeTab === "tab01" && (
-                <>
-                  <div className="cont">
-                    <ol>
-                      <li>
-                        <span>
-                          <em>1</em>
-                          <button type="button" className="txt">
-                            -
-                          </button>
-                        </span>
-                        {/*<button type="button" className="iconDel" />*/}
-                      </li>
-                      <li>
-                        <span>
-                          <em>2</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>3</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>4</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>5</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>6</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>7</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>8</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>9</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                      <li>
-                        <span>
-                          <em>10</em>
-                          <button type="button" className="txt">
-                            일이삼사오육칠팔구십일이삼사오육칠
-                          </button>
-                        </span>
-                        <button type="button" className="iconDel" />
-                      </li>
-                    </ol>
-                  </div>
-                </>
-              )}
-              {activeTab === "tab02" && (
-                <>
-                  <div className="cont">tab02</div>
-                </>
-              )}
-              {activeTab === "tab03" && (
-                <>
-                  <div className="cont">tab03</div>
-                </>
-              )}
-              {activeTab === "tab04" && (
-                <>
-                  <div className="cont">tab04</div>
-                </>
-              )}
-              {activeTab === "tab05" && (
-                <>
-                  <div className="cont">tab05</div>
-                </>
-              )}
+          <div className="keyWordContainer">
+            <div className="title borderNone">연관 검색어</div>
+            <div className="content">
+              <ul className="dot">
+                <li>
+                  <button type="button">
+                    일이삼사오육칠팔구십일이삼사오육칠팔구
+                  </button>
+                </li>
+                <li>
+                  <button type="button">버팀목전세자금대출 한도조회</button>
+                </li>
+                <li>
+                  <button type="button">대출이자납입일</button>
+                </li>
+                <li>
+                  <button type="button">한도미사용수수료 VG</button>
+                </li>
+                <li>
+                  <button type="button">재형저축 비과세 한도</button>
+                </li>
+                <li>
+                  <button type="button">당좌 이자</button>
+                </li>
+                <li>
+                  <button type="button">신용보정서한도</button>
+                </li>
+                <li>
+                  <button type="button">한도 신청</button>
+                </li>
+                <li>
+                  <button type="button">기간연장 이자</button>
+                </li>
+                <li>
+                  <button type="button">이체한도 5억</button>
+                </li>
+              </ul>
             </div>
           </div>
         </aside>
