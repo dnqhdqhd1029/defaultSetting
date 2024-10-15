@@ -1,13 +1,13 @@
 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="24/24_file_icons">
-<mask id="mask0_598_48107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<mask id="mask0_671_44471" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
 <circle id="Ellipse 6" cx="10" cy="10" r="10" fill="#D6EEFA"/>
 </mask>
-<g mask="url(#mask0_598_48107)">
-<rect id="Rectangle 264" y="12" width="24" height="12" fill="#C8421D"/>
-<rect id="Rectangle 265" width="24" height="12" fill="#ED6B47"/>
-<rect id="Rectangle 266" x="12" width="12" height="12" fill="#FF8F6A"/>
-<path id="Vector" d="M6.66669 5H11.7109C12.8093 5 13.6324 5.26607 14.1795 5.7982C14.7267 6.33034 15 7.08745 15 8.06953C15 9.0516 14.7021 9.86803 14.1059 10.4366C13.5096 11.0052 12.5996 11.289 11.3759 11.289H9.7145V14.9996H6.66669V5ZM9.71492 9.26344H10.4585C11.0435 9.26344 11.4542 9.16006 11.6909 8.95289C11.9277 8.74613 12.0458 8.48134 12.0458 8.15807C12.0458 7.83481 11.9431 7.57806 11.7375 7.35987C11.532 7.14168 11.1458 7.03237 10.5787 7.03237H9.7145V9.26302L9.71492 9.26344Z" fill="white"/>
+<g mask="url(#mask0_671_44471)">
+<rect id="Rectangle 264" x="-2" y="10" width="24" height="12" fill="#FFB29B"/>
+<rect id="Rectangle 265" x="-2" y="-2" width="24" height="12" fill="#FFD7CA"/>
+<rect id="Rectangle 266" x="10" y="-2" width="12" height="12" fill="#FFEEE9"/>
+<path id="Vector" d="M6.66675 5H11.7109C12.8094 5 13.6324 5.26607 14.1796 5.7982C14.7267 6.33034 15.0001 7.08745 15.0001 8.06953C15.0001 9.0516 14.7022 9.86803 14.1059 10.4366C13.5097 11.0052 12.5997 11.289 11.376 11.289H9.71456V14.9996H6.66675V5ZM9.71498 9.26344H10.4585C11.0435 9.26344 11.4542 9.16006 11.691 8.95289C11.9277 8.74613 12.0459 8.48134 12.0459 8.15807C12.0459 7.83481 11.9431 7.57806 11.7376 7.35987C11.532 7.14168 11.1459 7.03237 10.5788 7.03237H9.71456V9.26302L9.71498 9.26344Z" fill="#C8421D"/>
 </g>
 </g>
 </svg>

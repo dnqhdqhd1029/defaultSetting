@@ -140,12 +140,8 @@ const MainP = () => {
                             고객센터 <em>21</em>
                           </span>
                         </button>
-                        {/*<button type="button">*/}
-                        {/*  <i className="iconEyeOn" />*/}
-                        {/*</button>*/}
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
+
                       </div>
                     </li>
                     <li>
@@ -155,9 +151,7 @@ const MainP = () => {
                             전자결재 <em>5</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -167,9 +161,7 @@ const MainP = () => {
                             규정 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -179,45 +171,37 @@ const MainP = () => {
                             우리상품 바로알기 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
-                    <li className="off">
+                    <li className="">
                       <div className="depthFirst">
                         <button type="button">
                           <span>
                             부서홈페이지 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
-                    <li className="off">
+                    <li className="">
                       <div className="depthFirst">
                         <button type="button">
                           <span>
                             게시 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
-                    <li className="off">
+                    <li className="">
                       <div className="depthFirst">
                         <button type="button">
                           <span>
                             업무포탈 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -227,9 +211,7 @@ const MainP = () => {
                             업무길라잡이 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -239,9 +221,7 @@ const MainP = () => {
                             은행사전 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -251,9 +231,7 @@ const MainP = () => {
                             직원정보 <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -263,9 +241,7 @@ const MainP = () => {
                             통합Q&A <em>2</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
                     </li>
                     <li>
@@ -275,13 +251,162 @@ const MainP = () => {
                             전산매뉴얼ABC <em>2</em>
                           </span>
                         </button>
+
+                      </div>
+                    </li>
+                  </ul>
+
+                  {/*편집일떄*/}
+                 <ul>
+                    <li className="on">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            고객센터
+                          </span>
+                        </button>
+
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            전자결재
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            규정
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            우리상품 바로알기
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            부서홈페이지
+                          </span>
+                        </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" />
                         </label>
                       </div>
                     </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            게시
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" />
+                        </label>
+                      </div>
+                    </li>
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button">
+                          <span>
+                            업무포탈
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            업무길라잡이
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            은행사전
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            직원정보
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            통합Q&A
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            전산매뉴얼ABC
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+                    </li>
                   </ul>
+
                 </>
+
               )}
               {activeMenuTab === "tab02" && (
                 <>
@@ -293,9 +418,7 @@ const MainP = () => {
                             수신 <em>21</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
 
                       <div className="depthTwo">
@@ -328,9 +451,7 @@ const MainP = () => {
                             여신 <em>21</em>
                           </span>
                         </button>
-                        <label className="toggleSwitch">
-                          <input type="checkbox" />
-                        </label>
+
                       </div>
 
                       <div className="depthTwo">
@@ -357,9 +478,101 @@ const MainP = () => {
                       </div>
                     </li>
                   </ul>
+
+                  {/*편집일떄*/}
+                  <ul>
+                    {/*체크 될때 on*/}
+                    <li className="on">
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            수신 <em>21</em>
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" checked />
+                        </label>
+                      </div>
+
+                      <div className="depthTwo">
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            투자상품PLAZA
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                      </div>
+                    </li>
+                    {/*체크해재 될때 off*/}
+                    <li className="off">
+                      <div className="depthFirst">
+                        <button type="button" className="">
+                          <span>
+                            여신
+                          </span>
+                        </button>
+                        <label className="toggleSwitch">
+                          <input type="checkbox" />
+                        </label>
+                      </div>
+
+                      <div className="depthTwo">
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            투자상품PLAZA<em>21</em>
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                        <button type="button" className="">
+                          <span>
+                            신탁PLAZA
+                          </span>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
                 </>
               )}
             </div>
+
+            <div className="menuSetting">
+              <button type="button">
+                <i className="iconSetting" />
+                <span>메뉴 편집</span>
+              </button>
+
+              {/*편집일떄*/}
+              {/*<div className="btnWrap">
+                <button type="button" className="btn bgInfo">취소</button>
+                <button type="button" className="btn bgDarkBlue">저장</button>
+              </div>*/}
+            </div>
+
+
+
           </div>
         </div>
         <section className="section">
@@ -626,6 +839,95 @@ const MainP = () => {
             </div>
           </div>
 
+          <div className="keyWordContainer">
+            <div className="title borderNone">연관 검색어</div>
+            <div className="content">
+              <button type="button">
+                일이삼사오육칠팔구십일이삼사오육칠팔구
+              </button>
+              <button type="button">버팀목전세자금대출 한도조회</button>
+              <button type="button">대출이자납입일</button>
+              <button type="button">한도미사용수수료 VG</button>
+              <button type="button">재형저축 비과세 한도</button>
+              <button type="button">당좌 이자</button>
+              <button type="button">신용보정서한도</button>
+              <button type="button">한도 신청</button>
+              <button type="button">기간연장 이자</button>
+              <button type="button">이체한도 5억</button>
+
+            </div>
+          </div>
+
+        </section>
+        <aside>
+          <div className="aiContainer">
+            <div className="title borderNone">
+              <div className="flexS">
+                <i className="iconMascot" />
+                <span> AI 지식상담 </span>
+                <button type="button" className="setting">
+                  전행 모든지식 참조
+                </button>
+              </div>
+              <button
+                type="button"
+                className={`iconUp  counseling ${activeState.counseling ? "" : "down"}`}
+                onClick={() => toggle("counseling")}
+              />
+            </div>
+
+            <div
+              className={` toggleWrap ${activeState.counseling ? "show" : ""}`}
+            >
+              <ChattingP search />
+            </div>
+          </div>
+
+          <div className="chetbotContainer">
+            <div className="title borderNone">
+              <span className="flexS alignC">
+                <i className="iconAi mr1" /> AI챗봇에게 물어보기
+              </span>
+              <button
+                type="button"
+                className={`iconUp chetbot ${activeState.chetbot ? "" : "down"}`}
+                onClick={() => toggle("chetbot")}
+              />
+            </div>
+
+            <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`}>
+              <Swiper
+                slidesPerView={slides.length === 1 ? 1 : 2} // 슬라이드가 1개면 전체로 표시
+                loop={true}
+                spaceBetween={20}
+                //navigation={true}
+                pagination={true} modules={[Pagination]}
+                className="mySwiper"
+              >
+                {slides.map((slide, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="content">
+                    <div className="slideCont cont">
+                      <dl>
+                        <dt>
+                          <span>{slide?.title}</span>
+                        </dt>
+                        <dd className="info">
+                          <span className="txt">{slide?.description1}</span>
+                          <span>{slide?.description2}</span>
+                        </dd>
+                      </dl>
+                    </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+            </div>
+          </div>
+
+
+
           <div className="otherContainer">
             <div className="tabList">
               <button
@@ -804,115 +1106,6 @@ const MainP = () => {
                     <div className="cont">tab05</div>
                   </>
               )}
-            </div>
-          </div>
-
-
-        </section>
-        <aside>
-          <div className="aiContainer">
-            <div className="title borderNone">
-              <div className="flexS">
-                <i className="iconMascot" />
-                <span> AI 지식상담 </span>
-                <button type="button" className="setting">
-                  전행 모든지식 참조
-                </button>
-              </div>
-              <button
-                type="button"
-                className={`iconUp  counseling ${activeState.counseling ? "" : "down"}`}
-                onClick={() => toggle("counseling")}
-              />
-            </div>
-
-            <div
-              className={` toggleWrap ${activeState.counseling ? "show" : ""}`}
-            >
-              <ChattingP search />
-            </div>
-          </div>
-
-          <div className="chetbotContainer">
-            <div className="title borderNone">
-              <span className="flexS alignC">
-                <i className="iconAi mr1" /> AI챗봇에게 물어보기
-              </span>
-              <button
-                type="button"
-                className={`iconUp chetbot ${activeState.chetbot ? "" : "down"}`}
-                onClick={() => toggle("chetbot")}
-              />
-            </div>
-
-            <div className={`chetbotWrap ${activeState.chetbot ? "show" : ""}`}>
-              <Swiper
-                slidesPerView={slides.length === 1 ? 1 : 2} // 슬라이드가 1개면 전체로 표시
-                loop={true}
-                spaceBetween={20}
-                //navigation={true}
-                pagination={true} modules={[Pagination]}
-                className="mySwiper"
-              >
-                {slides.map((slide, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="content">
-                    <div className="slideCont cont">
-                      <dl>
-                        <dt>
-                          <span>{slide?.title}</span>
-                        </dt>
-                        <dd className="info">
-                          <span className="txt">{slide?.description1}</span>
-                          <span>{slide?.description2}</span>
-                        </dd>
-                      </dl>
-                    </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-
-            </div>
-          </div>
-
-          <div className="keyWordContainer">
-            <div className="title borderNone">연관 검색어</div>
-            <div className="content">
-              <ul className="dot">
-                <li>
-                  <button type="button">
-                    일이삼사오육칠팔구십일이삼사오육칠팔구
-                  </button>
-                </li>
-                <li>
-                  <button type="button">버팀목전세자금대출 한도조회</button>
-                </li>
-                <li>
-                  <button type="button">대출이자납입일</button>
-                </li>
-                <li>
-                  <button type="button">한도미사용수수료 VG</button>
-                </li>
-                <li>
-                  <button type="button">재형저축 비과세 한도</button>
-                </li>
-                <li>
-                  <button type="button">당좌 이자</button>
-                </li>
-                <li>
-                  <button type="button">신용보정서한도</button>
-                </li>
-                <li>
-                  <button type="button">한도 신청</button>
-                </li>
-                <li>
-                  <button type="button">기간연장 이자</button>
-                </li>
-                <li>
-                  <button type="button">이체한도 5억</button>
-                </li>
-              </ul>
             </div>
           </div>
         </aside>

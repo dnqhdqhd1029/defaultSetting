@@ -22,7 +22,6 @@ header {
   background-color: #fff;
   border-bottom: 2px solid #e9e9e9;
 
-
   .header {
     @include fs;
     width: 1280px;
@@ -39,29 +38,30 @@ header {
       margin-right: 20px;
       @include fs;
 
-      &:before{
+      &:before {
         content: "";
         width: 154px;
         height: 36px;
         background: url("../images/svg/h1-logo.svg") left top no-repeat;
         background-size: contain;
-
       }
 
-      button{
+      button {
         width: 16px;
         height: 16px;
-        background: url("../images/svg/icon-arrow-logo-down.svg") center center no-repeat;
+        background: url("../images/svg/icon-arrow-logo-down.svg") center center
+          no-repeat;
         background-size: contain;
 
-        &.on{
-          background: url("../images/svg/icon-arrow-logo-up.svg") center center no-repeat;
+        &.on {
+          background: url("../images/svg/icon-arrow-logo-up.svg") center center
+            no-repeat;
         }
       }
 
-      .btnDownPopup{
+      .btnDownPopup {
         position: absolute;
-        left:-10px;
+        left: -10px;
         top: 55px;
         font-size: 12px;
         background-color: #fff;
@@ -76,25 +76,22 @@ header {
         @include fc;
         flex-direction: column;
         display: none;
-        &.show{
+        &.show {
           opacity: 1;
           display: flex;
         }
 
-
-
-
-        & > button{
+        & > button {
           width: 154px;
           height: 36px;
           margin-bottom: 20px;
-          &.logo{
+          &.logo {
             width: 154px;
             height: 36px;
             background: url("../images/svg/h1-logo.svg") left top no-repeat;
             background-size: contain;
           }
-          &.logoAi{
+          &.logoAi {
             width: 154px;
             height: 36px;
             background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
@@ -119,18 +116,17 @@ header {
         flex-direction: column;
         font-size: 12px;
 
-
         &.keyword {
           position: relative;
           margin-right: 10px;
           min-width: 58px;
           height: 48px;
-          &:before{
-            content: '';
+          &:before {
+            content: "";
             width: 28px;
             height: 28px;
             background: url("../images/svg/icon-keyword.svg") center center
-            no-repeat;
+              no-repeat;
             background-size: 28px;
             margin-bottom: 5px;
           }
@@ -141,13 +137,13 @@ header {
           width: 58px;
           height: 48px;
 
-          &:before{
-            content: '';
+          &:before {
+            content: "";
             width: 28px;
             height: 28px;
             margin-bottom: 5px;
             background: url("../images/svg/icon-detail.svg") center center
-            no-repeat;
+              no-repeat;
             background-size: 28px;
           }
         }
@@ -166,14 +162,13 @@ header {
         }
       }
 
-      label{
+      label {
         font-size: 14px;
-        span{
+        span {
           background-size: 16px;
           padding-left: 20px;
         }
       }
-
     }
 
     .searchWrap {
@@ -181,7 +176,7 @@ header {
       width: 480px;
       height: 56px;
       border-radius: 28px;
-      border: 1px solid #0C0C0D;
+      border: 1px solid #0c0c0d;
       background: #fff;
       @include fj;
       padding: 0 10px 0 20px;
@@ -204,7 +199,7 @@ header {
       }
 
       .searchList {
-        border: 1px solid #0C0C0D;
+        border: 1px solid #0c0c0d;
         background-color: #fff;
         max-width: 100%;
         position: absolute;
@@ -287,52 +282,59 @@ header {
   }
 }
 
-
 main {
-  width: 1440px;
+  width: 1620px;
   margin: 0 auto;
   padding-top: 70px;
 
   @include fj;
   align-items: flex-start;
 
-
-
   /*공통*/
 
-  .toggleWrap{
+  .toggleWrap {
     opacity: 0;
     height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease ;
-    &.show{
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease,
+      overflow 0.3s ease;
+    &.show {
       opacity: 1;
       height: auto;
       overflow: visible;
-      transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease;
+      transition:
+        opacity 0.3s ease,
+        height 0.3s ease,
+        overflow 0.3s ease;
     }
   }
-  .chetbotWrap{
+  .chetbotWrap {
     opacity: 0;
     height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease ;
-    &.show{
+    transition:
+      opacity 0.3s ease,
+      height 0.3s ease,
+      overflow 0.3s ease;
+    &.show {
       opacity: 1;
       height: auto;
       overflow: visible;
-      transition: opacity 0.3s ease, height 0.3s ease , overflow 0.3s ease;
+      transition:
+        opacity 0.3s ease,
+        height 0.3s ease,
+        overflow 0.3s ease;
     }
   }
 
-
-
-  ul.dot{
-    li{
+  ul.dot {
+    li {
       @include fs;
       margin-bottom: 5px;
-      &:before{
-        content: '';
+      &:before {
+        content: "";
         width: 4px;
         height: 4px;
         border-radius: 50%;
@@ -342,8 +344,8 @@ main {
     }
   }
 
-  .title{
-    border-bottom: 1px solid #E9E9E9;
+  .title {
+    border-bottom: 1px solid #e9e9e9;
     padding-bottom: 10px;
     @include fj;
     width: 100%;
@@ -351,22 +353,22 @@ main {
     font-size: 18px;
     font-weight: 600;
 
-    &.borderNone{
+    &.borderNone {
       border-bottom: none;
     }
 
-    span{
+    span {
       color: #000;
       font-size: 18px;
       font-weight: 600;
-      em{
-        color: #BEC7CD;
+      em {
+        color: #bec7cd;
         font-size: 12px;
         vertical-align: top;
       }
     }
 
-    select{
+    select {
       background-color: transparent;
       border: none;
       border-radius: 0;
@@ -375,184 +377,189 @@ main {
       font-weight: 600;
     }
 
-    .iconUp{
+    .iconUp {
       width: 24px;
       height: 24px;
       background: url("../images/svg/icon-arrow-up.svg") center center no-repeat;
       background-size: contain;
       margin-left: 10px;
 
-      &.down{
-        background: url("../images/svg/icon-arrow-down.svg") center center no-repeat;
+      &.down {
+        background: url("../images/svg/icon-arrow-down.svg") center center
+          no-repeat;
       }
     }
-
   }
 
-
   .menuContainer {
-
     width: 240px;
 
-    .tabMenu{
+    .tabMenu {
       //width: 260px;
       height: 47px;
-      background: #F1F1F1;
+      background: #f1f1f1;
       margin-bottom: 10px;
       @include fj;
-      button{
+      button {
         flex: 1;
         text-align: center;
         font-size: 12px;
         color: $lightGray;
 
-        &.on{
-          color:$black;
+        &.on {
+          color: $black;
           font-weight: 800;
         }
-        &:first-of-type{
+        &:first-of-type {
           position: relative;
-          after{
+          after {
             content: "";
             width: 1px;
             height: 10px;
-            background: #A6B0BE;
+            background: #a6b0be;
             display: inline-block;
             position: absolute;
             right: 0;
             top: 5px;
-
           }
         }
       }
     }
 
-    .menuWrap{
+    .menuWrap {
       //width: 260px;
+      position: relative;
       border-radius: 12px;
       border: 1px solid #ddd;
       background: #fff;
 
-      .menuTab{
+      .menuTab {
         @include fj;
         height: 58px;
 
-        button{
+        button {
           flex: 1;
           text-align: center;
           color: $lightGray;
-          border-bottom: 1px solid #D5E0E7;
+          border-bottom: 1px solid #d5e0e7;
           height: 100%;
 
-          &.on{
-            color:$black;
+          &.on {
+            color: $black;
             font-weight: 600;
-            border-bottom: 1px solid #0C0C0D;
+            border-bottom: 1px solid #0c0c0d;
           }
-          &:first-of-type{
+          &:first-of-type {
             position: relative;
-            after{
+            after {
               content: "";
               width: 1px;
               height: 10px;
-              background: #A6B0BE;
+              background: #a6b0be;
               display: inline-block;
               position: absolute;
               right: 0;
               top: 5px;
-
             }
           }
         }
       }
 
-      .menuList{
+      .menuList {
         padding: 20px;
         min-height: 617px;
         ul {
-          li{
+          padding-bottom: 30px;
+          li {
             border-radius: 8px;
 
-            .depthFirst{
+            .depthFirst {
               padding: 8px 10px;
               @include fj;
               height: 40px;
               border-radius: 12px;
 
-              & > button{
+              & > button {
                 height: 40px;
                 line-height: 24px;
 
-                em{
+                em {
                   font-size: 12px;
-                  color: #BEC7CD;
+                  color: #bec7cd;
                 }
 
-                .iconEyeOn{
+                .iconEyeOn {
                   width: 20px;
                   height: 20px;
-                  background: url("../images/svg/icon-eye.svg") center center no-repeat;
+                  background: url("../images/svg/icon-eye.svg") center center
+                    no-repeat;
                 }
-                .iconEyOff{
+                .iconEyOff {
                   width: 20px;
                   height: 20px;
-                  background: url("../images/svg/icon-eye-off.svg") center center no-repeat;
+                  background: url("../images/svg/icon-eye-off.svg") center
+                    center no-repeat;
                 }
-
               }
             }
 
             //li
-            &.on{
-              .depthFirst{
+            &.on {
+
+              .depthFirst,.depthTwo  {
                 //background-color: #F6FCFF;
-                button{
+                button {
                   //color: $black;
-                 // font-weight: 600;
-                  em{
+                  // font-weight: 600;
+                  em {
                     color: $primary;
+                  }
+
+                  &:hover{
+                    background: transparent;
                   }
                 }
               }
-
             }
-            &.off{
-              .depthFirst{
-                button{
-                  color: #A6B0BE;
-                  em{
-                  font-size: 12px;
-                  color: #BEC7CD;
-                }
+            &.off {
+
+              .depthFirst,.depthTwo {
+                button {
+                  color: #a6b0be;
+                  em {
+                    font-size: 12px;
+                    color: #bec7cd;
+                  }
+
+                  &:hover{
+                    background: transparent;
+                  }
                 }
               }
-
             }
 
-            &:hover{
-              .depthFirst{
-                background-color: #F6FCFF;
-                em{
+            &:hover {
+              .depthFirst {
+                background-color: #f6fcff;
+                em {
                   color: $primary;
                 }
               }
-
             }
-            &.off:hover{
-              .depthFirst{
+            &.off:hover {
+              .depthFirst {
                 background-color: transparent;
-                em{
-                  color: #BEC7CD;
+                em {
+                  color: #bec7cd;
                 }
               }
-
             }
 
-            .depthTwo{
+            .depthTwo {
               margin-top: 5px;
-              & > button{
+              & > button {
                 display: block;
-                width:85%;
+                width: 85%;
                 height: 28px;
                 line-height: 24px;
                 font-size: 14px;
@@ -563,37 +570,68 @@ main {
                 color: $gray;
                 border-radius: 8px;
 
-                em{
+                em {
                   font-size: 12px;
-                  color: #BEC7CD;
+                  color: #bec7cd;
                   margin-left: 5px;
                 }
 
-                &:hover{
-                  background-color: #FAFAFA;
+                &:hover {
+                  background-color: #fafafa;
                 }
 
-                &.on{
+                &.on {
                   color: $black;
                   font-weight: 600;
-                  background-color: #FAFAFA;
+                  background-color: #fafafa;
 
-                  em{
+                  em {
                     color: $primary;
                   }
-
                 }
-
               }
             }
+          }
+        }
+      }
 
+      .menuSetting {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
 
+        & > button {
+          @include fc;
+          display: inline-flex;
+          height: 28px;
+          background: #f5f5f5;
+          color: #4d545b;
+          border-radius: 16px;
+          padding: 0 15px;
+          font-size: 14px;
+        }
 
+        & > .btnWrap {
+          @include fj;
+          .btn {
+            border-radius: 16px;
+            height: 28px;
+            text-align: center;
+            flex: 1;
+
+            &.bgInfo {
+              color: #4d545b;
+            }
           }
         }
 
-
-
+        .iconSetting {
+          background: url("../images/svg/icon-setting-dark.svg") center center
+            no-repeat;
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
@@ -603,21 +641,18 @@ main {
     position: relative;
     margin: 0 20px;
 
-    .total{
+    .total {
       color: #898989;
       font-size: 18px;
       height: 47px;
       @include fs;
       margin-bottom: 10px;
 
-      strong{
-        color: #20C4F4;
+      strong {
+        color: #20c4f4;
         font-weight: 500;
       }
     }
-
-
-
 
     .listContainer {
       border-radius: 12px;
@@ -626,158 +661,160 @@ main {
       padding: 20px;
       margin-bottom: 20px;
 
-
-
-      .content{
-        border-bottom: 1px solid #F1F1F1;
+      .content {
+        border-bottom: 1px solid #f1f1f1;
         padding: 20px 0;
 
-        .lnb{
-          span{
+        .lnb {
+          span {
             display: inline-flex;
             height: 20px;
             padding: 2px 6px;
             align-items: center;
             justify-content: center;
             border-radius: 4px;
-            background:#7996B7;
+            background: #7996b7;
             font-size: 12px;
             color: #fff;
 
-            &.number{
-              background:#E7F2F9;
-              color: #0075C2;
-              margin-left:10px;
+            &.number {
+              background: #e7f2f9;
+              color: #0075c2;
+              margin-left: 10px;
             }
           }
-          em{
+          em {
             margin-left: 10px;
             font-size: 12px;
             color: $lightGray;
-            b{
+            b {
               color: $gray;
             }
           }
         }
 
-        & > dl{
+        & > dl {
           margin-top: 5px;
 
-          & > dt{
+          & > dt {
             @include fj;
             margin-bottom: 10px;
-            span.txt{
+            span.txt {
               font-weight: 600;
               color: $black;
-              background: url("../images/svg/icon-bookMark.svg") left center no-repeat;
+              background: url("../images/svg/icon-bookMark.svg") left center
+                no-repeat;
               padding-left: 30px;
               font-size: 18px;
               flex: 1;
               @include ellipsis;
             }
 
-
-            em{
-              color: #A6B0BE;
+            em {
+              color: #a6b0be;
               font-size: 12px;
             }
           }
-          dd.info{
-
+          dd.info {
             color: $black;
             font-size: 14px;
 
-            .txt{
+            .txt {
               @include ellipsis;
-              font-weight:600;
+              font-weight: 600;
               margin-bottom: 5px;
             }
-
           }
-          dd.download{
-            color:#7996B7;
+          dd.download {
+            color: #7996b7;
             font-size: 14px;
             margin-top: 5px;
-            button{
+            button {
               display: block;
               text-align: left;
               @include fs;
               margin-bottom: 5px;
 
-              i{
+              i {
                 margin-right: 5px;
               }
-              .iconPdf{
+              .iconPdf {
                 width: 20px;
                 height: 20px;
-                background: url("../images/svg/icon-pdf.svg") center center no-repeat;
+                background: url("../images/svg/icon-pdf.svg") center center
+                  no-repeat;
                 background-size: contain;
               }
-              .iconExcel{
+              .iconExcel {
                 width: 20px;
                 height: 20px;
-                background: url("../images/svg/icon-excel.svg") center center no-repeat;
+                background: url("../images/svg/icon-excel.svg") center center
+                  no-repeat;
                 background-size: contain;
               }
-              .iconWord{
+              .iconWord {
                 width: 20px;
                 height: 20px;
-                background: url("../images/svg/icon-word.svg") center center no-repeat;
+                background: url("../images/svg/icon-word.svg") center center
+                  no-repeat;
                 background-size: contain;
               }
-              .iconHwp{
+              .iconHwp {
                 width: 20px;
                 height: 20px;
-                background: url("../images/svg/icon-han.svg") center center no-repeat;
+                background: url("../images/svg/icon-han.svg") center center
+                  no-repeat;
                 background-size: contain;
               }
-              .iconPpt{
+              .iconPpt {
                 width: 20px;
                 height: 20px;
-                background: url("../images/svg/icon-ppt.svg") center center no-repeat;
+                background: url("../images/svg/icon-ppt.svg") center center
+                  no-repeat;
                 background-size: contain;
               }
-              .iconEtc{
-                 width: 20px;
-                 height: 20px;
-                 background: url("../images/svg/icon-etc.svg") center center no-repeat;
-                 background-size: contain;
-               }
-
+              .iconEtc {
+                width: 20px;
+                height: 20px;
+                background: url("../images/svg/icon-etc.svg") center center
+                  no-repeat;
+                background-size: contain;
+              }
             }
           }
-          dd.etc{
+          dd.etc {
             @include fj;
             margin-top: 10px;
-            button{
+            button {
               height: 28px;
               padding: 3px 20px 3px 10px;
               display: inline-flex;
-              border-radius:20px;
-              border: 1px solid #F1F1F1;
+              border-radius: 20px;
+              border: 1px solid #f1f1f1;
               color: $lightGray;
 
               font-size: 14px;
-              background:#F9F9F9 url("../images/svg/icon-arrow-next.svg") right center no-repeat;
+              background: #f9f9f9 url("../images/svg/icon-arrow-next.svg") right
+                center no-repeat;
             }
 
-            span button{
+            span button {
               margin-right: 10px;
             }
           }
 
-          dd.similarData{
-            background-color: #FAFAFA;
+          dd.similarData {
+            background-color: #fafafa;
             padding: 10px;
             margin: 10px 20px;
-            dt{
+            dt {
               @include fj;
               margin-bottom: 10px;
 
               & > div {
                 @include fs;
                 width: 60%;
-                span.label{
+                span.label {
                   display: inline-flex;
                   height: 20px;
                   padding: 2px 6px;
@@ -786,312 +823,182 @@ main {
                   border-radius: 4px;
                   font-size: 12px;
                   color: #fff;
-                  min-width:60px;
+                  min-width: 60px;
                   margin-right: 5px;
-                  background-color: #BEC7CD;
+                  background-color: #bec7cd;
                   color: #fff;
-
                 }
-                span.txt{
+                span.txt {
                   color: $black;
                   font-size: 12px;
                   @include ellipsis;
-                  font-weight:600;
+                  font-weight: 600;
                   flex: 1;
                 }
               }
 
-              em{
+              em {
                 margin-left: 10px;
                 font-size: 12px;
                 color: $lightGray;
-                b{
+                b {
                   color: $gray;
                 }
               }
             }
-            dd.info{
+            dd.info {
+              & > div {
+                span.txt {
+                  color: $black;
+                  font-size: 12px;
+                  @include ellipsis;
+                  font-weight: 600;
+                  flex: 1;
+                  margin-bottom: 0;
+                  color: #4d545b;
+                }
+                button.btnMore {
+                  background: url("../images/svg/icon-more-up.svg") right center
+                    no-repeat;
+                  background-size: 12px;
+                  font-size: 12px;
+                  padding-right: 15px;
+                  min-width: 60px;
 
-             & > div{
-               span.txt{
-                 color: $black;
-                 font-size: 12px;
-                 @include ellipsis;
-                 font-weight:600;
-                 flex: 1;
-                 margin-bottom: 0;
-                 color: #4D545B;
-               }
-               button.btnMore{
-                 background: url("../images/svg/icon-more-up.svg") right center no-repeat;
-                 background-size: 12px;
-                 font-size: 12px;
-                 padding-right: 15px;
-                 min-width: 60px;
+                  &.up {
+                    background: url("../images/svg/icon-more-down.svg") right
+                      center no-repeat;
+                  }
+                }
+              }
 
-                 &.up{
-                   background: url("../images/svg/icon-more-down.svg") right center no-repeat;
-                 }
-               }
-             }
-
-             .infoMore{
-               background-color: #fff;
-               font-size: 12px;
-               color: #7F8896;
-               margin: 10px 0;
-               padding: 10px;
-               @include ellipsisLine;
-               -webkit-line-clamp: 3;
-               line-height: 19px;
-               height: 71px;
-
-             }
-
-
-           }
+              .infoMore {
+                background-color: #fff;
+                font-size: 12px;
+                color: #7f8896;
+                margin: 10px 0;
+                padding: 10px;
+                @include ellipsisLine;
+                -webkit-line-clamp: 3;
+                line-height: 19px;
+                height: 71px;
+              }
+            }
           }
         }
 
-        .txtNone{
-          h5{
-            color:$gray;
+        .txtNone {
+          padding: 20px;
+          h5 {
+            color: $gray;
             font-size: 18px;
             margin-bottom: 20px;
-            b{
+            b {
               color: $primary;
             }
           }
-
-
         }
 
-        &:last-of-type{
-
+        &:last-of-type {
           border-bottom: none;
-
         }
       }
 
-
-
-      .more{
-
-        border-top:1px solid #F1F1F1 ;
+      .more {
+        border-top: 1px solid #f1f1f1;
         padding-top: 20px;
         margin-bottom: 20px;
 
-
-        button{
+        button {
           height: 60px;
           border-radius: 12px;
-          background:#FAFAFA;
+          background: #fafafa;
 
           width: 100%;
           @include fc;
           font-weight: 600;
           font-size: 14px;
-          i.iconAdd{
-            background: url("../images/svg/icon-add.svg") center center no-repeat;
+          i.iconAdd {
+            background: url("../images/svg/icon-add.svg") center center
+              no-repeat;
             width: 20px;
             height: 20px;
           }
         }
       }
     }
-
-    .otherContainer{
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      background-color: #fff;
-      min-height: 200px;
-
-      .tabList{
-        position: relative;
-        @include fs;
-        border-bottom: 1px solid #7F8896;
-        height:30px;
-
-        & > button {
-          background: transparent;
-          padding: 5px 0;
-          cursor: pointer;
-          font-size: 14px;
-          transition: color 0.3s;
-          color: #A6B0BE;
-
-          text-align: center;
-          @include fc;
-
-
-          &.tab01{
-            width:77px;
-
-          }
-          &.tab02{
-            width: 144px;
-
-          }
-          &.tab03{
-            width: 120px;
-
-          }
-          &.tab04{
-            width: 134px;
-
-          }
-          &.tab05{
-            width: 100px;
-
-          }
-
-          &.active {
-            color: #0C0C0D;
-            font-weight: 700;
-          }
-
-          button.setting{
-            width:16px;
-            height: 16px;
-            background: url("../images/svg/icon-setting-sm.svg") center center no-repeat;
-            background-size: contain;
-          }
-        }
-
-
-        .underline {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1px;
-          background: #0C0C0D;
-          transition: all 0.3s;
-          width: 100px;
-        }
-      }
-
-      .tabWrap{
-        .cont{
-          margin-top: 20px;
-          ol{
-            @include fs;
-            flex-wrap: wrap;
-            li{
-              width: 48%;
-              position: relative;
-              padding: 5px 0;
-              @include fs;
-
-              span{
-                flex: 1;
-                text-align: left;
-
-                em{
-                  width: 20px;
-                  margin-right: 10px;
-                  font-weight: 600;
-                }
-                button{
-
-                  @include ellipsis;
-                  width: 75%;
-                  text-align: left;
-                }
-              }
-
-
-
-              .iconDel{
-                width:20px;
-                height: 20px;
-                background: url("../images/svg/icon-del.svg") center center no-repeat;
-                position: absolute;
-                right: 10px;
-                top: 5px;
-              }
-
-            }
-          }
-        }
-      }
-    }
-
-
   }
 
   aside {
-    width: 400px;
+    width: 580px;
 
     //메인에서
-    .aiContainer{
+    .aiContainer {
       //border: 5px solid #000;
       margin-bottom: 20px;
 
-      .title{
+      .title {
         @include fj;
-        span{
+        height: 47px;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+        span {
           font-weight: 600;
           font-size: 18px;
           margin-left: 10px;
         }
 
-        .iconMascot{
+        .iconMascot {
           width: 36px;
           height: 36px;
-          background: url("../images/svg/icon-mascot.svg") center center no-repeat;
+          background: url("../images/svg/icon-mascot.svg") center center
+            no-repeat;
           background-size: contain;
         }
 
-
-
-        button.setting{
+        button.setting {
           height: 24px;
           margin: 0 10px;
-          color: #67809C;
+          color: #67809c;
           font-size: 14px;
           border-radius: 29px;
-          padding:3px 30px 3px 10px;
-          background: #F1F1F1 url("../images/svg/icon-setting-sm.svg") 95% center no-repeat;
+          padding: 3px 30px 3px 10px;
+          background: #f1f1f1 url("../images/svg/icon-setting-sm.svg") 95%
+            center no-repeat;
           background-size: 16px;
         }
-
       }
 
-
-
       /*미니 챗봇 (메인에서)*/
-      .chattingWrap{
-
-        .aiTxt{
-
+      .chattingWrap {
+        .aiTxt {
           ///background-size: 37px 34px;
           padding-left: 0;
           padding-top: 35px;
 
           .answerLink,
-          .cont{
+          .cont {
             width: 100%;
 
-            .memberData.person{
-              .flexS{
+            .memberData.person {
+              .flexS {
                 display: block;
               }
             }
           }
 
-          .keywordLink button{
-            padding:3px 10px ;
+          .keywordLink button {
+            padding: 3px 10px;
 
-            &:last-of-type{
+            &:last-of-type {
               margin-right: 0;
             }
           }
 
           .swiper {
             position: relative;
-            &:after{
-              content: '';
+            &:after {
+              content: "";
               background: url("../images/svg/bg-swipe.svg") right top no-repeat;
               width: 60px;
               height: 100%;
@@ -1100,70 +1007,66 @@ main {
               top: 0;
               z-index: 9;
             }
-
           }
-
-
         }
 
-        .gridContainer{
+        .gridContainer {
           display: grid;
           gap: 10px;
           grid-template-columns: repeat(1, 1fr); //열
-          grid-template-rows: repeat(3,auto); //행
-
+          grid-template-rows: repeat(3, auto); //행
         }
 
-        .etcArea{
+        .etcArea {
           padding-right: 0;
         }
       }
 
-      .documentSelect{
-        display:none;
+      .documentSelect {
+        display: none;
       }
     }
 
-
-    .chetbotContainer{
+    .chetbotContainer {
       border-radius: 12px;
-      background: #E9ECFC;
+      background: #e9ecfc;
       padding: 20px;
       margin-bottom: 20px;
       //min-height: 300px;
 
-      .iconAi{
+      .iconAi {
         width: 36px;
         height: 36px;
         background: url("../images/svg/icon-ai.svg") center center no-repeat;
         background-size: contain;
       }
 
-      .swiper{
+      .swiper {
         //height: 250px;
 
-        .swiper-wrapper{
+        .swiper-wrapper {
           height: auto;
         }
 
-        .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+        .swiper-pagination-fraction,
+        .swiper-pagination-custom,
+        .swiper-horizontal > .swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
           position: relative;
-          bottom:0;
+          bottom: 0;
           top: 0;
           margin-top: 5px;
         }
         .swiper-pagination-bullet-active {
-
-          background: #0C0C0D;
+          background: #0c0c0d;
         }
       }
 
-      .content{
+      .content {
         @include fs;
         align-items: flex-start;
 
-
-        .cont{
+        .cont {
           flex: 1;
           width: 48%;
           background: #fff;
@@ -1171,28 +1074,27 @@ main {
           margin-right: 20px;
           height: 220px;
 
-          &:last-of-type{
+          &:last-of-type {
             margin-right: 0;
           }
 
-          dl{
-            dt{
+          dl {
+            dt {
               color: $black;
               font-weight: 600;
               margin-bottom: 10px;
-              border-bottom: 1px solid #F1F1F1;
+              border-bottom: 1px solid #f1f1f1;
               padding-bottom: 10px;
             }
-            dd.info{
-              .txt{
+            dd.info {
+              .txt {
                 @include ellipsis;
                 color: $black;
                 font-weight: 500;
                 margin-bottom: 10px;
-
               }
 
-              span{
+              span {
                 color: $lightGray;
               }
             }
@@ -1200,184 +1102,145 @@ main {
         }
       }
     }
-
-
-
-    .keyWordContainer{
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-
-      .content{
-        ul.dot{
-          display: flex;
-          flex-wrap: wrap;
-          li{
-            //display: inline-block;
-            width: 48%;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            button{
-              @include ellipsis;
-              flex: 1;
-              text-align: left;
-              width: 90%;
-            }
-            &:nth-of-type(even){
-              margin-right: 0;
-            }
-          }
-        }
-      }
-
-
-    }
-
-
   }
-  &.csMain{
+  &.csMain {
     width: 1120px;
     margin: 0 auto;
     padding-top: 20px;
 
     .menuContainer {
-
       width: 300px;
-      .tabMenu{
+      .tabMenu {
         width: 300px;
         height: 47px;
-        background: #F1F1F1;
+        background: #f1f1f1;
         margin-bottom: 10px;
         @include fj;
-        button{
+        button {
           flex: 1;
           text-align: center;
           font-size: 12px;
           color: $lightGray;
 
-          &.on{
-            color:$black;
+          &.on {
+            color: $black;
             font-weight: 800;
           }
-          &:first-of-type{
+          &:first-of-type {
             position: relative;
-            after{
+            after {
               content: "";
               width: 1px;
               height: 10px;
-              background: #A6B0BE;
+              background: #a6b0be;
               display: inline-block;
               position: absolute;
               right: 0;
               top: 5px;
-
             }
           }
         }
       }
 
-      .menuWrap{
+      .menuWrap {
         width: 300px;
+        position: relative;
         border-radius: 12px;
         border: 1px solid #ddd;
         background: #fff;
 
-        button.all{
+        button.all {
           display: block;
           font-size: 14px;
-          background: url("../images/svg/icon-add-round.svg") left center no-repeat;
+          background: url("../images/svg/icon-add-round.svg") left center
+            no-repeat;
           background-size: 16px;
           padding-left: 25px;
           margin-bottom: 10px;
         }
 
-
-        .menuList{
+        .menuList {
           padding: 20px;
           min-height: 617px;
           ul {
-            & > li{
+            & > li {
               border-radius: 0;
 
-              & > button{
+              & > button {
                 height: 40px;
                 line-height: 24px;
 
                 font-size: 14px;
                 font-weight: 700;
-                background: url("../images/svg/icon-arrow-menu-down.svg") left center no-repeat;
+                background: url("../images/svg/icon-arrow-menu-down.svg") left
+                  center no-repeat;
                 padding-left: 20px;
-                em{
+                em {
                   font-size: 12px;
-                  color: #BEC7CD;
+                  color: #bec7cd;
                 }
 
-                &.on{
-                  color: #0C0C0D;
-                  em{
+                &.on {
+                  color: #0c0c0d;
+                  em {
                     color: $primary;
                   }
-
                 }
-
               }
 
-              .depthTwo{
+              .depthTwo {
                 margin-top: 5px;
-                 ul li{
-                   & > button{
-                     display: block;
-                     width:85%;
-                     height: 28px;
-                     line-height: 24px;
-                     font-size: 14px;
-                     text-align: left;
-                     padding-left: 10px;
-                     margin: 0 20px;
-                     margin-bottom: 5px;
-                     color: $gray;
-                     border-radius: 0;
-                     background: url("../images/svg/icon-arrow-menu-right.svg") left center no-repeat;
-                     padding-left: 20px;
+                ul li {
+                  & > button {
+                    display: block;
+                    width: 85%;
+                    height: 28px;
+                    line-height: 24px;
+                    font-size: 14px;
+                    text-align: left;
+                    padding-left: 10px;
+                    margin: 0 20px;
+                    margin-bottom: 5px;
+                    color: $gray;
+                    border-radius: 0;
+                    background: url("../images/svg/icon-arrow-menu-right.svg")
+                      left center no-repeat;
+                    padding-left: 20px;
 
-                     em{
-                       font-size: 12px;
-                       color: #BEC7CD;
-                       margin-left: 5px;
-                     }
+                    em {
+                      font-size: 12px;
+                      color: #bec7cd;
+                      margin-left: 5px;
+                    }
 
-                     &:hover{
-                       background-color: transparent;
-                     }
+                    &:hover {
+                      background-color: transparent;
+                    }
 
-                     &.on{
-                       color: $black;
-                       font-weight: 600;
-                       background-color: transparent;
+                    &.on {
+                      color: $black;
+                      font-weight: 600;
+                      background-color: transparent;
 
-                       em{
-                         color: $primary;
-                       }
+                      em {
+                        color: $primary;
+                      }
+                    }
+                  }
 
-                     }
-
-                     }
-
-                   &.on{
-                    & >  button{
-                       background: url("../images/svg/icon-arrow-menu-down.svg") left center no-repeat;
-                     }
-                   }
-                 }
+                  &.on {
+                    & > button {
+                      background: url("../images/svg/icon-arrow-menu-down.svg")
+                        left center no-repeat;
+                    }
+                  }
+                }
               }
 
-              .depthThree{
-
-                & > button{
+              .depthThree {
+                & > button {
                   display: block;
-                  width:85%;
+                  width: 85%;
                   height: 28px;
                   line-height: 24px;
                   font-size: 14px;
@@ -1387,164 +1250,285 @@ main {
                   margin-bottom: 5px;
                   color: $gray;
                   border-radius: 0;
-                  em{
+                  em {
                     font-size: 12px;
-                    color: #BEC7CD;
+                    color: #bec7cd;
                     margin-left: 5px;
                   }
 
-                  &:hover{
+                  &:hover {
                     background-color: transparent;
                   }
 
-                  &.on{
+                  &.on {
                     color: $black;
                     font-weight: 600;
                     background-color: transparent;
 
-                    em{
+                    em {
                       color: $primary;
                     }
-
                   }
-
                 }
               }
-
-
             }
           }
-
-
-
         }
       }
     }
 
-    section.section{
+    section.section {
       width: 800px;
 
-      .title{
-        .total{
-          height:auto;
+      .title {
+        .total {
+          height: auto;
           margin-bottom: 0;
         }
 
-        select{
+        select {
           font-size: 14px;
         }
       }
-      .content .lnb span.number{
+      .content .lnb span.number {
         margin-left: 0;
       }
 
-      .content dl dt span.txt{
+      .content dl dt span.txt {
         background: none;
         padding-left: 0;
       }
-
-
     }
 
-    &.tabWrap{
+    &.tabWrap {
       width: 800px;
       display: block;
       padding: 10px;
 
-      .csSearchWrap{
+      .csSearchWrap {
         margin-bottom: 20px;
-        border-bottom: 1px solid #E9E9E9;
+        border-bottom: 1px solid #e9e9e9;
         padding-bottom: 20px;
         @include fj;
-        .search{
-          width:70%;
+        .search {
+          width: 70%;
 
-          .btn{
-            background-color: #0075C2;
+          .btn {
+            background-color: #0075c2;
             border-radius: 4px;
           }
         }
-        .view{
-          button{
+        .view {
+          button {
             width: 40px;
             height: 40px;
             border-radius: 4px;
             margin-left: 10px;
 
-
-            &.on{
-              background-color:#E9EDF5;
+            &.on {
+              background-color: #e9edf5;
             }
-
           }
-          .iconVewList{
-
-            background: url("../images/svg/icon-view-list.svg") center center no-repeat;
+          .iconVewList {
+            background: url("../images/svg/icon-view-list.svg") center center
+              no-repeat;
             background-size: 28px;
-
           }
-          .iconVewSearch{
-            background: url("../images/svg/icon-view-search.svg") center center no-repeat;
+          .iconVewSearch {
+            background: url("../images/svg/icon-view-search.svg") center center
+              no-repeat;
             background-size: 20px;
-
           }
         }
       }
-      section.section{
+      section.section {
         margin-left: 0;
       }
-
     }
   }
 
+  .otherContainer {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    min-height: 200px;
 
-}//main
+    .tabList {
+      position: relative;
+      @include fs;
+      border-bottom: 1px solid #7f8896;
+      height: 30px;
 
+      & > button {
+        background: transparent;
+        padding: 5px 0;
+        cursor: pointer;
+        font-size: 14px;
+        transition: color 0.3s;
+        color: #a6b0be;
 
+        text-align: center;
+        @include fc;
 
-.similarSearch{
+        &.tab01 {
+          width: 77px;
+        }
+        &.tab02 {
+          width: 144px;
+        }
+        &.tab03 {
+          width: 120px;
+        }
+        &.tab04 {
+          width: 134px;
+        }
+        &.tab05 {
+          width: 100px;
+        }
 
-  background-color: #F1F8FD;
+        &.active {
+          color: #0c0c0d;
+          font-weight: 700;
+        }
+
+        button.setting {
+          width: 16px;
+          height: 16px;
+          background: url("../images/svg/icon-setting-sm.svg") center center
+            no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background: #0c0c0d;
+        transition: all 0.3s;
+        width: 100px;
+      }
+    }
+
+    .tabWrap {
+      .cont {
+        margin-top: 20px;
+        ol {
+          @include fs;
+          flex-wrap: wrap;
+          li {
+            width: 48%;
+            position: relative;
+            padding: 5px 0;
+            @include fs;
+
+            span {
+              flex: 1;
+              text-align: left;
+
+              em {
+                width: 20px;
+                margin-right: 10px;
+                font-weight: 600;
+              }
+              button {
+                @include ellipsis;
+                width: 75%;
+                text-align: left;
+              }
+            }
+
+            .iconDel {
+              width: 20px;
+              height: 20px;
+              background: url("../images/svg/icon-del.svg") center center
+                no-repeat;
+              position: absolute;
+              right: 10px;
+              top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .keyWordContainer {
+    margin-bottom: 20px;
+
+    @include fs;
+    align-items: flex-start;
+
+    .title {
+      font-weight: 700;
+      color: #000;
+      width: 100px;
+      padding-bottom: 0;
+      margin-right: 10px;
+    }
+
+    .content {
+      flex: 1;
+      button {
+        @include fc;
+        display: inline-flex;
+        border-radius: 12px;
+        background: #fff;
+        height: 34px;
+        color: #0c0c0d;
+        padding: 0 16px;
+        gap: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+
+        &:hover {
+          background: #dcebf5;
+        }
+      }
+    }
+  }
+} //main
+
+.similarSearch {
+  background-color: #f1f8fd;
   height: 48px;
   @include fc;
-  dl{
-
+  dl {
     font-size: 14px;
     @include fc;
-    dt{
-      color: #0C0C0D;
+    dt {
+      color: #0c0c0d;
       display: inline-block;
       font-weight: 700;
       margin-right: 10px;
     }
-    dd{
+    dd {
       display: inline-block;
       margin-right: 10px;
-      button{
+      button {
         border-radius: 18px;
-        background:#FFF;
+        background: #fff;
         display: inline-flex;
         padding: 4px 10px;
-        color: #7996B7;
+        color: #7996b7;
         @include fc;
 
-        &.more{
-          background-color: #E7F2F9;
-          color: #4D545B;
+        &.more {
+          background-color: #e7f2f9;
+          color: #4d545b;
         }
       }
     }
   }
 }
 
-
-
-
-.paginate{
-  border-top:1px solid #F1F1F1 ;
+.paginate {
+  border-top: 1px solid #f1f1f1;
   padding-top: 20px;
   @include fc;
-  strong{
+  strong {
     width: 40px;
     height: 40px;
     margin: 0 5px;
@@ -1555,25 +1539,25 @@ main {
     align-items: center;
     justify-content: center;
   }
-  button{
+  button {
     width: 40px;
     height: 40px;
     margin: 0 5px;
     text-align: center;
-    &.prev{
-      background: url("../images/svg/icon-paginate-prev.svg") center center no-repeat;
-
+    &.prev {
+      background: url("../images/svg/icon-paginate-prev.svg") center center
+        no-repeat;
     }
-    &.next{
-      background: url("../images/svg/icon-paginate-next.svg") center center no-repeat;
-
+    &.next {
+      background: url("../images/svg/icon-paginate-next.svg") center center
+        no-repeat;
     }
   }
 }
 
 /*counselingWrap 쳇팅 관련 css*/
-.counselingWrap{
-  background-color: #F1F8FD;
+.counselingWrap {
+  background-color: #f1f8fd;
   border-radius: 12px;
   border: 1px solid #ddd;
   padding: 20px;
@@ -1581,11 +1565,8 @@ main {
   overflow-y: auto;
   position: relative;
 
-
-
-  .chattingWrap{
-
-    .aiTxt{
+  .chattingWrap {
+    .aiTxt {
       overflow: hidden;
       //display: inline-flex;
       //align-items: flex-start;
@@ -1595,14 +1576,13 @@ main {
       background-size: 47px 43px;
       padding-left: 55px;
 
-      @include mobile{
+      @include mobile {
         padding-left: 0;
         padding-top: 45px;
       }
 
-
-      .iconMascot{
-        content: '';
+      .iconMascot {
+        content: "";
         width: 47px;
         height: 47px;
         background: url("../images/svg/icon-mascot.svg") center center no-repeat;
@@ -1611,10 +1591,10 @@ main {
         margin-right: 5px;
         float: left;
       }
-      .cont{
+      .cont {
         border-radius: 0px 20px 20px 20px;
-        background: #FFF;
-        padding:20px ;
+        background: #fff;
+        padding: 20px;
         margin-top: 15px;
         display: inline-block;
         font-size: 14px;
@@ -1623,232 +1603,229 @@ main {
         line-height: 20px;
         width: 95%;
 
-        @include mobile{
+        @include mobile {
           margin-bottom: 20px;
         }
 
-
-        p{
+        p {
           margin-bottom: 10px;
 
-          button.bgGray{
+          button.bgGray {
             display: inline-flex;
             height: 28px;
             padding: 14px 16px;
             border-radius: 14px;
-            background: #F1F1F1;
+            background: #f1f1f1;
             align-items: center;
             margin-bottom: 10px;
             margin-right: 5px;
           }
-          .iconInfo{
+          .iconInfo {
             width: 16px;
             height: 16px;
-            background: url("../images/svg/icon-info.svg") center center no-repeat;
+            background: url("../images/svg/icon-info.svg") center center
+              no-repeat;
             background-size: contain;
             margin-right: 5px;
           }
-          .iconInfoDarkGray{
+          .iconInfoDarkGray {
             width: 16px;
             height: 16px;
-            background: url("../images/svg/icon-info-darkGray.svg") center center no-repeat;
+            background: url("../images/svg/icon-info-darkGray.svg") center
+              center no-repeat;
             background-size: contain;
             margin-right: 5px;
           }
 
-          small{
-            color: #A6B0BE;
+          small {
+            color: #a6b0be;
           }
-
-
         }
-        .bgYellow{
-          background-color: #FFF5EA;
+        .bgYellow {
+          background-color: #fff5ea;
           padding: 10px;
         }
-
-
       }
 
-      .answerLink{
+      .answerLink {
         border-radius: var(--Corner-Full, 1000px);
-        background: #E2F0F8;
+        background: #e2f0f8;
         min-height: 40px;
         padding: 5px 20px;
-        margin:10px 0;
+        margin: 10px 0;
         width: 95%;
         text-align: left;
         border-radius: 20px;
         vertical-align: middle;
 
-        & > button{
+        & > button {
           display: block;
           width: 100%;
           text-align: left;
           @include fj;
           align-items: flex-start;
 
-
-
-          & > div{
+          & > div {
             width: 80%;
             @include fs;
-            b{
+            b {
               width: 15px;
             }
-            b,strong{
-              color:$darkBlue;
+            b,
+            strong {
+              color: $darkBlue;
               margin-right: 5px;
             }
-            span.txt{
+            span.txt {
               @include ellipsis;
               flex: 1;
               width: 50%;
               color: $gray;
-              &.link{
+              &.link {
                 color: $primary;
               }
             }
-
-
-
           }
 
-          em{
+          em {
             font-size: 12px;
             color: $lightGray;
             padding-top: 5px;
           }
         }
 
-
-
-        div.download{
-          color:$gray;
+        div.download {
+          color: $gray;
           font-size: 14px;
           padding-top: 5px;
           clear: both;
 
-          button{
+          button {
             display: block;
             text-align: left;
             @include fs;
             margin-bottom: 5px;
             font-size: 12px;
 
-            i{
+            i {
               margin-right: 5px;
             }
-            .iconPdf{
+            .iconPdf {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-pdf.svg") center center no-repeat;
+              background: url("../images/svg/icon-pdf.svg") center center
+                no-repeat;
               background-size: contain;
             }
-            .iconExcel{
+            .iconExcel {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-excel.svg") center center no-repeat;
+              background: url("../images/svg/icon-excel.svg") center center
+                no-repeat;
               background-size: contain;
             }
-            .iconWord{
+            .iconWord {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-word.svg") center center no-repeat;
+              background: url("../images/svg/icon-word.svg") center center
+                no-repeat;
               background-size: contain;
             }
-            .iconHwp{
+            .iconHwp {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-han.svg") center center no-repeat;
+              background: url("../images/svg/icon-han.svg") center center
+                no-repeat;
               background-size: contain;
             }
-            .iconPpt{
+            .iconPpt {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-ppt.svg") center center no-repeat;
+              background: url("../images/svg/icon-ppt.svg") center center
+                no-repeat;
               background-size: contain;
             }
-            .iconEtc{
+            .iconEtc {
               width: 20px;
               height: 20px;
-              background: url("../images/svg/icon-etc.svg") center center no-repeat;
+              background: url("../images/svg/icon-etc.svg") center center
+                no-repeat;
               background-size: contain;
             }
           }
         }
       }
 
-      .keywordLink{
+      .keywordLink {
         margin-top: 20px;
         margin-bottom: 20px;
 
-        button{
+        button {
           height: 40px;
           padding: 3px 20px;
-          border-radius:20px;
-          background:#FFF;
+          border-radius: 20px;
+          background: #fff;
           color: $black;
           margin-right: 10px;
         }
       }
-
     }
 
-    .question{
-
+    .question {
       text-align: right;
       margin: 20px 0;
-      .cont{
+      .cont {
         border-radius: 45px 22px 0px 45px;
-        background: var(--3-point-color-33-sky-blue, #219BF1);
+        background: var(--3-point-color-33-sky-blue, #219bf1);
         color: #fff;
         padding: 8px 20px;
         display: inline-block;
       }
     }
   }
-  .etcArea{
+  .etcArea {
     margin: 20px 0;
     margin-bottom: 0;
-    padding-right:85px;
+    padding-right: 85px;
 
-    @include mobile{
+    @include mobile {
       padding-left: 0;
       padding-right: 0;
     }
 
-    .ect{
-      button{
+    .ect {
+      button {
         position: relative;
         width: 28px;
         height: 28px;
         border-radius: 10px;
         background-size: contain;
         margin-left: 10px;
-        &.like{
+        &.like {
           background: url("../images/svg/icon-like.svg") center center no-repeat;
         }
-        &.dislike{
-          background: url("../images/svg/icon-dislike.svg") center center no-repeat;
+        &.dislike {
+          background: url("../images/svg/icon-dislike.svg") center center
+            no-repeat;
         }
-        &.message{
-          background: url("../images/svg/icon-message.svg") center center no-repeat;
+        &.message {
+          background: url("../images/svg/icon-message.svg") center center
+            no-repeat;
         }
-        &.hashtag{
-          background: url("../images/svg/icon-hashtag.svg") center center no-repeat;
+        &.hashtag {
+          background: url("../images/svg/icon-hashtag.svg") center center
+            no-repeat;
         }
-        &.document{
-          background: url("../images/svg/icon-document.svg") center center no-repeat;
+        &.document {
+          background: url("../images/svg/icon-document.svg") center center
+            no-repeat;
+        }
 
-        }
-
-
-        span{
+        span {
           opacity: 0;
           height: 0;
           border-radius: 14px;
-          background: var(--1-dark-color-11-black, #0C0C0D);
+          background: var(--1-dark-color-11-black, #0c0c0d);
           //transition: opacity 0.3s ease, height 0.1s ease;
           position: relative;
           //min-width: 90px;
@@ -1857,41 +1834,44 @@ main {
           display: inline-flex;
           align-items: center;
           text-align: center;
-
-
         }
 
-        &.on{
-
-          &.like{
-            background: url("../images/svg/icon-like-on.svg") center center no-repeat;
+        &.on {
+          &.like {
+            background: url("../images/svg/icon-like-on.svg") center center
+              no-repeat;
           }
-          &.dislike{
-            background: url("../images/svg/icon-dislike-on.svg") center center no-repeat;
+          &.dislike {
+            background: url("../images/svg/icon-dislike-on.svg") center center
+              no-repeat;
           }
-          &.message{
-            background: url("../images/svg/icon-message-on.svg") center center no-repeat;
+          &.message {
+            background: url("../images/svg/icon-message-on.svg") center center
+              no-repeat;
           }
-          &.hashtag{
-            background: url("../images/svg/icon-hashtag-on.svg") center center no-repeat;
+          &.hashtag {
+            background: url("../images/svg/icon-hashtag-on.svg") center center
+              no-repeat;
           }
-          &.document{
-            background: url("../images/svg/icon-document-on.svg") center center no-repeat;
-
+          &.document {
+            background: url("../images/svg/icon-document-on.svg") center center
+              no-repeat;
           }
-          &:hover{
-            background-color: #E2F0F8;
+          &:hover {
+            background-color: #e2f0f8;
           }
         }
 
-        &:hover{
-          background-color: #E2F0F8;
+        &:hover {
+          background-color: #e2f0f8;
 
-          span{
+          span {
             opacity: 1;
             min-width: 90px;
             min-height: 28px;
-            transition: opacity 0.3s ease, height 0.1s ease;
+            transition:
+              opacity 0.3s ease,
+              height 0.1s ease;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -1900,7 +1880,7 @@ main {
             top: 30px;
             left: -30px;
 
-            em{
+            em {
               min-width: 80px;
               padding: 0 10px;
             }
@@ -1913,14 +1893,14 @@ main {
             left: 50%; /* 화살표를 중앙에 위치 */
             transform: translateX(-50%);
             width: 5px;
-            height:5px;
+            height: 5px;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            border-bottom: 5px solid #0C0C0D; /* 화살표 색상 (말풍선과 동일) */
+            border-bottom: 5px solid #0c0c0d; /* 화살표 색상 (말풍선과 동일) */
             //border: 1px solid red;
           }
 
-          &.document span{
+          &.document span {
             line-height: 18px;
             min-height: 45px;
           }
@@ -1929,7 +1909,7 @@ main {
     }
   }
 
-  .searchArea{
+  .searchArea {
     clear: both;
     @include fj;
     margin-top: 20px;
@@ -1938,21 +1918,21 @@ main {
     bottom: 0;
     z-index: 100;
 
-    button.iconScale{
-
+    button.iconScale {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: #fff url("../images/svg/icon-scale.svg") center center no-repeat;
+      background: #fff url("../images/svg/icon-scale.svg") center center
+        no-repeat;
       background-size: 24px;
       margin-right: 5px;
       box-shadow: 1px 1px 10px #ccc;
 
-      span{
+      span {
         opacity: 0;
         height: 0;
         border-radius: 14px;
-        background: var(--1-dark-color-11-black, #0C0C0D);
+        background: var(--1-dark-color-11-black, #0c0c0d);
         position: relative;
         color: #fff;
         display: inline-flex;
@@ -1960,12 +1940,14 @@ main {
         text-align: center;
       }
 
-      &:hover{
-        span{
+      &:hover {
+        span {
           opacity: 1;
           min-width: 120px;
           min-height: 28px;
-          transition: opacity 0.3s ease, height 0.1s ease;
+          transition:
+            opacity 0.3s ease,
+            height 0.1s ease;
           color: #fff;
           display: flex;
           justify-content: center;
@@ -1974,7 +1956,7 @@ main {
           top: -50px;
           left: -30px;
 
-          em{
+          em {
             min-width: 80px;
             padding: 0 10px;
           }
@@ -1987,31 +1969,29 @@ main {
           left: 50%; /* 화살표를 중앙에 위치 */
           transform: translateX(-50%);
           width: 5px;
-          height:5px;
+          height: 5px;
           border-left: 5px solid transparent;
           border-right: 5px solid transparent;
-          border-top: 5px solid #0C0C0D; /* 화살표 색상 (말풍선과 동일) */
+          border-top: 5px solid #0c0c0d; /* 화살표 색상 (말풍선과 동일) */
           //border: 1px solid red;
         }
 
-        &.document span{
+        &.document span {
           line-height: 18px;
           min-height: 45px;
         }
       }
     }
-    .search{
-
+    .search {
       border-radius: 28px;
-      background: #3D637C;
+      background: #3d637c;
       min-height: 40px;
       flex: 1;
       @include fj;
       padding: 0 5px;
       height: 40px;
 
-
-      .enter{
+      .enter {
         width: 32px;
         height: 32px;
         background: url("../images/svg/icon-enter.svg") center center no-repeat;
@@ -2019,8 +1999,6 @@ main {
         margin-left: 10px;
       }
     }
-
-
   }
 
   .swiper {
@@ -2029,7 +2007,7 @@ main {
     margin: 20px 0;
     padding: 0 50px;
 
-    @include mobile{
+    @include mobile {
       width: 95%;
     }
 
@@ -2041,121 +2019,111 @@ main {
       border-radius: 12px;
       background-color: #fff;
 
-
       /* Center slide text vertically */
       display: flex;
       justify-content: center;
       align-items: center;
 
-      &:nth-child(even){
+      &:nth-child(even) {
         //margin-right: 70px !important;
       }
 
-      .slideCont{
+      .slideCont {
         font-size: 14px;
         width: 100%;
         padding: 10px;
 
-        dl{
-          dt{
+        dl {
+          dt {
             text-align: left;
             margin-bottom: 10px;
             @include fs;
-            .iconNotice{
+            .iconNotice {
               width: 16px;
               height: 16px;
-              background: url("../images/svg/icon-notice.svg") center center no-repeat;
+              background: url("../images/svg/icon-notice.svg") center center
+                no-repeat;
               background-size: contain;
               margin-right: 5px;
-
             }
 
-            strong{
+            strong {
               @include ellipsis;
               color: $black;
             }
-
-
           }
-          dd{
+          dd {
             text-align: left;
 
-            &.txt{
-              color: #7F8896;
+            &.txt {
+              color: #7f8896;
               @include ellipsisLine;
               -webkit-line-clamp: 2;
               text-align: left;
             }
-            &.date{
+            &.date {
               margin-top: 10px;
 
-              span{
-                color:#A6B0BE;
+              span {
+                color: #a6b0be;
               }
-              button{
+              button {
                 @include fe;
               }
-              .iconRight{
+              .iconRight {
                 width: 16px;
                 height: 16px;
-                background: url("../images/svg/icon-arrow-next.svg") center center no-repeat;
+                background: url("../images/svg/icon-arrow-next.svg") center
+                  center no-repeat;
                 background-size: contain;
                 margin-right: 5px;
               }
             }
           }
-
-
-
         }
       }
     }
 
-    .swiper-button-prev, .swiper-button-next{
-      color: #D5E0E7;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #d5e0e7;
     }
   }
 
-
-  .memberData{
-    border-top: 1px solid #F1F1F1;
-    & > .flexS{
-      border-bottom: 1px solid #F1F1F1;
+  .memberData {
+    border-top: 1px solid #f1f1f1;
+    & > .flexS {
+      border-bottom: 1px solid #f1f1f1;
       padding: 10px 0;
 
-
-
-      .info{
+      .info {
         flex: 1;
       }
     }
-    em{
-      color: #00538A;
+    em {
+      color: #00538a;
     }
-    dt{
+    dt {
       font-size: 14px;
       margin-bottom: 5px;
     }
-
-
-
   }
-  .gridContainer{
-    .iconCall{
+  .gridContainer {
+    .iconCall {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-call.svg") center center no-repeat;
       background-size: contain;
       margin: 0 5px;
     }
-    .iconProfile{
+    .iconProfile {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-profile.svg") center center no-repeat;
       background-size: contain;
       margin: 0 5px;
     }
-    .iconSns{
+    .iconSns {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-sns.svg") center center no-repeat;
@@ -2166,51 +2134,46 @@ main {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(2, 1fr); //열
-    grid-template-rows: repeat(4 ,auto); //행
+    grid-template-rows: repeat(4, auto); //행
 
-    &.etc{
+    &.etc {
       grid-template-columns: repeat(1, 1fr); //열
-      grid-template-rows: repeat(3,auto); //행
+      grid-template-rows: repeat(3, auto); //행
     }
 
     .grid-item {
       @include fs;
       width: 100%;
 
-      dl{
+      dl {
         @include fs;
-        width:100%;
+        width: 100%;
         dt {
-          color: #7996B7;
+          color: #7996b7;
           font-size: 12px;
           text-align: left;
           padding: 5px;
-          min-width:100px;
+          min-width: 100px;
           font-weight: 600;
         }
 
-        dd{
+        dd {
           flex: 1;
           font-size: 14px;
           padding: 5px;
-          color: #0C0C0D;
+          color: #0c0c0d;
           display: inline-block;
           font-weight: 600;
         }
 
-        .fontSm{
+        .fontSm {
           font-size: 12px;
           color: $gray;
         }
       }
-
-
-
-
     }
 
-    table{
-
+    table {
       width: 100%;
       table-layout: fixed;
       //border-top: 1px solid #F1F1F1;
@@ -2218,60 +2181,58 @@ main {
       color: $black;
 
       th {
-        color: #7996B7;
+        color: #7996b7;
         font-size: 10px;
         text-align: left;
         padding: 5px;
         width: 10%;
       }
 
-      td{
+      td {
         font-size: 14px;
         padding: 5px;
       }
 
-      .fontSm{
+      .fontSm {
         font-size: 12px;
         color: $gray;
       }
 
-      th:last-of-type,td:last-of-type{
+      th:last-of-type,
+      td:last-of-type {
         border-right: none;
       }
 
-      tbody th{
-        background-color: #FAFAFA;
+      tbody th {
+        background-color: #fafafa;
         color: $black;
       }
-
     }
   }
 
-  .noneTable{
-
-    .iconCall{
+  .noneTable {
+    .iconCall {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-call.svg") center center no-repeat;
       background-size: contain;
       margin: 0 5px;
     }
-    .iconProfile{
+    .iconProfile {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-profile.svg") center center no-repeat;
       background-size: contain;
       margin: 0 5px;
     }
-    .iconSns{
+    .iconSns {
       width: 20px;
       height: 20px;
       background: url("../images/svg/icon-sns.svg") center center no-repeat;
       background-size: contain;
       margin: 0 5px;
     }
-    table{
-
+    table {
       width: 100%;
       table-layout: fixed;
       //border-top: 1px solid #F1F1F1;
@@ -2279,69 +2240,70 @@ main {
       color: $black;
 
       th {
-        color: #7996B7;
+        color: #7996b7;
         font-size: 10px;
         text-align: left;
         padding: 5px;
         width: 10%;
       }
 
-      td{
+      td {
         font-size: 14px;
         padding: 5px;
       }
 
-      .fontSm{
+      .fontSm {
         font-size: 12px;
         color: $gray;
       }
 
-      th:last-of-type,td:last-of-type{
+      th:last-of-type,
+      td:last-of-type {
         border-right: none;
       }
 
-      tbody th{
-        background-color: #FAFAFA;
+      tbody th {
+        background-color: #fafafa;
         color: $black;
       }
-
     }
   }
 
-  table.dataTable{
+  table.dataTable {
     width: 100%;
     table-layout: fixed;
-    border-top: 1px solid #7F8896;
-    border-bottom: 1px solid #7F8896;
+    border-top: 1px solid #7f8896;
+    border-bottom: 1px solid #7f8896;
     border-collapse: separate;
 
     th {
-      border-right: 1px solid #E9E9E9;
-      background:  #F1F1F1;
+      border-right: 1px solid #e9e9e9;
+      background: #f1f1f1;
       padding: 5px;
     }
 
-    td{
-      border-right: 1px solid var(--2-light-color-21-gray, #F1F1F1);
-      border-bottom: 1px solid var(--2-light-color-21-gray, #F1F1F1);
-      background: var(--2-light-color-24-white, #FFF);
+    td {
+      border-right: 1px solid var(--2-light-color-21-gray, #f1f1f1);
+      border-bottom: 1px solid var(--2-light-color-21-gray, #f1f1f1);
+      background: var(--2-light-color-24-white, #fff);
       padding: 5px;
     }
 
-    th:last-of-type,td:last-of-type{
+    th:last-of-type,
+    td:last-of-type {
       border-right: none;
     }
 
-    tbody th{
-      background-color: #FAFAFA;
+    tbody th {
+      background-color: #fafafa;
       color: $black;
     }
   }
 
-  .aiSelect{
+  .aiSelect {
     border-radius: 0px 20px 20px 20px;
-    background: #FFF;
-    padding:20px ;
+    background: #fff;
+    padding: 20px;
     margin-top: 15px;
     display: inline-block;
     font-size: 14px;
@@ -2351,23 +2313,23 @@ main {
     width: 442px;
     margin-left: 55px;
 
-    @include mobile{
+    @include mobile {
       margin-left: 0;
       width: 100%;
     }
 
-    small{
-      color: #7996B7;
+    small {
+      color: #7996b7;
       margin-bottom: 20px;
     }
-    ul li{
-      border-bottom: 1px solid #F1F1F1;
+    ul li {
+      border-bottom: 1px solid #f1f1f1;
 
-      &:last-of-type{
+      &:last-of-type {
         border-bottom: none;
       }
 
-      button{
+      button {
         display: block;
         text-align: left;
         padding: 10px 0;
@@ -2375,33 +2337,31 @@ main {
     }
   }
 
-  .questionsSelect{
+  .questionsSelect {
     margin-left: 55px;
     margin-top: 15px;
-    & > button{
+    & > button {
       padding: 4px 16px;
       background-color: #fff;
       border-radius: 20px;
       display: block;
       margin-bottom: 10px;
 
-      &:hover{
-        background-color:#E2F0F8;
+      &:hover {
+        background-color: #e2f0f8;
       }
     }
   }
 }
 
-
-
 /*counselingContainer*/
-.counselingContainer{
+.counselingContainer {
   width: 100%;
   height: 100vh;
-  background: #F1F8FD;
+  background: #f1f8fd;
   overflow: hidden;
 
-  .header{
+  .header {
     height: 57px;
     background-color: #fff;
     border-bottom: 1px solid #eee;
@@ -2417,29 +2377,30 @@ main {
       margin-right: 20px;
       @include fs;
 
-      &:before{
+      &:before {
         content: "";
         width: 154px;
         height: 36px;
         background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
         background-size: contain;
-
       }
 
-      button{
+      button {
         width: 16px;
         height: 16px;
-        background: url("../images/svg/icon-arrow-logo-down.svg") center center no-repeat;
+        background: url("../images/svg/icon-arrow-logo-down.svg") center center
+          no-repeat;
         background-size: contain;
 
-        &.on{
-          background: url("../images/svg/icon-arrow-logo-up.svg") center center no-repeat;
+        &.on {
+          background: url("../images/svg/icon-arrow-logo-up.svg") center center
+            no-repeat;
         }
       }
 
-      .btnDownPopup{
+      .btnDownPopup {
         position: absolute;
-        left:-10px;
+        left: -10px;
         top: 55px;
         font-size: 12px;
         background-color: #fff;
@@ -2455,23 +2416,22 @@ main {
         flex-direction: column;
         display: none;
 
-        &.show{
+        &.show {
           opacity: 1;
           display: flex;
         }
 
-
-        & > button{
+        & > button {
           width: 154px;
           height: 36px;
           margin-bottom: 20px;
-          &.logo{
+          &.logo {
             width: 154px;
             height: 36px;
             background: url("../images/svg/h1-logo.svg") left top no-repeat;
             background-size: contain;
           }
-          &.logoAi{
+          &.logoAi {
             width: 154px;
             height: 36px;
             background: url("../images/svg/h1-logo-ai.svg") left top no-repeat;
@@ -2497,64 +2457,56 @@ main {
         width: 28px;
         height: 28px;
         &.counseling {
-
-          background: url("../images/svg/icon-time.svg") center center
-          no-repeat;
-          background-size:28px;
+          background: url("../images/svg/icon-time.svg") center center no-repeat;
+          background-size: 28px;
           //border: 1px solid red;
           position: relative;
         }
         &.setting {
-          background: url("../images/svg/icon-setting-line.svg") center center no-repeat;
+          background: url("../images/svg/icon-setting-line.svg") center center
+            no-repeat;
           background-size: 34px;
-
         }
       }
 
-      label{
+      label {
         font-size: 14px;
-        span{
+        span {
           background-size: 16px;
           padding-left: 20px;
         }
       }
-
     }
-
-
   }
 
-  .aiContainer{
-
+  .aiContainer {
     overflow: hidden;
-    height: calc(100vh - -60px );
+    height: calc(100vh - -60px);
     //height: 100vh;
     overflow-y: auto;
 
-    .counselingWrap{
+    .counselingWrap {
       border: none;
       border-radius: 0;
       //height: calc(100vh - 173px );
-      height: calc(100vh - 158px );
+      height: calc(100vh - 158px);
       overflow-y: auto;
 
-      @include mobile{
-        height: calc(100vh - 132px );
+      @include mobile {
+        height: calc(100vh - 132px);
       }
 
-      &.show{
+      &.show {
         float: left;
         width: 60%;
       }
-
-
     }
 
-    .documentSelect{
+    .documentSelect {
       background-color: #fff;
-      width:40%;
+      width: 40%;
       float: left;
-      height: calc(100vh - 158px );
+      height: calc(100vh - 158px);
       padding: 20px;
       overflow-y: auto;
       //border: 1px solid red;
@@ -2568,7 +2520,6 @@ main {
       &.hide {
         animation: slideLeftOut 0.5s forwards;
       }
-
 
       /* 오른쪽에서 왼쪽으로 나오는 애니메이션 */
       @keyframes slideLeftIn {
@@ -2594,26 +2545,27 @@ main {
         }
       }
 
-      .title{
+      .title {
         font-size: 18px;
-        color: #7F8896;
+        color: #7f8896;
         line-height: 30px;
         position: relative;
         margin-bottom: 20px;
 
-        strong{
-          color: #0C0C0D;
+        strong {
+          color: #0c0c0d;
           display: block;
         }
 
-        span{
+        span {
           display: block;
         }
 
-        button.close{
+        button.close {
           width: 20px;
           height: 20px;
-          background: url("../images/svg/icon-close-gray.svg") center center no-repeat;
+          background: url("../images/svg/icon-close-gray.svg") center center
+            no-repeat;
           background-size: contain;
           position: absolute;
           right: 0;
@@ -2621,160 +2573,148 @@ main {
         }
       }
 
-      .documentList{
-         ul li{
-           @include fs;
-           align-items: flex-start;
-           margin-bottom: 20px;
-           & > span{
-             font-weight: 700;
-             color: #00538A;
-             width: 20px;
-           }
+      .documentList {
+        ul li {
+          @include fs;
+          align-items: flex-start;
+          margin-bottom: 20px;
+          & > span {
+            font-weight: 700;
+            color: #00538a;
+            width: 20px;
+          }
 
-           & > dl{
-              flex: 1;
+          & > dl {
+            flex: 1;
 
+            dt {
+              margin-bottom: 5px;
+              button {
+                width: 100%;
+                text-align: left;
+                @include fj;
+                .iconLink {
+                  width: 16px;
+                  height: 16px;
+                  background: url("../images/svg/icon-link.svg") center center
+                    no-repeat;
+                  background-size: contain;
+                  margin-left: 5px;
+                }
 
-             dt{
-               margin-bottom: 5px;
-               button{
-                 width: 100%;
-                 text-align: left;
-                 @include fj;
-                 .iconLink{
-                   width: 16px;
-                   height: 16px;
-                   background: url("../images/svg/icon-link.svg") center center no-repeat;
-                   background-size: contain;
-                   margin-left: 5px;
-                 }
+                & > div {
+                  color: #00538a;
+                  font-weight: 700;
+                  width: 85%;
+                  @include fs;
 
-                 & > div {
-                   color: #00538A;
-                   font-weight: 700;
-                   width: 85%;
-                   @include fs;
+                  b {
+                    margin-right: 10px;
+                  }
 
-                   b{
-                     margin-right: 10px;
-                   }
+                  span.txt {
+                    @include ellipsis;
 
+                    color: #4d545b;
+                    flex: 1;
 
-                   span.txt{
-                     @include ellipsis;
+                    &.link {
+                      color: #0a86da;
+                    }
+                  }
+                }
 
-                     color: #4D545B;
-                     flex: 1;
+                em {
+                  font-size: 12px;
+                  color: #7f8896;
+                }
+              }
+            }
+            dd {
+              span.txt {
+                @include ellipsis;
+              }
 
+              .download {
+                margin-top: 10px;
+                .iconLink {
+                  width: 16px;
+                  height: 16px;
+                  background: url("../images/svg/icon-link.svg") center center
+                    no-repeat;
+                  background-size: contain;
+                  margin-right: 5px;
+                }
 
-                     &.link{
-                       color: #0A86DA;
-                     }
-
-
-                   }
-                 }
-
-                 em{
-                   font-size: 12px;
-                   color: #7F8896;
-                 }
-
-               }
-             }
-             dd{
-               span.txt{
-                 @include ellipsis;
-               }
-
-               .download{
-                 margin-top: 10px;
-                 .iconLink{
-                   width: 16px;
-                   height: 16px;
-                   background: url("../images/svg/icon-link.svg") center center no-repeat;
-                   background-size: contain;
-                   margin-right: 5px;
-                 }
-
-                 & > button{
-                   display: block;
-                   width: 100%;
-                   border-radius: 14px;
-                   background: #F9F9F9;
-                   font-size: 12px;
-                   text-align: left;
-                   margin-bottom: 5px;
-                   height: 28px;
-                   @include fs;
-                   padding-left: 10px;
-                 }
-               }
-             }
-           }
-         }
+                & > button {
+                  display: block;
+                  width: 100%;
+                  border-radius: 14px;
+                  background: #f9f9f9;
+                  font-size: 12px;
+                  text-align: left;
+                  margin-bottom: 5px;
+                  height: 28px;
+                  @include fs;
+                  padding-left: 10px;
+                }
+              }
+            }
+          }
+        }
       }
-
-
-
-
     }
 
-    .chattingFooter{
+    .chattingFooter {
       background-color: #fff;
       height: 100px;
       position: relative;
       clear: both;
-      border-top: 1px solid #EEEEEE;
-
+      border-top: 1px solid #eeeeee;
 
       padding: 0 30px;
       @include fj;
 
-      @include mobile{
+      @include mobile {
         height: 76px;
-        padding:0 10px ;
+        padding: 0 10px;
       }
 
-      .searchWrap{
-
-        .selectRound{
-
+      .searchWrap {
+        .selectRound {
         }
 
-        @include mobile{
-          .selectRound,.toggleSwitch{
+        @include mobile {
+          .selectRound,
+          .toggleSwitch {
             display: none;
           }
-
         }
 
         flex: 1;
-        .searchArea{
+        .searchArea {
           width: 570px;
           position: relative;
           @include fj;
 
-          @include mobile{
+          @include mobile {
             width: 100%;
             margin-left: 0 !important;
           }
 
-
-          .search{
+          .search {
             border-radius: 28px;
-            background: #3D637C;
+            background: #3d637c;
             min-height: 40px;
             flex: 1;
             @include fj;
             padding: 0 5px;
 
-            @include mobile{
+            @include mobile {
               height: 56px;
             }
 
-            textarea{
+            textarea {
               flex: 1;
               background: transparent;
               border: 0;
@@ -2785,34 +2725,34 @@ main {
               padding-left: 10px;
             }
 
-            .enter{
-              width: 32px ;
-              height: 32px ;
-              background: url("../images/svg/icon-enter.svg") center center no-repeat;
+            .enter {
+              width: 32px;
+              height: 32px;
+              background: url("../images/svg/icon-enter.svg") center center
+                no-repeat;
               background-size: contain;
               margin-left: 10px;
 
-              @include mobile{
+              @include mobile {
                 width: 40px;
                 height: 40px;
               }
             }
-
-
           }
 
-          .iconRefresh{
+          .iconRefresh {
             width: 40px;
             height: 40px;
-            background: url("../images/svg/icon-refresh.svg") center center no-repeat;
+            background: url("../images/svg/icon-refresh.svg") center center
+              no-repeat;
             background-size: contain;
             margin-left: 10px;
 
-            @include mobile{
-            display: none;
+            @include mobile {
+              display: none;
             }
           }
-          .info{
+          .info {
             position: absolute;
             width: 100%;
             text-align: center;
@@ -2822,48 +2762,42 @@ main {
             color: $gray;
             @include fc;
 
-            @include mobile{
-             display: none;
+            @include mobile {
+              display: none;
             }
 
-            .iconInfo{
+            .iconInfo {
               width: 16px;
               height: 16px;
               margin-right: 5px;
-              background: url("../images/svg/icon-info.svg") center center no-repeat;
+              background: url("../images/svg/icon-info.svg") center center
+                no-repeat;
             }
           }
-
-
-
         }
-
-
-
       }
-      .etc{
-        border-left: 1px solid #DDDDDD;
-        width:150px;
+      .etc {
+        border-left: 1px solid #dddddd;
+        width: 150px;
         height: 40px;
         @include fc;
 
-        @include mobile{
+        @include mobile {
           display: none;
-
         }
-        .iconFolder{
+        .iconFolder {
           width: 40px;
           height: 40px;
-          background: url("../images/svg/icon-folder.svg") center center no-repeat;
-          background-size: 24px;;
+          background: url("../images/svg/icon-folder.svg") center center
+            no-repeat;
+          background-size: 24px;
           margin-left: 10px;
           margin-right: 20px;
-          &.on{
-            background-color: #E9EDF5;
-
+          &.on {
+            background-color: #e9edf5;
           }
         }
-        .iconMenu{
+        .iconMenu {
           width: 40px;
           height: 40px;
           background: url("../images/svg/icon-menu.svg") center center no-repeat;
@@ -2871,36 +2805,35 @@ main {
           margin-left: 10px;
           border-radius: 12px;
 
-          &.on{
-            background-color: #E9EDF5;
-
+          &.on {
+            background-color: #e9edf5;
           }
         }
       }
 
-      .iconMenuPopup{
+      .iconMenuPopup {
         width: 305px;
         position: absolute;
-        right:20px;
-        bottom:100px;
+        right: 20px;
+        bottom: 100px;
 
         z-index: 100;
         display: none;
         transform: translateY(50px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
 
-        &.show{
+        &.show {
           //opacity: 1;
           display: block;
           transform: translateY(0);
           animation: slideUp 0.3s ease;
         }
 
-
-        & > button{
-
-          &:hover{
-            background: #E9EDF5;
+        & > button {
+          &:hover {
+            background: #e9edf5;
           }
 
           width: 305px;
@@ -2909,14 +2842,14 @@ main {
           color: $gray;
           font-size: 12px;
           border-radius: 12px;
-          background: #FFF;
+          background: #fff;
           @include fj;
           padding: 10px 15px;
 
-          & > div{
+          & > div {
             flex: 1;
             text-align: left;
-            strong{
+            strong {
               font-size: 14px;
               color: #000;
               display: block;
@@ -2924,28 +2857,24 @@ main {
             }
           }
 
-
-
-          &.mainAi{
-            &:after{
-              content:'';
+          &.mainAi {
+            &:after {
+              content: "";
               width: 40px;
               height: 40px;
               background: url("../images/svg/icon-myAi.svg") left top no-repeat;
               background-size: contain;
             }
-
-
           }
-          &.myPrompt{
-            &:after{
-              content:'';
+          &.myPrompt {
+            &:after {
+              content: "";
               width: 40px;
               height: 40px;
-              background: url("../images/svg/icon-prompt.svg") left top no-repeat;
+              background: url("../images/svg/icon-prompt.svg") left top
+                no-repeat;
               background-size: contain;
             }
-
           }
         }
       }
@@ -2961,11 +2890,9 @@ main {
         }
       }
     }
-
   }
 
-
-  .counselingPopup{
+  .counselingPopup {
     position: absolute;
     right: 20px;
     top: 50px;
@@ -2973,14 +2900,14 @@ main {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
     width: 360px;
     min-height: 136px;
-    padding:10px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
     overflow: hidden;
     border-radius: 20px;
     z-index: 100;
     opacity: 0;
     font-size: 14px;
     display: none;
-    &.show{
+    &.show {
       opacity: 1;
       display: block;
     }
@@ -2993,13 +2920,14 @@ main {
       padding: 10px 0 10px 0;
       border-bottom: 1px solid #f1f1f1;
 
-      strong{
+      strong {
         @include fs;
 
-        .btnSetting{
+        .btnSetting {
           width: 20px;
           height: 20px;
-          background: url("../images/svg/icon-setting-sm.svg") center center no-repeat;
+          background: url("../images/svg/icon-setting-sm.svg") center center
+            no-repeat;
           background-size: 24px;
           margin-left: 5px;
         }
@@ -3021,42 +2949,33 @@ main {
         border-bottom: none;
         margin-bottom: 0;
       }
-
-
     }
 
-    .counselingList{
+    .counselingList {
       min-height: 200px;
       padding: 20px 0;
       ul {
-        li{
-          border-bottom: 1px solid #F1F1F1;
-          &:last-of-type{
+        li {
+          border-bottom: 1px solid #f1f1f1;
+          &:last-of-type {
             border-bottom: none;
           }
-          button{
+          button {
             text-align: left;
             padding: 10px 0;
             width: 100%;
             font-size: 14px;
-            strong{
+            strong {
               @include ellipsis;
               color: $gray;
             }
-            span{
+            span {
               font-size: 12px;
-              color: #A6B0BE;
+              color: #a6b0be;
             }
           }
         }
       }
     }
   }
-
-
-
-
 }
-
-
-
