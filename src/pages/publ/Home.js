@@ -87,7 +87,6 @@ const Home = () => {
 
         { path: "counselingMain", label: "============================" , status: "=====",date:"====="},
         { path: "counselingMain", label: "지식상담 메인(고객수정반영이슈)" , status: "완료",date:"2024-09-25 수"},
-        { path: "counselingMain", label: "지식상담 Mini(고객수정반영이슈)" , status: "완료",date:"2024-09-25 수"},
         { path: "counselingMain", label: "설정 모달(기획대기중)" , status: "대기중",date:"2024-00-00 00"},
         { path: "counselingMain", label: "My헬프데스크 관리 팝업 (새창이동)" , status: "새창이동이어서"},
         { path: "counselingMain", label: "최근검색어(텍스트입력필드 내 드롭다운)" , status: "완료",date:"2024-10-18 금"},
@@ -100,7 +99,9 @@ const Home = () => {
         { path: "counselingMain", label: "안내페이지 문구 상세 팝업(기획서확인필요)" , status: "대기중",date:"2024-10-17 목"},
         { path: "counselingMain", label: "신지식정보 관리(기획서확인필요)" , status: "대기중",date:"2024-10-11 금"},
         { path: "counselingMain", label: "신정보관리체계 등록 팝업(기획서확인필요)" , status: "대기중",date:"2024-10-11 금"},
-        { path: "counselingMain", label: "신정보관리체계 파일 등록 팝업(기획서확인필요)" , status: "대기중",date:"2024-10-11 금"}
+        { path: "counselingMain", label: "신정보관리체계 파일 등록 팝업(기획서확인필요)" , status: "대기중",date:"2024-10-11 금"},
+        { path: "============================", label: "============================" , status: "대기중",date:"2024-10-11 금"},
+        { path: "counselingMini", label: "지식상담 Mini" , status: "진행중",date:"2024-10-23 수"}
     ];
   return (
     <HomeContainer>

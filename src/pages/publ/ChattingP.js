@@ -51,13 +51,39 @@ const ChattingP = ({ search, chattingFooter }) => {
   };
   return (
     <>
-      
+
       <div
         className={`counselingWrap scroll ${activeState.etc05 ? "show" : ""}`}
       >
         <div className="chattingWrap ">
-          {/*class 이름 변경*/}
+
+          {/*Mini 일때 인사말*/}
           <div className="aiTxt">
+            <div className="cont">
+              <p>
+                안녕하세요. <br/>
+                우리은행 ChatGPT AI 지식상담입니다.
+              </p>
+            </div>
+          </div>
+
+          <div className="question">
+            <div className="cont">모바일 운전면허증으로 체크카드 수령 시 <br/>
+              본인 확인 가능한가요?</div>
+          </div>
+
+
+
+
+          <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
+
             <div className="cont">
               <p>
                 어떤 업무를 도와드릴까요? <br />
@@ -87,42 +113,35 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -132,7 +151,16 @@ const ChattingP = ({ search, chattingFooter }) => {
           <div className="question">
             <div className="cont">이자율 스왑이 뭐야?</div>
           </div>
+
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
+
             <div className="cont">
               <p>
                 이자율 스왑이란 금융시장에서 차입자의 기존부채 또는 신규 부채에
@@ -154,22 +182,17 @@ const ChattingP = ({ search, chattingFooter }) => {
                   className={`like ${activeState.etc01 ? "on" : ""}`}
                   onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
                   type="button"
                   className={`dislike ${activeState.etc02 ? "on" : ""}`}
                   onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
-                <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
+
+
                 <button
                   type="button"
                   className={`hashtag ${activeState.etc04 ? "on" : ""}`}
@@ -183,9 +206,7 @@ const ChattingP = ({ search, chattingFooter }) => {
                   onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -256,6 +277,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             </div>
           </div>
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
             <div className="cont">
               <p>
                 모바일 운전면허증은 정부에서 발행 및 운영하는 서비스입니다.
@@ -281,42 +309,35 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -437,6 +458,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             <div className="cont">근저당권의 피담보채무 범위를 알려줘</div>
           </div>
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
             <div className="cont">
               <p>
                 3명의 담당자가 있습니다.
@@ -495,42 +523,35 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -538,6 +559,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             {/* end etcArea*/}
           </div>
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
             <div className="cont">
               <p>
                 빅데이터 사업부 비정형데이터 자산화 사업 담당자는 아래와
@@ -681,42 +709,35 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -724,6 +745,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             {/* end etcArea*/}
           </div>
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
             <div className="cont">
               <p>
                 기업진단시스템 빅아이 URL은 아래와 같습니다. URL을 클릭하시면
@@ -742,42 +770,34 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -785,6 +805,13 @@ const ChattingP = ({ search, chattingFooter }) => {
             {/* end etcArea*/}
           </div>
           <div className="aiTxt">
+            <button
+                type="button"
+                className={`message ${activeState.etc03 ? "on" : ""}`}
+                onClick={() => toggle("etc03")}
+            >
+              <span>AI선택</span>
+            </button>
             <div className="cont">
               <p>아래와 같이 주요국 환율 안내드립니다.</p>
               <p>
@@ -860,42 +887,35 @@ const ChattingP = ({ search, chattingFooter }) => {
               </label>
               <div className="ect">
                 <button
-                  type="button"
-                  className={`like ${activeState.etc01 ? "on" : ""}`}
-                  onClick={() => toggle("etc01")}
+                    type="button"
+                    className={`like ${activeState.etc01 ? "on" : ""}`}
+                    onClick={() => toggle("etc01")}
                 >
-                  <span>좋아요</span>
+
                 </button>
                 <button
-                  type="button"
-                  className={`dislike ${activeState.etc02 ? "on" : ""}`}
-                  onClick={() => toggle("etc02")}
+                    type="button"
+                    className={`dislike ${activeState.etc02 ? "on" : ""}`}
+                    onClick={() => toggle("etc02")}
                 >
-                  <span>별로에요</span>
+
                 </button>
+
+
                 <button
-                  type="button"
-                  className={`message ${activeState.etc03 ? "on" : ""}`}
-                  onClick={() => toggle("etc03")}
-                >
-                  <span>AI선택</span>
-                </button>
-                <button
-                  type="button"
-                  className={`hashtag ${activeState.etc04 ? "on" : ""}`}
-                  onClick={() => toggle("etc04")}
+                    type="button"
+                    className={`hashtag ${activeState.etc04 ? "on" : ""}`}
+                    onClick={() => toggle("etc04")}
                 >
                   <span>연관질문</span>
                 </button>
                 <button
-                  type="button"
-                  className={`document ${activeState.etc05 ? "on" : ""}`}
-                  onClick={() => toggle("etc05")}
+                    type="button"
+                    className={`document ${activeState.etc05 ? "on" : ""}`}
+                    onClick={() => toggle("etc05")}
                 >
                   <span>
-                    근거문서
-                    <br />
-                    보기
+                    근거문서 보기
                   </span>
                 </button>
               </div>
@@ -1058,6 +1078,8 @@ const ChattingP = ({ search, chattingFooter }) => {
       </div>
 
       {/* end 근거문서*/}
+
+
       {chattingFooter && (
         <div className="chattingFooter">
           <div className="searchWrap flexS">
@@ -1354,7 +1376,7 @@ const ChattingP = ({ search, chattingFooter }) => {
             console.log("callback");
           }}
       />
-      
+
       <ModalP
         ref={modalMyPromptRef}
         title="나의 프롬프트 관리"
@@ -1639,7 +1661,7 @@ const ChattingP = ({ search, chattingFooter }) => {
                   </dl>
                 </div>
               </li>
-                
+
               </ul>
             </div>
           </>
@@ -1661,7 +1683,7 @@ const ChattingP = ({ search, chattingFooter }) => {
           content={
             <>
               <div className="detailViewContainer">
-                
+
                 <div className="info">
                 <p>우리은행 ChatGPT, AI 지식상담입니다.<br/>
                 환전주머니 환율 우대율이 변경될 예정입니다.</p><br/>
