@@ -7,7 +7,7 @@ import imgImg from "../../assets/images/svg/icon-img.svg";
 
 import ModalP from "./ModalP";
 import ConfirmP from "./ConfirmP";
-const ChattingP = ({ search, chattingFooter }) => {
+const ChattingP = ({ search, chattingFooter ,mini }) => {
   const confirmRef = useRef(null);
   const modalMyFileRef = useRef(null);
   const modalMyPromptRef = useRef(null);
@@ -58,6 +58,8 @@ const ChattingP = ({ search, chattingFooter }) => {
         <div className="chattingWrap ">
 
           {/*Mini 일때 인사말*/}
+          {mini &&
+              <>
           <div className="aiTxt">
             <div className="cont">
               <p>
@@ -71,6 +73,9 @@ const ChattingP = ({ search, chattingFooter }) => {
             <div className="cont">모바일 운전면허증으로 체크카드 수령 시 <br/>
               본인 확인 가능한가요?</div>
           </div>
+              </>
+
+          }
 
 
 
@@ -474,14 +479,14 @@ const ChattingP = ({ search, chattingFooter }) => {
               <p>
                 <div className="memberData">
                   <div className="flexS alignS mb2">
-                    <em className="mr2 bold600">1</em>
+                    <em className="mr2 bold500">1</em>
                     <div className="img mr2">
                       <img src={imgImg} alt="" />
                     </div>
                     <div className="info">
                       <dl>
                         <dt>
-                          <strong className="bold700">홍길동</strong>차장
+                          <strong className="bold500">홍길동</strong>차장
                         </dt>
                         <dd className="textLightGray fontSm">
                           우리은행 | 빅데이터플랫폼부
@@ -494,14 +499,14 @@ const ChattingP = ({ search, chattingFooter }) => {
                   </div>
 
                   <div className="flexS alignS mb2">
-                    <em className="mr2 bold600">2</em>
+                    <em className="mr2 bold500">2</em>
                     <div className="img mr2">
                       <img src={imgImg} alt="" />
                     </div>
                     <div className="info">
                       <dl>
                         <dt>
-                          <strong className="bold700">홍길동</strong>차장
+                          <strong className="bold500">홍길동</strong>차장
                         </dt>
                         <dd className="textLightGray fontSm">
                           우리은행 | 빅데이터플랫폼부
@@ -611,7 +616,8 @@ const ChattingP = ({ search, chattingFooter }) => {
                                 800012345
                                 <button type="button" className="iconCall" />
                                 <button type="button" className="iconProfile" />
-                                <button type="button" className="iconSns" />
+                                <button type="button" className="icon
+                                Sns" />
                               </div>
                             </dd>
                           </dl>
@@ -758,7 +764,7 @@ const ChattingP = ({ search, chattingFooter }) => {
                 바로 이동하실 수 있습니다.
               </p>
               <p>
-                <span className="textPrimary bold600">
+                <span className="textPrimary bold500">
                   https://srj.woorifg.com:8080
                 </span>
               </p>
@@ -1560,107 +1566,125 @@ const ChattingP = ({ search, chattingFooter }) => {
               <ul>
                 <li className="checked">
                   <label>
-                    <input type="radio" name="mascoat" />
-                    <span />
-                  </label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
 
-                  <div className="mascoat">
-                    <i className="mascoatA" />
-                    <dl>
-                      <dt>
-                        A Type <span className="textPrimary">현재 기본값</span>
-                      </dt>
-                      <dd>
-                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                        적합합니다.
-                      </dd>
-                    </dl>
-                  </div>
+
+                    <div className="mascoat">
+                      <i className="mascoatA" />
+                      <dl>
+                        <dt>
+                          A Type <span className="textPrimary">현재 기본값</span>
+                        </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                    <div className="mascoat">
+                      <i className="mascoatB" />
+                      <dl>
+                        <dt>B Type </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                    <div className="mascoat">
+                      <i className="mascoatC" />
+                      <dl>
+                        <dt>C Type </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                    <div className="mascoat">
+                      <i className="mascoatD" />
+                      <dl>
+                        <dt>D Type </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                    <div className="mascoat">
+                      <i className="mascoatE" />
+                      <dl>
+                        <dt>E Type </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </label>
                 </li>
                 <li>
                   <label>
                     <input type="radio" name="mascoat" />
                     <span />
-                  </label>
 
-                  <div className="mascoat">
-                    <i className="mascoatB" />
-                    <dl>
-                      <dt>B Type </dt>
-                      <dd>
-                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                        적합합니다.
-                      </dd>
-                    </dl>
-                  </div>
+
+                    <div className="mascoat">
+                      <i className="mascoatF" />
+                      <dl>
+                        <dt>F Type </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+                    </div>
+                  </label>
                 </li>
-                <li>
-                  <label>
-                    <input type="radio" name="mascoat" />
-                    <span />
-                  </label>
-
-                  <div className="mascoat">
-                    <i className="mascoatC" />
-                    <dl>
-                      <dt>C Type </dt>
-                      <dd>
-                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                        적합합니다.
-                      </dd>
-                    </dl>
-                  </div>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="mascoat" />
-                    <span />
-                  </label>
-
-                  <div className="mascoat">
-                    <i className="mascoatD" />
-                    <dl>
-                      <dt>D Type </dt>
-                      <dd>
-                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                        적합합니다.
-                      </dd>
-                    </dl>
-                  </div>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="mascoat" />
-                    <span />
-                  </label>
-
-                  <div className="mascoat">
-                    <i className="mascoatE" />
-                    <dl>
-                      <dt>E Type </dt>
-                      <dd>
-                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                        적합합니다.
-                      </dd>
-                    </dl>
-                  </div>
-                </li> <li>
-                <label>
-                  <input type="radio" name="mascoat" />
-                  <span />
-                </label>
-
-                <div className="mascoat">
-                  <i className="mascoatF" />
-                  <dl>
-                    <dt>F Type </dt>
-                    <dd>
-                      AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
-                      적합합니다.
-                    </dd>
-                  </dl>
-                </div>
-              </li>
 
               </ul>
             </div>

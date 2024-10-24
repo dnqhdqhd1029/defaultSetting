@@ -11,6 +11,8 @@ import "../../assets/style/style.scss";
 import "swiper/css";
 import 'swiper/css/pagination';
 
+import imgImg from "../../assets/images/svg/icon-img.svg";
+
 const MainP = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [activeTab, setActiveTab] = useState("tab01");
@@ -578,6 +580,7 @@ const MainP = () => {
         <section className="section">
           <div className="total">
             AI검색 결과 <strong>42건</strong> 이 있습니다.
+            <button type="button" className="keyword">키워드로 검색 </button>
           </div>
           <div className="listContainer">
             <div className="title">
@@ -784,6 +787,86 @@ const MainP = () => {
                   </button>
                 </dd>
               </dl>
+            </div>
+
+            {/*직원정보*/}
+            <div className="content flexJ">
+              <div className="memberData">
+                <div className="info flexS alignS">
+                  <dl>
+                    <dt>
+                      <strong className="bold500">홍길동</strong>차장
+                    </dt>
+                    <dd>
+                      우리은행 | 빅데이터플랫폼부
+                    </dd>
+                    <dd className="icon flexS">
+                      <button type="button" className="iconCall" />
+                      <button type="button" className="iconProfile" />
+                      <button type="button" className="iconSns" />
+
+                    </dd>
+                  </dl>
+
+                  <div className="img mr2">
+                    <img src={imgImg} alt="" />
+                  </div>
+                </div>
+                <div className="gridItem">
+                  <dl>
+                    <dt>담당업무</dt>
+                    <dd className="fontSm">
+                      데이터 자산화 팀장 - 팀업무 전반
+                    </dd>
+                  </dl>
+                </div>
+                <div className="gridItem">
+                  <dl>
+                    <dt>세부업무</dt>
+                    <dd className="fontSm">
+                      FA/CS매니저/대여금고관리/방카슈랑스/은퇴설계/특정거래승인권/해외유학이주/장애인전담/출납책임/금융사기담당/FATCA관리/금융소비자보호담당자/카드개인정보보호/교환/시공과금/신용카드총괄/압류/중요증서취급중요증서취급책임/외화출납책임/당행보관통장관리
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div className="memberData">
+                <div className="info flexS alignS">
+                  <dl>
+                    <dt>
+                      <strong className="bold500">홍길동</strong>차장
+                    </dt>
+                    <dd>
+                      우리은행 | 빅데이터플랫폼부
+                    </dd>
+                    <dd className="icon flexS">
+                      <button type="button" className="iconCall" />
+                      <button type="button" className="iconProfile" />
+                      <button type="button" className="iconSns" />
+
+                    </dd>
+                  </dl>
+
+                  <div className="img mr2">
+                    <img src={imgImg} alt="" />
+                  </div>
+                </div>
+                <div className="gridItem">
+                  <dl>
+                    <dt>담당업무</dt>
+                    <dd className="fontSm">
+                      데이터 자산화 팀장 - 팀업무 전반
+                    </dd>
+                  </dl>
+                </div>
+                <div className="gridItem">
+                  <dl>
+                    <dt>세부업무</dt>
+                    <dd className="fontSm">
+                      FA/CS매니저/대여금고관리/방카슈랑스/은퇴설계/특정거래승인권/해외유학이주/장애인전담/출납책임/금융사기담당/FATCA관리/금융소비자보호담당자/카드개인정보보호/교환/시공과금/신용카드총괄/압류/중요증서취급중요증서취급책임/외화출납책임/당행보관통장관리
+                    </dd>
+                  </dl>
+                </div>
+              </div>
             </div>
 
             <div className="more">

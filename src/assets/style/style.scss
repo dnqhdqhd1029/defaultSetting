@@ -7,7 +7,7 @@
 body {
   font-size: $fontMd;
   font-weight: $font600;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Korean", sans-serif;
   width: 100%;
   height: 100vh;
   background: #fafafa;
@@ -255,7 +255,7 @@ header {
           span {
             color: #7996b7;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 500;
           }
           button {
             font-size: 14px;
@@ -351,7 +351,7 @@ main {
     width: 100%;
     color: #000;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
 
     &.borderNone {
       border-bottom: none;
@@ -360,7 +360,7 @@ main {
     span {
       color: #000;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       em {
         color: #bec7cd;
         font-size: 12px;
@@ -374,7 +374,7 @@ main {
       border-radius: 0;
       color: $lightGray;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .iconUp {
@@ -446,7 +446,7 @@ main {
 
           &.on {
             color: $black;
-            font-weight: 600;
+            font-weight: 500;
             border-bottom: 1px solid #0c0c0d;
           }
           &:first-of-type {
@@ -510,7 +510,7 @@ main {
                 //background-color: #F6FCFF;
                 button {
                   //color: $black;
-                  // font-weight: 600;
+                  // font-weight: 500;
                   em {
                     color: $primary;
                   }
@@ -582,7 +582,7 @@ main {
 
                 &.on {
                   color: $black;
-                  font-weight: 600;
+                  font-weight: 500;
                   background-color: #fafafa;
 
                   em {
@@ -652,6 +652,20 @@ main {
         color: #20c4f4;
         font-weight: 500;
       }
+
+      button.keyword {
+        height: 24px;
+        margin: 0 0 0 10px;
+        color: #67809c;
+        font-size: 14px;
+        border-radius: 29px;
+        padding: 3px 30px 3px 10px;
+        background: #fff url("../images/svg/icon-quastion.svg") 95%
+        center no-repeat;
+        background-size: 16px;
+        @include  fs;
+        color: #7996B7;
+      }
     }
 
     .listContainer {
@@ -700,7 +714,7 @@ main {
             @include fj;
             margin-bottom: 10px;
             span.txt {
-              font-weight: 600;
+              font-weight: 500;
               color: $black;
               background: url("../images/svg/icon-bookMark.svg") left center
                 no-repeat;
@@ -721,7 +735,7 @@ main {
 
             .txt {
               @include ellipsis;
-              font-weight: 600;
+              font-weight: 500;
               margin-bottom: 5px;
             }
           }
@@ -832,7 +846,7 @@ main {
                   color: $black;
                   font-size: 12px;
                   @include ellipsis;
-                  font-weight: 600;
+                  font-weight: 500;
                   flex: 1;
                 }
               }
@@ -852,7 +866,7 @@ main {
                   color: $black;
                   font-size: 12px;
                   @include ellipsis;
-                  font-weight: 600;
+                  font-weight: 500;
                   flex: 1;
                   margin-bottom: 0;
                   color: #4d545b;
@@ -899,6 +913,71 @@ main {
           }
         }
 
+        /*직원정보*/
+        .memberData{
+          .iconCall {
+            width: 20px;
+            height: 20px;
+            background: url("../images/svg/icon-call.svg") center center no-repeat;
+            background-size: contain;
+            margin: 0 5px;
+          }
+          .iconProfile {
+            width: 20px;
+            height: 20px;
+            background: url("../images/svg/icon-profile.svg") center center no-repeat;
+            background-size: contain;
+            margin: 0 5px;
+          }
+          .iconSns {
+            width: 20px;
+            height: 20px;
+            background: url("../images/svg/icon-sns.svg") center center no-repeat;
+            background-size: contain;
+            margin: 0 5px;
+          }
+
+          .info{
+
+            font-size: 12px;
+            color: #7F8896;
+            dl{
+              flex: 1;
+               dt{
+                 font-size: 20px;
+                 margin-bottom: 5px;
+                 strong{
+                   color: #0C0C0D;
+                 }
+               }
+              dd{
+                margin-bottom: 10px;
+              }
+            }
+
+          }
+
+          .gridItem{
+            margin-top: 10px;
+            dt{
+              font-size: 12px;
+              color: #7996B7;
+              font-weight: 500;
+              margin-bottom: 5px;
+            }
+            dd{
+              color: #4D545B;
+              margin-bottom: 10px;
+              line-height: 18px;
+            }
+          }
+
+        }
+
+        .memberData + .memberData{
+          margin-left: 10px;
+        }
+
         &:last-of-type {
           border-bottom: none;
         }
@@ -916,7 +995,7 @@ main {
 
           width: 100%;
           @include fc;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 14px;
           i.iconAdd {
             background: url("../images/svg/icon-add.svg") center center
@@ -926,6 +1005,11 @@ main {
           }
         }
       }
+
+      //.detailView{
+      //  max-height: 500px;
+      //  overflow-y: auto;
+      //}
     }
   }
 
@@ -943,7 +1027,7 @@ main {
         margin-bottom: 10px;
         padding-bottom: 0;
         span {
-          font-weight: 600;
+          font-weight: 500;
           font-size: 18px;
           margin-left: 10px;
         }
@@ -963,9 +1047,11 @@ main {
           font-size: 14px;
           border-radius: 29px;
           padding: 3px 30px 3px 10px;
-          background: #f1f1f1 url("../images/svg/icon-setting-sm.svg") 95%
+          background: #fff url("../images/svg/icon-setting-mini.svg") 95%
             center no-repeat;
           background-size: 16px;
+          @include  fs;
+          color: #7996B7;
         }
       }
 
@@ -974,7 +1060,9 @@ main {
         .aiTxt {
           ///background-size: 37px 34px;
           padding-left: 0;
-          padding-top: 35px;
+          padding-top: 0;
+          margin-top: 0;
+          background: none;
 
 
           .answerLink,
@@ -1082,7 +1170,7 @@ main {
           dl {
             dt {
               color: $black;
-              font-weight: 600;
+              font-weight: 500;
               margin-bottom: 10px;
               border-bottom: 1px solid #f1f1f1;
               padding-bottom: 10px;
@@ -1172,7 +1260,7 @@ main {
                 line-height: 24px;
 
                 font-size: 14px;
-                font-weight: 700;
+                font-weight: 500;
                 background: url("../images/svg/icon-arrow-menu-down.svg") left
                   center no-repeat;
                 padding-left: 20px;
@@ -1220,7 +1308,7 @@ main {
 
                     &.on {
                       color: $black;
-                      font-weight: 600;
+                      font-weight: 500;
                       background-color: transparent;
 
                       em {
@@ -1263,7 +1351,7 @@ main {
 
                   &.on {
                     color: $black;
-                    font-weight: 600;
+                    font-weight: 500;
                     background-color: transparent;
 
                     em {
@@ -1285,6 +1373,8 @@ main {
         .total {
           height: auto;
           margin-bottom: 0;
+
+
         }
 
         select {
@@ -1312,7 +1402,7 @@ main {
         padding-bottom: 20px;
         @include fj;
         .search {
-          width: 70%;
+          width: 500%;
 
           .btn {
             background-color: #0075c2;
@@ -1390,7 +1480,7 @@ main {
 
         &.active {
           color: #0c0c0d;
-          font-weight: 700;
+          font-weight: 500;
         }
 
         button.setting {
@@ -1432,7 +1522,7 @@ main {
               em {
                 width: 20px;
                 margin-right: 10px;
-                font-weight: 600;
+                font-weight: 500;
               }
               button {
                 @include ellipsis;
@@ -1463,7 +1553,7 @@ main {
     align-items: flex-start;
 
     .title {
-      font-weight: 700;
+      font-weight: 500;
       color: #000;
       width: 100px;
       padding-bottom: 0;
@@ -1502,7 +1592,7 @@ main {
     dt {
       color: #0c0c0d;
       display: inline-block;
-      font-weight: 700;
+      font-weight: 500;
       margin-right: 10px;
     }
     dd {
@@ -1533,7 +1623,7 @@ main {
     width: 40px;
     height: 40px;
     margin: 0 5px;
-    font-weight: 600;
+    font-weight: 500;
     color: $primary;
     text-align: center;
     display: inline-flex;
@@ -2198,7 +2288,7 @@ main {
           text-align: left;
           padding: 5px;
           min-width: 100px;
-          font-weight: 600;
+          font-weight: 500;
 
           @include mobile{
             min-width: 75px;
@@ -2211,7 +2301,7 @@ main {
           padding: 5px;
           color: #0c0c0d;
           display: inline-block;
-          font-weight: 600;
+          font-weight: 500;
         }
 
         .fontSm {
@@ -2337,6 +2427,7 @@ main {
       border-right: 1px solid #e9e9e9;
       background: #f1f1f1;
       padding: 5px;
+      font-weight: 500;
     }
 
     td {
@@ -2636,7 +2727,7 @@ main {
           align-items: flex-start;
           margin-bottom: 20px;
           & > span {
-            font-weight: 700;
+            font-weight: 500;
             color: #00538a;
             width: 20px;
           }
@@ -2661,7 +2752,7 @@ main {
 
                 & > div {
                   color: #00538a;
-                  font-weight: 700;
+                  font-weight: 500;
                   width: 85%;
                   @include fs;
 
@@ -2768,7 +2859,7 @@ main {
             padding: 0 5px;
 
             @include mobile {
-              height: 56px;
+              height: 46px;
             }
 
             textarea {
@@ -2993,7 +3084,7 @@ main {
       span {
         color: #000000;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
       }
       button.close {
         width: 24px;
@@ -3048,7 +3139,7 @@ main {
       color: #3E5F85;
       font-size: 16px;
       margin-right: 20px;
-      font-weight: 700;
+      font-weight: 500;
       @include fs;
 
       &:before {
@@ -3080,6 +3171,7 @@ main {
             content:'';
             background: url("../images/svg/icon-setting-mini.svg") center center no-repeat;
             background-size: 20px;
+            margin-left: 5px;
           }
 
         }
@@ -3094,7 +3186,7 @@ main {
       }
     }
 
-    //mini chattingWrap
+
 
 
 

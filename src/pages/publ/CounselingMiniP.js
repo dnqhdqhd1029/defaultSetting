@@ -4,12 +4,14 @@ import { Table } from "antd";
 
 import ChattingP from "./ChattingP";
 import ModalP from "./ModalP";
+import BottomSheetP from './BottomSheetP';
 import "../../assets/style/style.scss";
 
 const CounselingMiniP = () => {
   const confirmRef = useRef(null);
   const modalCounselingRef = useRef(null);
   const modalSettingRef = useRef(null);
+  const bottomSheetRef = useRef(null);
   const [activeState, setActiveState] = useState({
     counseling: false,
     setting: false,
@@ -36,7 +38,7 @@ const CounselingMiniP = () => {
             <button
               className={`setting ${activeState.setting ? "on" : ""}`}
               type="button"
-              onClick={() => modalSettingRef.current.show()}
+              onClick={() => bottomSheetRef.current.show()}
             >
               전행 모든지식 참조
             </button>
@@ -111,10 +113,150 @@ const CounselingMiniP = () => {
         </div>
         {/*end header*/}
         <div className="aiContainer">
-          <ChattingP chattingFooter />
+          <ChattingP chattingFooter mini />
         </div>
         {/*end aiContainer*/}
       </div>
+
+      <BottomSheetP
+          ref={bottomSheetRef}
+          title="대표 AI 선택"
+          colse
+          section={<>
+
+            <div className="mainAiContainer">
+              <ul>
+                <li className="checked">
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                    <div className="mascoat">
+                      <i className="mascoatA" />
+                      <dl>
+                        <dt>
+                          A Type <span className="textPrimary">현재 기본값</span>
+                        </dt>
+                        <dd>
+                          AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                          적합합니다.
+                        </dd>
+                      </dl>
+
+                   </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                  <div className="mascoat">
+                    <i className="mascoatB" />
+                    <dl>
+                      <dt>B Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                  <div className="mascoat">
+                    <i className="mascoatC" />
+                    <dl>
+                      <dt>C Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                  <div className="mascoat">
+                    <i className="mascoatD" />
+                    <dl>
+                      <dt>D Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <div>
+                      <input type="radio" name="mascoat" />
+                      <span />
+                    </div>
+
+
+                  <div className="mascoat">
+                    <i className="mascoatE" />
+                    <dl>
+                      <dt>E Type </dt>
+                      <dd>
+                        AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                        적합합니다.
+                      </dd>
+                    </dl>
+                  </div>
+                  </label>
+                </li>
+                <li>
+                <label>
+                  <input type="radio" name="mascoat" />
+                  <span />
+
+
+                <div className="mascoat">
+                  <i className="mascoatF" />
+                  <dl>
+                    <dt>F Type </dt>
+                    <dd>
+                      AI검색에 KMS 가중치 높게 적용한 AI로서 일반적인 업무에
+                      적합합니다.
+                    </dd>
+                  </dl>
+                </div>
+                </label>
+              </li>
+
+              </ul>
+            </div>
+          </>}
+          btnText1="취소"
+          btnText2="저장"
+          callback={() => {
+            console.log('callback');
+          }}
+      />
 
       <ModalP
         ref={modalCounselingRef}

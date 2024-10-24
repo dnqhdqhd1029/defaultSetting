@@ -330,13 +330,55 @@ const ConciergeP = () => {
 
                 </dl>
 
-                <div className="detailView mt2" style={{padding:'0',minHeight:'200px',fontSize:'14px'}}>
+                <div className="detailView mt2 scroll" style={{padding:'0',minHeight:'200px',fontSize:'14px'}}>
                   검색결과 preview 영역<br/>
                   검색결과 preview 영역<br/>
                   검색결과 preview 영역<br/>
                   검색결과 preview 영역<br/>
                   검색결과 preview 영역<br/>
                   검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역<br/>
+                  검색결과 preview 영역
+
                 </div>
               </div>
 
