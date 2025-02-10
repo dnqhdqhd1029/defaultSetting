@@ -17,6 +17,7 @@ const HomeContainer = styled.div`
     width: 100%;
     font-size: 14px;
     font-weight: 500;
+    border:1px solid red
     
     tr:hover{
       background-color: #f5f5f5; 
