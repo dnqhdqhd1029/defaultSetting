@@ -29,6 +29,8 @@ const ConfirmP = ({ width,header, title, content, callback ,close ,btnText01 ,bt
                  <div className="confirmContainer">
                       <div className="confirmWrap" style={{ width: `${width}` }}>
 
+                          
+
                           {title && close && (
                               <div className="top ">
                                   <strong>{title}</strong>

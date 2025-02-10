@@ -4,12 +4,13 @@ import ModalP from "./ModalP";
 import ChattingP from "./ChattingP";
 import { Table } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { Pagination } from "swiper/modules";
 
 //import type { TableColumnsType, TableProps } from 'antd';
 import "../../assets/style/style.scss";
 import "swiper/css";
-import 'swiper/css/pagination';
+import "swiper/css/pagination";
 
 import imgImg from "../../assets/images/svg/icon-img.svg";
 
@@ -78,23 +79,27 @@ const MainP = () => {
     {
       title: "여신은행 이자징수일",
       description1: "자금세탁방지",
-      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+      description2:
+        "필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
     },
     {
       title: "영업점검사",
       description1: "여신업무 소홀 및 부실여신 사례",
-      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+      description2:
+        "필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
     },
     {
       title: "영업점검사",
       description1: "여신업무 소홀 및 부실여신 사례",
-      description2:"필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
-    }
+      description2:
+        "필수사전요건으로 모바일뱅킹에서 고객이 직접 KYC를 수행할 수 있습니다. 자세한 사항은 디지털금융그룹 KYC 담당자에게 문의하시기 바랍니다.",
+    },
   ];
 
   return (
     <>
       <HeaderP />
+
       <main>
         <div className="menuContainer">
           <div className="tabMenu">
@@ -142,8 +147,6 @@ const MainP = () => {
                             고객센터 <em>21</em>
                           </span>
                         </button>
-
-
                       </div>
                     </li>
                     <li>
@@ -153,7 +156,6 @@ const MainP = () => {
                             전자결재 <em>5</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -163,7 +165,6 @@ const MainP = () => {
                             규정 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -173,7 +174,6 @@ const MainP = () => {
                             우리상품 바로알기 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li className="">
@@ -183,7 +183,6 @@ const MainP = () => {
                             부서홈페이지 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li className="">
@@ -193,7 +192,6 @@ const MainP = () => {
                             게시 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li className="">
@@ -203,7 +201,6 @@ const MainP = () => {
                             업무포탈 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -213,7 +210,6 @@ const MainP = () => {
                             업무길라잡이 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -223,7 +219,6 @@ const MainP = () => {
                             은행사전 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -233,7 +228,6 @@ const MainP = () => {
                             직원정보 <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -243,7 +237,6 @@ const MainP = () => {
                             통합Q&A <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                     <li>
@@ -253,19 +246,16 @@ const MainP = () => {
                             전산매뉴얼ABC <em>2</em>
                           </span>
                         </button>
-
                       </div>
                     </li>
                   </ul>
 
                   {/*편집일떄*/}
-                 <ul>
+                  <ul>
                     <li className="on">
                       <div className="depthFirst">
                         <button type="button">
-                          <span>
-                            고객센터
-                          </span>
+                          <span>고객센터</span>
                         </button>
 
                         <label className="toggleSwitch">
@@ -276,9 +266,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button">
-                          <span>
-                            전자결재
-                          </span>
+                          <span>전자결재</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -288,9 +276,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            규정
-                          </span>
+                          <span>규정</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -300,9 +286,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            우리상품 바로알기
-                          </span>
+                          <span>우리상품 바로알기</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -312,9 +296,7 @@ const MainP = () => {
                     <li className="off">
                       <div className="depthFirst">
                         <button type="button">
-                          <span>
-                            부서홈페이지
-                          </span>
+                          <span>부서홈페이지</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" />
@@ -324,9 +306,7 @@ const MainP = () => {
                     <li className="off">
                       <div className="depthFirst">
                         <button type="button">
-                          <span>
-                            게시
-                          </span>
+                          <span>게시</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" />
@@ -336,9 +316,7 @@ const MainP = () => {
                     <li className="off">
                       <div className="depthFirst">
                         <button type="button">
-                          <span>
-                            업무포탈
-                          </span>
+                          <span>업무포탈</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" />
@@ -348,9 +326,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            업무길라잡이
-                          </span>
+                          <span>업무길라잡이</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -360,9 +336,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            은행사전
-                          </span>
+                          <span>은행사전</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -372,9 +346,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            직원정보
-                          </span>
+                          <span>직원정보</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -384,9 +356,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            통합Q&A
-                          </span>
+                          <span>통합Q&A</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -396,9 +366,7 @@ const MainP = () => {
                     <li>
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            전산매뉴얼ABC
-                          </span>
+                          <span>전산매뉴얼ABC</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" checked />
@@ -406,9 +374,7 @@ const MainP = () => {
                       </div>
                     </li>
                   </ul>
-
                 </>
-
               )}
               {activeMenuTab === "tab02" && (
                 <>
@@ -420,7 +386,6 @@ const MainP = () => {
                             수신 <em>21</em>
                           </span>
                         </button>
-
                       </div>
 
                       <div className="depthTwo">
@@ -453,7 +418,6 @@ const MainP = () => {
                             여신 <em>21</em>
                           </span>
                         </button>
-
                       </div>
 
                       <div className="depthTwo">
@@ -498,24 +462,16 @@ const MainP = () => {
 
                       <div className="depthTwo">
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                         <button type="button" className="">
-                          <span>
-                            투자상품PLAZA
-                          </span>
+                          <span>투자상품PLAZA</span>
                         </button>
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                       </div>
                     </li>
@@ -523,9 +479,7 @@ const MainP = () => {
                     <li className="off">
                       <div className="depthFirst">
                         <button type="button" className="">
-                          <span>
-                            여신
-                          </span>
+                          <span>여신</span>
                         </button>
                         <label className="toggleSwitch">
                           <input type="checkbox" />
@@ -534,9 +488,7 @@ const MainP = () => {
 
                       <div className="depthTwo">
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                         <button type="button" className="">
                           <span>
@@ -544,14 +496,10 @@ const MainP = () => {
                           </span>
                         </button>
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                         <button type="button" className="">
-                          <span>
-                            신탁PLAZA
-                          </span>
+                          <span>신탁PLAZA</span>
                         </button>
                       </div>
                     </li>
@@ -572,15 +520,14 @@ const MainP = () => {
                 <button type="button" className="btn bgDarkBlue">저장</button>
               </div>*/}
             </div>
-
-
-
           </div>
         </div>
         <section className="section">
           <div className="total">
             AI검색 결과 <strong>42건</strong> 이 있습니다.
-            <button type="button" className="keyword">키워드로 검색 </button>
+            <button type="button" className="keyword">
+              키워드로 검색{" "}
+            </button>
           </div>
           <div className="listContainer">
             <div className="title">
@@ -797,14 +744,11 @@ const MainP = () => {
                     <dt>
                       <strong className="bold500">홍길동</strong>차장
                     </dt>
-                    <dd>
-                      우리은행 | 빅데이터플랫폼부
-                    </dd>
+                    <dd>우리은행 | 빅데이터플랫폼부</dd>
                     <dd className="icon flexS">
                       <button type="button" className="iconCall" />
                       <button type="button" className="iconProfile" />
                       <button type="button" className="iconSns" />
-
                     </dd>
                   </dl>
 
@@ -815,9 +759,7 @@ const MainP = () => {
                 <div className="gridItem">
                   <dl>
                     <dt>담당업무</dt>
-                    <dd className="fontSm">
-                      데이터 자산화 팀장 - 팀업무 전반
-                    </dd>
+                    <dd className="fontSm">데이터 자산화 팀장 - 팀업무 전반</dd>
                   </dl>
                 </div>
                 <div className="gridItem">
@@ -835,14 +777,11 @@ const MainP = () => {
                     <dt>
                       <strong className="bold500">홍길동</strong>차장
                     </dt>
-                    <dd>
-                      우리은행 | 빅데이터플랫폼부
-                    </dd>
+                    <dd>우리은행 | 빅데이터플랫폼부</dd>
                     <dd className="icon flexS">
                       <button type="button" className="iconCall" />
                       <button type="button" className="iconProfile" />
                       <button type="button" className="iconSns" />
-
                     </dd>
                   </dl>
 
@@ -853,9 +792,7 @@ const MainP = () => {
                 <div className="gridItem">
                   <dl>
                     <dt>담당업무</dt>
-                    <dd className="fontSm">
-                      데이터 자산화 팀장 - 팀업무 전반
-                    </dd>
+                    <dd className="fontSm">데이터 자산화 팀장 - 팀업무 전반</dd>
                   </dl>
                 </div>
                 <div className="gridItem">
@@ -937,10 +874,8 @@ const MainP = () => {
               <button type="button">한도 신청</button>
               <button type="button">기간연장 이자</button>
               <button type="button">이체한도 5억</button>
-
             </div>
           </div>
-
         </section>
         <aside>
           <div className="aiContainer">
@@ -984,86 +919,84 @@ const MainP = () => {
                 loop={true}
                 spaceBetween={20}
                 //navigation={true}
-                pagination={true} modules={[Pagination]}
+                pagination={true}
+                modules={[Pagination]}
                 className="mySwiper"
               >
                 {slides.map((slide, index) => (
                   <SwiperSlide key={index}>
                     <div className="content">
-                    <div className="slideCont cont">
-                      <dl>
-                        <dt>
-                          <span>{slide?.title}</span>
-                        </dt>
-                        <dd className="info">
-                          <span className="txt">{slide?.description1}</span>
-                          <span>{slide?.description2}</span>
-                        </dd>
-                      </dl>
-                    </div>
+                      <div className="slideCont cont">
+                        <dl>
+                          <dt>
+                            <span>{slide?.title}</span>
+                          </dt>
+                          <dd className="info">
+                            <span className="txt">{slide?.description1}</span>
+                            <span>{slide?.description2}</span>
+                          </dd>
+                        </dl>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
-
             </div>
           </div>
-
-
 
           <div className="otherContainer">
             <div className="tabList">
               <button
-                  type="button"
-                  className={`tab01 ${activeTab === "tab01" ? "active" : " "}`}
-                  onClick={() => handleTabClick("tab01")}
-                  ref={(el) => (tabButtonsRef.current[0] = el)}
+                type="button"
+                className={`tab01 ${activeTab === "tab01" ? "active" : " "}`}
+                onClick={() => handleTabClick("tab01")}
+                ref={(el) => (tabButtonsRef.current[0] = el)}
               >
                 북마크
                 {activeTab === "tab01" && (
-                    <button
-                        type="button"
-                        className="setting"
-                        onClick={() => modalBookMarkRef.current.show()}
-                    />
+                  <button
+                    type="button"
+                    className="setting"
+                    onClick={() => modalBookMarkRef.current.show()}
+                  />
                 )}
               </button>
               <button
-                  type="button"
-                  className={`tab02 ${activeTab === "tab02" ? "active" : ""}`}
-                  onClick={() => handleTabClick("tab02")}
-                  ref={(el) => (tabButtonsRef.current[1] = el)}
+                type="button"
+                className={`tab02 ${activeTab === "tab02" ? "active" : ""}`}
+                onClick={() => handleTabClick("tab02")}
+                ref={(el) => (tabButtonsRef.current[1] = el)}
               >
                 My 헬프데스크
               </button>
               <button
-                  type="button"
-                  className={`tab03  ${activeTab === "tab03" ? "active" : ""}`}
-                  onClick={() => handleTabClick("tab03")}
-                  ref={(el) => (tabButtonsRef.current[2] = el)}
+                type="button"
+                className={`tab03  ${activeTab === "tab03" ? "active" : ""}`}
+                onClick={() => handleTabClick("tab03")}
+                ref={(el) => (tabButtonsRef.current[2] = el)}
               >
                 나의 즐겨찾기
               </button>
               <button
-                  type="button"
-                  className={`tab04  ${activeTab === "tab04" ? "active" : ""}`}
-                  onClick={() => handleTabClick("tab04")}
-                  ref={(el) => (tabButtonsRef.current[3] = el)}
+                type="button"
+                className={`tab04  ${activeTab === "tab04" ? "active" : ""}`}
+                onClick={() => handleTabClick("tab04")}
+                ref={(el) => (tabButtonsRef.current[3] = el)}
               >
                 알림 검색어
                 {activeTab === "tab04" && (
-                    <button
-                        type="button"
-                        className="setting"
-                        onClick={() => modalNoticeRef.current.show()}
-                    />
+                  <button
+                    type="button"
+                    className="setting"
+                    onClick={() => modalNoticeRef.current.show()}
+                  />
                 )}
               </button>
               <button
-                  type="button"
-                  className={`tab05 ${activeTab === "tab05" ? "active" : ""}`}
-                  onClick={() => handleTabClick("tab05")}
-                  ref={(el) => (tabButtonsRef.current[4] = el)}
+                type="button"
+                className={`tab05 ${activeTab === "tab05" ? "active" : ""}`}
+                onClick={() => handleTabClick("tab05")}
+                ref={(el) => (tabButtonsRef.current[4] = el)}
               >
                 인기 검색어
               </button>
@@ -1072,122 +1005,122 @@ const MainP = () => {
 
             <div className="tabWrap">
               {activeTab === "tab01" && (
-                  <>
-                    <div className="cont">
-                      <ol>
-                        <li>
+                <>
+                  <div className="cont">
+                    <ol>
+                      <li>
                         <span>
                           <em>1</em>
                           <button type="button" className="txt">
                             -
                           </button>
                         </span>
-                          {/*<button type="button" className="iconDel" />*/}
-                        </li>
-                        <li>
+                        {/*<button type="button" className="iconDel" />*/}
+                      </li>
+                      <li>
                         <span>
                           <em>2</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>3</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>4</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>5</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>6</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>7</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>8</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>9</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                        <li>
+                        <button type="button" className="iconDel" />
+                      </li>
+                      <li>
                         <span>
                           <em>10</em>
                           <button type="button" className="txt">
                             일이삼사오육칠팔구십일이삼사오육칠
                           </button>
                         </span>
-                          <button type="button" className="iconDel" />
-                        </li>
-                      </ol>
-                    </div>
-                  </>
+                        <button type="button" className="iconDel" />
+                      </li>
+                    </ol>
+                  </div>
+                </>
               )}
               {activeTab === "tab02" && (
-                  <>
-                    <div className="cont">tab02</div>
-                  </>
+                <>
+                  <div className="cont">tab02</div>
+                </>
               )}
               {activeTab === "tab03" && (
-                  <>
-                    <div className="cont">tab03</div>
-                  </>
+                <>
+                  <div className="cont">tab03</div>
+                </>
               )}
               {activeTab === "tab04" && (
-                  <>
-                    <div className="cont">tab04</div>
-                  </>
+                <>
+                  <div className="cont">tab04</div>
+                </>
               )}
               {activeTab === "tab05" && (
-                  <>
-                    <div className="cont">tab05</div>
-                  </>
+                <>
+                  <div className="cont">tab05</div>
+                </>
               )}
             </div>
           </div>
